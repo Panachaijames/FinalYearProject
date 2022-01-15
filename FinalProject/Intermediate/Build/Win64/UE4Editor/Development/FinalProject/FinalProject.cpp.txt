@@ -1,0 +1,2 @@
+C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\Definitions.FinalProject.h
+C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\FinalProject.h
