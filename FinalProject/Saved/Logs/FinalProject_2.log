@@ -1072,3 +1072,76 @@ LogConfig: Setting CVar [[r.setres:1280x720]]
 [2022.01.21-17.17.12:411][886]Display: HotReload successful (1 functions remapped  0 scriptstructs remapped)
 [2022.01.21-17.17.12:653][886]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0375 seconds. Added 3838 classes and 937 folders.
 [2022.01.21-17.17.12:679][886]Display: HotReload took  0.5s.
+[2022.01.21-17.38.44:913][ 89]LogTemp: Repeating last play command: Selected Viewport
+[2022.01.21-17.38.44:924][ 89]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2022.01.21-17.38.44:924][ 89]PIE: New page: PIE session: FinalProject (Jan 21, 2022, 5:38:44 PM)
+[2022.01.21-17.38.44:925][ 89]LogPlayLevel: Creating play world package: /Game/UEDPIE_0_FinalProject
+[2022.01.21-17.38.46:223][ 89]LogPlayLevel: PIE: StaticDuplicateObject took: (1.297903s)
+[2022.01.21-17.38.46:225][ 89]LogAIModule: Creating AISystem for world FinalProject
+[2022.01.21-17.38.46:226][ 89]LogPlayLevel: PIE: World Init took: (0.002714s)
+[2022.01.21-17.38.46:226][ 89]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/FinalProject.FinalProject to /Game/UEDPIE_0_FinalProject.FinalProject (1.301103s)
+[2022.01.21-17.38.46:241][ 89]LogUObjectHash: Compacting FUObjectHashTables data took   1.69ms
+[2022.01.21-17.38.46:255][ 89]LogAudio: Display: Creating Audio Device:                 Id: 3, Scope: Unique, Realtime: True
+[2022.01.21-17.38.46:255][ 89]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2022.01.21-17.38.46:255][ 89]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2022.01.21-17.38.46:255][ 89]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2022.01.21-17.38.46:255][ 89]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2022.01.21-17.38.46:255][ 89]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2022.01.21-17.38.46:255][ 89]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2022.01.21-17.38.46:255][ 89]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2022.01.21-17.38.46:255][ 89]LogAudio: Display: AudioDevice MaxSources: 32
+[2022.01.21-17.38.46:256][ 89]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2022.01.21-17.38.46:256][ 89]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2022.01.21-17.38.46:256][ 89]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2022.01.21-17.38.46:256][ 89]LogAudioMixer: Display: Initializing audio mixer.
+[2022.01.21-17.38.46:265][ 89]LogAudioMixer: Display: 0: FrontLeft
+[2022.01.21-17.38.46:265][ 89]LogAudioMixer: Display: 1: FrontRight
+[2022.01.21-17.38.46:372][ 89]LogAudioMixer: Display: Using Audio Device Speakers/Headphones (Realtek(R) Audio)
+[2022.01.21-17.38.46:389][ 89]LogAudioMixer: Display: Initializing Sound Submixes...
+[2022.01.21-17.38.46:389][ 89]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2022.01.21-17.38.46:389][ 89]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2022.01.21-17.38.46:391][ 89]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2022.01.21-17.38.46:391][ 89]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2022.01.21-17.38.46:391][ 89]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2022.01.21-17.38.46:393][ 89]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2022.01.21-17.38.46:393][ 89]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2022.01.21-17.38.46:393][ 89]LogInit: FAudioDevice initialized.
+[2022.01.21-17.38.46:393][ 89]LogAudio: Display: Audio Device (ID: 3) registered with world 'FinalProject'.
+[2022.01.21-17.38.46:410][ 89]LogLoad: Game class is 'MyGameMode_BP_C'
+[2022.01.21-17.38.46:437][ 89]LogWorld: Bringing World /Game/UEDPIE_0_FinalProject.FinalProject up for play (max tick rate 60) at 2022.01.21-17.38.46
+[2022.01.21-17.38.46:438][ 89]LogWorld: Bringing up level for play took: 0.026870
+[2022.01.21-17.38.46:439][ 89]LogOnline: OSS: Creating online subsystem instance for: :Context_3
+[2022.01.21-17.38.46:442][ 89]LogGameMode: Display: Match State Changed from EnteringMap to WaitingToStart
+[2022.01.21-17.38.46:442][ 89]LogGameState: Match State Changed from EnteringMap to WaitingToStart
+[2022.01.21-17.38.46:442][ 89]LogGameMode: Display: Match State Changed from WaitingToStart to InProgress
+[2022.01.21-17.38.46:444][ 89]LogGameState: Match State Changed from WaitingToStart to InProgress
+[2022.01.21-17.38.46:444][ 89]PIE: Server logged in
+[2022.01.21-17.38.46:445][ 89]PIE: Play in editor total start time 1.524 seconds.
+[2022.01.21-17.39.02:892][887]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2022.01.21-17.39.02:892][887]LogWorld: BeginTearingDown for /Game/UEDPIE_0_FinalProject
+[2022.01.21-17.39.02:893][887]LogWorld: UWorld::CleanupWorld for FinalProject, bSessionEnded=true, bCleanupResources=true
+[2022.01.21-17.39.02:900][887]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.01.21-17.39.02:910][887]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2022.01.21-17.39.02:912][887]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.01.21-17.39.02:924][887]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2022.01.21-17.39.02:924][887]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2022.01.21-17.39.02:925][887]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2022.01.21-17.39.02:935][887]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2022.01.21-17.39.02:944][887]LogUObjectHash: Compacting FUObjectHashTables data took   1.00ms
+[2022.01.21-17.39.02:994][888]LogPlayLevel: Display: Destroying online subsystem :Context_3
+[2022.01.21-17.40.19:447][226]LogSlate: Took 0.001121 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Italic.ttf' (157K)
+[2022.01.21-17.40.29:378][382]LogSlate: Only BGRA pngs, bmps or icos are supported in by External Image Picker
+[2022.01.21-17.40.54:759][518]LogSlate: Only BGRA pngs, bmps or icos are supported in by External Image Picker
+[2022.01.21-17.41.20:158][901]LogSlate: Window 'Editor Preferences' being destroyed
+[2022.01.21-17.43.33:754][555]LogHotReload: New module detected: UE4Editor-FinalProject-0005.dll
+[2022.01.21-17.43.34:783][559]LogHotReload: Starting Hot-Reload from IDE
+[2022.01.21-17.43.34:889][559]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'FinalProject' in 0.0004 seconds. Added 5 classes and 2 folders.
+[2022.01.21-17.43.34:895][559]Display: HotReload successful (1 functions remapped  0 scriptstructs remapped)
+[2022.01.21-17.43.34:953][559]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0107 seconds. Added 3838 classes and 937 folders.
+[2022.01.21-17.43.34:961][559]Display: HotReload took  0.2s.
+[2022.01.21-17.50.18:999][765]LogHotReload: New module detected: UE4Editor-FinalProject-0006.dll
+[2022.01.21-17.50.20:027][769]LogHotReload: Starting Hot-Reload from IDE
+[2022.01.21-17.50.20:131][769]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'FinalProject' in 0.0003 seconds. Added 5 classes and 2 folders.
+[2022.01.21-17.50.20:136][769]Display: HotReload successful (1 functions remapped  0 scriptstructs remapped)
+[2022.01.21-17.50.20:194][769]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0099 seconds. Added 3838 classes and 937 folders.
+[2022.01.21-17.50.20:201][769]Display: HotReload took  0.2s.

@@ -30,6 +30,8 @@ ACharacterMovement::ACharacterMovement()
 	FollowCamera->bUsePawnControlRotation = false;
 }
 
+
+
 // Called when the game starts or when spawned
 void ACharacterMovement::BeginPlay()
 {
@@ -54,6 +56,25 @@ void ACharacterMovement::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 
+	PlayerInputComponent->BindAxis("MoveForward", this, &ACharacterMovement::MoveForward);
+	PlayerInputComponent->BindAxis("MoveRight", this, &ACharacterMovement::MoveRight);
+
 
 }
+void ACharacterMovement::MoveForward(float Axis)
+{
+	FRotator Rotation = Controller->GetControlRotation();
+	FRotator YawRotation(0.0f, Rotation.Yaw, 0.0f);
 
+	FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
+	AddMovementInput(Direction, Axis);
+}
+
+void ACharacterMovement::MoveRight(float Axis)
+{
+	FRotator Rotation = Controller->GetControlRotation();
+	FRotator YawRotation(0.0f, Rotation.Yaw, 0.0f);
+
+	FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+	AddMovementInput(Direction, Axis);
+}
