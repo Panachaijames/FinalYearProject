@@ -2,6 +2,7 @@
 
 
 #include "CharacterMovement.h"
+#include "GameFramework/SpringArmComponent.h"
 
 // Sets default values
 ACharacterMovement::ACharacterMovement()
@@ -18,10 +19,13 @@ ACharacterMovement::ACharacterMovement()
 	GetCharacterMovement()->JumpZVelocity = 600.0f;
 	GetCharacterMovement()->AirControl = 0.2f;
 
+	//Create a camera boom 
+	//(pulls in towards the character) if there is a collision
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
 	CameraBoom->SetupAttachment(RootComponent);
-
+	//The camera follows at this distance behind the character
 	CameraBoom->TargetArmLength = 300.0f;
+	//Rotate the arm based on the controller
 	CameraBoom->bUsePawnControlRotation = true;
 
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FolloeCamera"));
