@@ -3,7 +3,8 @@
 
 #include "CharacterMovement.h"
 #include "GameFramework/SpringArmComponent.h"
-
+#include "Kismet/GameplayStatics.h"
+#include "Sound/SoundCue.h"
 // Sets default values
 ACharacterMovement::ACharacterMovement()
 {
@@ -43,6 +44,13 @@ void ACharacterMovement::BeginPlay()
 	
 }
 
+void ACharacterMovement::FireWeapon()
+{
+	if (FireSound) {
+		UGameplayStatics::PlaySound2D(this, FireSound);
+	}
+}
+
 // Called every frame
 void ACharacterMovement::Tick(float DeltaTime)
 {
@@ -63,7 +71,7 @@ void ACharacterMovement::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 	PlayerInputComponent->BindAxis("MoveForward", this, &ACharacterMovement::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &ACharacterMovement::MoveRight);
 
-
+	PlayerInputComponent->BindAction("FireButton", IE_Pressed, this, &ACharacterMovement::FireWeapon);
 }
 void ACharacterMovement::MoveForward(float Axis)
 {

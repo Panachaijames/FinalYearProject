@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\FinalProject.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{097CD826-39E5-4C7C-B126-8402B034B6CE}</UniqueIdentifier>
+      <UniqueIdentifier>{1871C89B-1FEF-44A0-86D3-A25867077BA4}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\FinalProject.Target.cs">
       <Filter>Source</Filter>
@@ -11,8 +11,10 @@
     <None Include="..\..\Source\FinalProjectEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{3F57864E-98A4-4D44-8676-53589DACD6EE}</UniqueIdentifier>
+      <UniqueIdentifier>{A0DD0121-3234-4C3D-8F22-A4B8150EA787}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,8 +32,14 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\FinalProject">
-      <UniqueIdentifier>{90EF3CDF-1184-41EC-9AC3-A7B431C9006A}</UniqueIdentifier>
+      <UniqueIdentifier>{819BDB6D-0253-4522-AD12-91248476E486}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\FinalProject\CharacterMovement.cpp">
+      <Filter>Source\FinalProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FinalProject\CharacterMovement.h">
+      <Filter>Source\FinalProject</Filter>
+    </ClInclude>
     <None Include="..\..\Source\FinalProject\FinalProject.Build.cs">
       <Filter>Source\FinalProject</Filter>
     </None>
@@ -63,6 +71,12 @@
       <Filter>Source\FinalProject</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\FinalProject\FinalProjectProjectile.h">
+      <Filter>Source\FinalProject</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FinalProject\ShooterAnimInstance.cpp">
+      <Filter>Source\FinalProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FinalProject\ShooterAnimInstance.h">
       <Filter>Source\FinalProject</Filter>
     </ClInclude>
   </ItemGroup>

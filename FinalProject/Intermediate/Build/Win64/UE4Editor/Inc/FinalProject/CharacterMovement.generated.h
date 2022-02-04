@@ -58,7 +58,10 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ACharacterMovement)
 
 
-#define FinalProject_Source_FinalProject_CharacterMovement_h_19_PRIVATE_PROPERTY_OFFSET
+#define FinalProject_Source_FinalProject_CharacterMovement_h_19_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__FireSound() { return STRUCT_OFFSET(ACharacterMovement, FireSound); }
+
+
 #define FinalProject_Source_FinalProject_CharacterMovement_h_16_PROLOG
 #define FinalProject_Source_FinalProject_CharacterMovement_h_19_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
