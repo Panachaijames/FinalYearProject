@@ -59,7 +59,9 @@ public: \
 
 
 #define FinalProject_Source_FinalProject_CharacterMovement_h_19_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__FireSound() { return STRUCT_OFFSET(ACharacterMovement, FireSound); }
+	FORCEINLINE static uint32 __PPO__FireSound() { return STRUCT_OFFSET(ACharacterMovement, FireSound); } \
+	FORCEINLINE static uint32 __PPO__MuzzleFlash() { return STRUCT_OFFSET(ACharacterMovement, MuzzleFlash); } \
+	FORCEINLINE static uint32 __PPO__HipFireMontage() { return STRUCT_OFFSET(ACharacterMovement, HipFireMontage); }
 
 
 #define FinalProject_Source_FinalProject_CharacterMovement_h_16_PROLOG
