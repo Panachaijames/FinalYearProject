@@ -3,10 +3,10 @@
   Using Visual Studio 2019 14.29.30137 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.19041.0 SDK (C:\Program Files (x86)\Windows Kits\10).
   Building 4 actions with 12 processes...
     [1/4] CharacterMovement.cpp
-    [2/4] UE4Editor-FinalProject-0014.lib
-       Creating library C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0014.lib and object C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0014.exp
-    [3/4] UE4Editor-FinalProject-0014.dll
-       Creating library C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0014.suppressed.lib and object C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0014.suppressed.exp
+    [2/4] UE4Editor-FinalProject-0016.lib
+       Creating library C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0016.lib and object C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0016.exp
+    [3/4] UE4Editor-FinalProject-0016.dll
+       Creating library C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0016.suppressed.lib and object C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0016.suppressed.exp
     [4/4] FinalProjectEditor.target
-  Total time in Parallel executor: 20.28 seconds
-  Total execution time: 21.46 seconds
+  Total time in Parallel executor: 12.83 seconds
+  Total execution time: 14.20 seconds
