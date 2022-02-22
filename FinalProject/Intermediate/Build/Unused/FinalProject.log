@@ -1,18 +1,32 @@
 ﻿  Using 'git status' to determine working set for adaptive non-unity build (C:\Users\james\Desktop\GithubRepo\FinalYearProject).
+  Creating makefile for FinalProjectEditor (Build.version is newer)
   Parsing headers for FinalProjectEditor
     Running UnrealHeaderTool "C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\FinalProject.uproject" "C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\FinalProjectEditor\Development\FinalProjectEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\james\AppData\Local\UnrealBuildTool\Log_UHT.txt" -installed
   LogInit: Display: Loading text-based GConfig....
-  Reflection code generated for FinalProjectEditor in 5.3163131 seconds
+  Reflection code generated for FinalProjectEditor in 9.1878221 seconds
   Building FinalProjectEditor...
   Using Visual Studio 2019 14.29.30137 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.19041.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  Building 6 actions with 12 processes...
-    [1/6] FinalProject.init.gen.cpp
-    [2/6] ShooterAnimInstance.cpp
-    [3/6] ShooterAnimInstance.gen.cpp
-    [4/6] UE4Editor-FinalProject-0023.lib
-       Creating library C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0023.lib and object C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0023.exp
-    [5/6] UE4Editor-FinalProject-0023.dll
-       Creating library C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0023.suppressed.lib and object C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0023.suppressed.exp
-    [6/6] FinalProjectEditor.target
-  Total time in Parallel executor: 12.30 seconds
-  Total execution time: 19.09 seconds
+  Building 19 actions with 12 processes...
+    [1/19] Default.rc2
+    [2/19] SharedPCH.Engine.ShadowErrors.cpp
+    [3/19] FinalProject.cpp
+    [4/19] FinalProject.init.gen.cpp
+    [5/19] ShooterAnimInstance.cpp
+    [6/19] FinalProjectGameMode.cpp
+    [7/19] FinalProjectProjectile.cpp
+    [8/19] FinalProjectGameMode.gen.cpp
+    [9/19] FinalProjectHUD.gen.cpp
+    [10/19] FinalProjectHUD.cpp
+    [11/19] CharacterMovement.gen.cpp
+    [12/19] FinalProjectCharacter.gen.cpp
+    [13/19] FinalProjectCharacter.cpp
+    [14/19] CharacterMovement.cpp
+    [15/19] FinalProjectProjectile.gen.cpp
+    [16/19] ShooterAnimInstance.gen.cpp
+    [17/19] UE4Editor-FinalProject-0024.lib
+       Creating library C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0024.lib and object C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0024.exp
+    [18/19] UE4Editor-FinalProject-0024.dll
+       Creating library C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0024.suppressed.lib and object C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0024.suppressed.exp
+    [19/19] FinalProjectEditor.target
+  Total time in Parallel executor: 47.36 seconds
+  Total execution time: 70.65 seconds
