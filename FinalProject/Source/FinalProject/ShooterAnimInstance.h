@@ -35,10 +35,13 @@ private:
 	bool bIsAccelerating;
 
 	/** Offset yaw used for strafing*/
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement, meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Movement, meta = (AllowPrivateAccess = "true"))
 	float MovementOffsetYaw;
 
 	/** Offset yaw the frame before we stopped moving*/
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement, meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Movement, meta = (AllowPrivateAccess = "true"))
 	float LastMovementOffsetYaw;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
+	bool bAiming;
 };

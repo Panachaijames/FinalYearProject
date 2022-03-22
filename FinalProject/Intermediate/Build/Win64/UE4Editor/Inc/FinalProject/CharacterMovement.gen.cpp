@@ -23,8 +23,52 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 	ENGINE_API UClass* Z_Construct_UClass_UParticleSystem_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
 // End Cross Module References
+	DEFINE_FUNCTION(ACharacterMovement::execGetCrosshairSpreadMultiplier)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(float*)Z_Param__Result=P_THIS->GetCrosshairSpreadMultiplier();
+		P_NATIVE_END;
+	}
 	void ACharacterMovement::StaticRegisterNativesACharacterMovement()
 	{
+		UClass* Class = ACharacterMovement::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "GetCrosshairSpreadMultiplier", &ACharacterMovement::execGetCrosshairSpreadMultiplier },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_ACharacterMovement_GetCrosshairSpreadMultiplier_Statics
+	{
+		struct CharacterMovement_eventGetCrosshairSpreadMultiplier_Parms
+		{
+			float ReturnValue;
+		};
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_ACharacterMovement_GetCrosshairSpreadMultiplier_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(CharacterMovement_eventGetCrosshairSpreadMultiplier_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ACharacterMovement_GetCrosshairSpreadMultiplier_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ACharacterMovement_GetCrosshairSpreadMultiplier_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACharacterMovement_GetCrosshairSpreadMultiplier_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACharacterMovement_GetCrosshairSpreadMultiplier_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACharacterMovement, nullptr, "GetCrosshairSpreadMultiplier", nullptr, nullptr, sizeof(CharacterMovement_eventGetCrosshairSpreadMultiplier_Parms), Z_Construct_UFunction_ACharacterMovement_GetCrosshairSpreadMultiplier_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterMovement_GetCrosshairSpreadMultiplier_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACharacterMovement_GetCrosshairSpreadMultiplier_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterMovement_GetCrosshairSpreadMultiplier_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ACharacterMovement_GetCrosshairSpreadMultiplier()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ACharacterMovement_GetCrosshairSpreadMultiplier_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	UClass* Z_Construct_UClass_ACharacterMovement_NoRegister()
 	{
@@ -33,6 +77,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 	struct Z_Construct_UClass_ACharacterMovement_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
@@ -44,6 +89,46 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FollowCamera_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_FollowCamera;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BaseTurnRate_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_BaseTurnRate;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BaseLookUpRate_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_BaseLookUpRate;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_HipTurnRate_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_HipTurnRate;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_HipLookUpRate_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_HipLookUpRate;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AimingTurnRate_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_AimingTurnRate;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AimingLookUpRate_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_AimingLookUpRate;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MouseHipTurnRate_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_MouseHipTurnRate;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MouseHipLookUpRate_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_MouseHipLookUpRate;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MouseAimingTurnRate_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_MouseAimingTurnRate;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MouseAimingLookUpRate_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_MouseAimingLookUpRate;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FireSound_MetaData[];
 #endif
@@ -64,6 +149,35 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BeamParticles_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_BeamParticles;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bAiming_MetaData[];
+#endif
+		static void NewProp_bAiming_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bAiming;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ZoomInterSpeed_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_ZoomInterSpeed;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CrosshairSpreadMultiplier_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_CrosshairSpreadMultiplier;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CrosshairVelocityFactor_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_CrosshairVelocityFactor;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CrosshairInAirFactor_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_CrosshairInAirFactor;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CrosshairAimFactor_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_CrosshairAimFactor;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CrosshairShootingFactor_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_CrosshairShootingFactor;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -71,6 +185,9 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 	UObject* (*const Z_Construct_UClass_ACharacterMovement_Statics::DependentSingletons[])() = {
 		(UObject* (*)())Z_Construct_UClass_ACharacter,
 		(UObject* (*)())Z_Construct_UPackage__Script_FinalProject,
+	};
+	const FClassFunctionLinkInfo Z_Construct_UClass_ACharacterMovement_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_ACharacterMovement_GetCrosshairSpreadMultiplier, "GetCrosshairSpreadMultiplier" }, // 3800122887
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::Class_MetaDataParams[] = {
@@ -81,25 +198,143 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CameraBoom_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Camera" },
+		{ "Comment", "/** Camera boom positioning the camera behind the character */" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Camera boom positioning the camera behind the character" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CameraBoom = { "CameraBoom", nullptr, (EPropertyFlags)0x00100000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, CameraBoom), Z_Construct_UClass_USpringArmComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CameraBoom_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CameraBoom_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CameraBoom = { "CameraBoom", nullptr, (EPropertyFlags)0x00400000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, CameraBoom), Z_Construct_UClass_USpringArmComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CameraBoom_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CameraBoom_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_FollowCamera_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Camera" },
+		{ "Comment", "/** Camera that follows the character */" },
 		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Camera that follows the character" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_FollowCamera = { "FollowCamera", nullptr, (EPropertyFlags)0x00400000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, FollowCamera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_FollowCamera_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_FollowCamera_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_BaseTurnRate_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Camera" },
+		{ "Comment", "/** Base turn rate, in deg/sec. Other scaling may affect final turn rate */" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Base turn rate, in deg/sec. Other scaling may affect final turn rate" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_BaseTurnRate = { "BaseTurnRate", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, BaseTurnRate), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_BaseTurnRate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_BaseTurnRate_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_BaseLookUpRate_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Camera" },
+		{ "Comment", "/** Base look up/down rate, in deg/sec. Other scaling may affect final turn rate */" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Base look up/down rate, in deg/sec. Other scaling may affect final turn rate" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_BaseLookUpRate = { "BaseLookUpRate", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, BaseLookUpRate), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_BaseLookUpRate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_BaseLookUpRate_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HipTurnRate_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Camera" },
+		{ "Comment", "/** Turn rate wile not aiming*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Turn rate wile not aiming" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HipTurnRate = { "HipTurnRate", nullptr, (EPropertyFlags)0x0040000000010015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, HipTurnRate), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HipTurnRate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HipTurnRate_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HipLookUpRate_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Camera" },
+		{ "Comment", "/**Look up rate when not aiming*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Look up rate when not aiming" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HipLookUpRate = { "HipLookUpRate", nullptr, (EPropertyFlags)0x0040000000010015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, HipLookUpRate), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HipLookUpRate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HipLookUpRate_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_AimingTurnRate_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Camera" },
 		{ "ModuleRelativePath", "CharacterMovement.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_FollowCamera = { "FollowCamera", nullptr, (EPropertyFlags)0x00100000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, FollowCamera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_FollowCamera_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_FollowCamera_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_AimingTurnRate = { "AimingTurnRate", nullptr, (EPropertyFlags)0x0040000000010015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, AimingTurnRate), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_AimingTurnRate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_AimingTurnRate_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_AimingLookUpRate_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Camera" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_AimingLookUpRate = { "AimingLookUpRate", nullptr, (EPropertyFlags)0x0040000000010015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, AimingLookUpRate), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_AimingLookUpRate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_AimingLookUpRate_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MouseHipTurnRate_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Camera" },
+		{ "ClampMax", "1.0" },
+		{ "ClampMin", "0.0" },
+		{ "Comment", "/** Scale Factor for mouse look sensitivity. Turn rate when not aiming.*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Scale Factor for mouse look sensitivity. Turn rate when not aiming." },
+		{ "UIMax", "1.0" },
+		{ "UIMin", "0.0" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MouseHipTurnRate = { "MouseHipTurnRate", nullptr, (EPropertyFlags)0x0040000000010015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, MouseHipTurnRate), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MouseHipTurnRate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MouseHipTurnRate_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MouseHipLookUpRate_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Camera" },
+		{ "ClampMax", "1.0" },
+		{ "ClampMin", "0.0" },
+		{ "Comment", "/** Scale Factor for mouse look sensitivity. Look up rate when not aiming.*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Scale Factor for mouse look sensitivity. Look up rate when not aiming." },
+		{ "UIMax", "1.0" },
+		{ "UIMin", "0.0" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MouseHipLookUpRate = { "MouseHipLookUpRate", nullptr, (EPropertyFlags)0x0040000000010015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, MouseHipLookUpRate), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MouseHipLookUpRate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MouseHipLookUpRate_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MouseAimingTurnRate_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Camera" },
+		{ "ClampMax", "1.0" },
+		{ "ClampMin", "0.0" },
+		{ "Comment", "/** Scale Factor for mouse look sensitivity. Turn rate when aiming.*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Scale Factor for mouse look sensitivity. Turn rate when aiming." },
+		{ "UIMax", "1.0" },
+		{ "UIMin", "0.0" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MouseAimingTurnRate = { "MouseAimingTurnRate", nullptr, (EPropertyFlags)0x0040000000010015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, MouseAimingTurnRate), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MouseAimingTurnRate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MouseAimingTurnRate_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MouseAimingLookUpRate_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Camera" },
+		{ "ClampMax", "1.0" },
+		{ "ClampMin", "0.0" },
+		{ "Comment", "/** Scale Factor for mouse look sensitivity. Look up rate when aiming.*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Scale Factor for mouse look sensitivity. Look up rate when aiming." },
+		{ "UIMax", "1.0" },
+		{ "UIMin", "0.0" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MouseAimingLookUpRate = { "MouseAimingLookUpRate", nullptr, (EPropertyFlags)0x0040000000010015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, MouseAimingLookUpRate), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MouseAimingLookUpRate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MouseAimingLookUpRate_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_FireSound_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Combat" },
-		{ "Comment", "//Randomized gunshot sound cue\n" },
+		{ "Comment", "/** Randomized gunshot sound cue */" },
 		{ "ModuleRelativePath", "CharacterMovement.h" },
 		{ "ToolTip", "Randomized gunshot sound cue" },
 	};
@@ -109,7 +344,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MuzzleFlash_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Combat" },
-		{ "Comment", "//Flash spawned at BarrelSocket\n" },
+		{ "Comment", "/** Flash spawned at BarrelSocket */" },
 		{ "ModuleRelativePath", "CharacterMovement.h" },
 		{ "ToolTip", "Flash spawned at BarrelSocket" },
 	};
@@ -119,7 +354,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HipFireMontage_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Combat" },
-		{ "Comment", "//Montage for firing the weapon\n" },
+		{ "Comment", "/** Montage for firing the weapon */" },
 		{ "ModuleRelativePath", "CharacterMovement.h" },
 		{ "ToolTip", "Montage for firing the weapon" },
 	};
@@ -129,7 +364,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_ImpactParticles_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Combat" },
-		{ "Comment", "// Particles spawned upon bullet impact\n" },
+		{ "Comment", "/** Particles spawned upon bullet impact */" },
 		{ "ModuleRelativePath", "CharacterMovement.h" },
 		{ "ToolTip", "Particles spawned upon bullet impact" },
 	};
@@ -139,20 +374,111 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_BeamParticles_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Combat" },
-		{ "Comment", "// Smoke trail for bullets\n" },
+		{ "Comment", "/** Smoke trail for bullets */" },
 		{ "ModuleRelativePath", "CharacterMovement.h" },
 		{ "ToolTip", "Smoke trail for bullets" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_BeamParticles = { "BeamParticles", nullptr, (EPropertyFlags)0x0040000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, BeamParticles), Z_Construct_UClass_UParticleSystem_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_BeamParticles_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_BeamParticles_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_bAiming_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Combat" },
+		{ "Comment", "/** True when aiming */" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "True when aiming" },
+	};
+#endif
+	void Z_Construct_UClass_ACharacterMovement_Statics::NewProp_bAiming_SetBit(void* Obj)
+	{
+		((ACharacterMovement*)Obj)->bAiming = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_bAiming = { "bAiming", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(ACharacterMovement), &Z_Construct_UClass_ACharacterMovement_Statics::NewProp_bAiming_SetBit, METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_bAiming_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_bAiming_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_ZoomInterSpeed_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Combat" },
+		{ "Comment", "/**Interp speed for zooming when aiming*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Interp speed for zooming when aiming" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_ZoomInterSpeed = { "ZoomInterSpeed", nullptr, (EPropertyFlags)0x0040000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, ZoomInterSpeed), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_ZoomInterSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_ZoomInterSpeed_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CrosshairSpreadMultiplier_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Crosshairs" },
+		{ "Comment", "/** Determines the spread of the crosshairs */" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Determines the spread of the crosshairs" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CrosshairSpreadMultiplier = { "CrosshairSpreadMultiplier", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, CrosshairSpreadMultiplier), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CrosshairSpreadMultiplier_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CrosshairSpreadMultiplier_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CrosshairVelocityFactor_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Crosshairs" },
+		{ "Comment", "/** Velocity component for crosshair spread*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Velocity component for crosshair spread" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CrosshairVelocityFactor = { "CrosshairVelocityFactor", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, CrosshairVelocityFactor), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CrosshairVelocityFactor_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CrosshairVelocityFactor_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CrosshairInAirFactor_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Crosshairs" },
+		{ "Comment", "/** In Air component for crosshair spread*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "In Air component for crosshair spread" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CrosshairInAirFactor = { "CrosshairInAirFactor", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, CrosshairInAirFactor), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CrosshairInAirFactor_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CrosshairInAirFactor_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CrosshairAimFactor_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Crosshairs" },
+		{ "Comment", "/** Aim component for crosshair spread*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Aim component for crosshair spread" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CrosshairAimFactor = { "CrosshairAimFactor", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, CrosshairAimFactor), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CrosshairAimFactor_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CrosshairAimFactor_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CrosshairShootingFactor_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Crosshairs" },
+		{ "Comment", "/** Shooting component for crosshair spread*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Shooting component for crosshair spread" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CrosshairShootingFactor = { "CrosshairShootingFactor", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, CrosshairShootingFactor), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CrosshairShootingFactor_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CrosshairShootingFactor_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ACharacterMovement_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CameraBoom,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_FollowCamera,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_BaseTurnRate,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_BaseLookUpRate,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HipTurnRate,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HipLookUpRate,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_AimingTurnRate,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_AimingLookUpRate,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MouseHipTurnRate,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MouseHipLookUpRate,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MouseAimingTurnRate,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MouseAimingLookUpRate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_FireSound,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MuzzleFlash,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HipFireMontage,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_ImpactParticles,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_BeamParticles,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_bAiming,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_ZoomInterSpeed,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CrosshairSpreadMultiplier,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CrosshairVelocityFactor,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CrosshairInAirFactor,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CrosshairAimFactor,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CrosshairShootingFactor,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ACharacterMovement_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ACharacterMovement>::IsAbstract,
@@ -162,11 +488,11 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 		"Game",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		nullptr,
+		FuncInfo,
 		Z_Construct_UClass_ACharacterMovement_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
-		0,
+		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::PropPointers),
 		0,
 		0x009000A4u,
@@ -181,7 +507,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ACharacterMovement, 2787971314);
+	IMPLEMENT_CLASS(ACharacterMovement, 1071761058);
 	template<> FINALPROJECT_API UClass* StaticClass<ACharacterMovement>()
 	{
 		return ACharacterMovement::StaticClass();

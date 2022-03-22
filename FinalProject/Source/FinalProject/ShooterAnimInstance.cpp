@@ -3,6 +3,7 @@
 
 #include "ShooterAnimInstance.h"
 #include "CharacterMovement.h"
+#include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/KismetMathLibrary.h"
 
 void  UShooterAnimInstance::UpdateAnimationProperties(float DeltaTime)
@@ -44,6 +45,8 @@ void  UShooterAnimInstance::UpdateAnimationProperties(float DeltaTime)
 			LastMovementOffsetYaw = MovementOffsetYaw;
 		}
 		
+		bAiming = ShooterCharacter->GetAiming();
+
 	}
 }
 

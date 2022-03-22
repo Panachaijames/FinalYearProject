@@ -1,5 +1,5 @@
 /MANIFEST:EMBED
-/MANIFESTINPUT:"C:\Program Files\Epic Games\UE_4.27\Engine\Build\Windows\Resources\Default-Win64.manifest"
+/MANIFESTINPUT:D:\UE4.27\UE_4.27\Engine\Build\Windows\Resources\Default-Win64.manifest
 /NOLOGO
 /DEBUG
 /errorReport:prompt
@@ -40,18 +40,20 @@
 "C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\FinalProjectGameMode.cpp.obj"
 "C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\FinalProjectHUD.cpp.obj"
 "C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\FinalProjectProjectile.cpp.obj"
+"C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\ShooterAnimInstance.cpp.obj"
 "C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\CharacterMovement.gen.cpp.obj"
 "C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\FinalProject.init.gen.cpp.obj"
 "C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\FinalProjectCharacter.gen.cpp.obj"
 "C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\FinalProjectGameMode.gen.cpp.obj"
 "C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\FinalProjectHUD.gen.cpp.obj"
 "C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\FinalProjectProjectile.gen.cpp.obj"
+"C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\ShooterAnimInstance.gen.cpp.obj"
 "C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\Default.rc2.res"
-"C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\UE4Editor-Engine.lib"
-"C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Development\Core\UE4Editor-Core.lib"
-"C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Development\CoreUObject\UE4Editor-CoreUObject.lib"
-"C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Development\InputCore\UE4Editor-InputCore.lib"
-"C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Development\HeadMountedDisplay\UE4Editor-HeadMountedDisplay.lib"
+"D:\UE4.27\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\UE4Editor-Engine.lib"
+"D:\UE4.27\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Development\Core\UE4Editor-Core.lib"
+"D:\UE4.27\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Development\CoreUObject\UE4Editor-CoreUObject.lib"
+"D:\UE4.27\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Development\InputCore\UE4Editor-InputCore.lib"
+"D:\UE4.27\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Development\HeadMountedDisplay\UE4Editor-HeadMountedDisplay.lib"
 "delayimp.lib"
 "wininet.lib"
 "rpcrt4.lib"
