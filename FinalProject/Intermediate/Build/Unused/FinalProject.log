@@ -1,13 +1,36 @@
-﻿  Using 'git status' to determine working set for adaptive non-unity build (C:\Users\james\Desktop\GithubRepo\FinalYearProject).
+﻿  Using 'git status' to determine working set for adaptive non-unity build (D:\GithubRepo\FinalYearProject).
+  Creating makefile for FinalProjectEditor (game project files are newer)
+  Parsing headers for FinalProjectEditor
+    Running UnrealHeaderTool "D:\GithubRepo\FinalYearProject\FinalProject\FinalProject.uproject" "D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\FinalProjectEditor\Development\FinalProjectEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\james\AppData\Local\UnrealBuildTool\Log_UHT.txt" -installed
+  LogInit: Display: Loading text-based GConfig....
+  Reflection code generated for FinalProjectEditor in 60.7244358 seconds
   Building FinalProjectEditor...
   Using Visual Studio 2019 14.29.30137 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.19041.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  Building 4 actions with 12 processes...
-    [1/4] CharacterMovement.cpp
-C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\CharacterMovement.cpp(20): warning C5038: data member 'ACharacterMovement::bAiming' will be initialized after data member 'ACharacterMovement::HipTurnRate'
-    [2/4] UE4Editor-FinalProject-0006.lib
-       Creating library C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0006.lib and object C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0006.exp
-    [3/4] UE4Editor-FinalProject-0006.dll
-       Creating library C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0006.suppressed.lib and object C:\Users\james\Desktop\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0006.suppressed.exp
-    [4/4] FinalProjectEditor.target
-  Total time in Parallel executor: 22.72 seconds
-  Total execution time: 34.20 seconds
+  Building 20 actions with 12 processes...
+    [1/20] Default.rc2
+    [2/20] SharedPCH.Engine.ShadowErrors.cpp
+    [3/20] FinalProject.cpp
+    [4/20] MyClass.cpp
+    [5/20] FinalProject.init.gen.cpp
+    [6/20] FinalProjectGameMode.gen.cpp
+    [7/20] CharacterMovement.gen.cpp
+    [8/20] FinalProjectCharacter.gen.cpp
+    [9/20] FinalProjectGameMode.cpp
+    [10/20] FinalProjectProjectile.cpp
+    [11/20] FinalProjectHUD.cpp
+    [12/20] ShooterAnimInstance.cpp
+    [13/20] ShooterAnimInstance.gen.cpp
+    [14/20] FinalProjectProjectile.gen.cpp
+    [15/20] FinalProjectHUD.gen.cpp
+    [16/20] CharacterMovement.cpp
+D:\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\CharacterMovement.cpp(20): warning C5038: data member 'ACharacterMovement::bAiming' will be initialized after data member 'ACharacterMovement::HipTurnRate'
+D:\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\CharacterMovement.cpp(47): warning C5038: data member 'ACharacterMovement::AutomaticFireRate' will be initialized after data member 'ACharacterMovement::bShouldFire'
+D:\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\CharacterMovement.cpp(48): warning C5038: data member 'ACharacterMovement::bShouldFire' will be initialized after data member 'ACharacterMovement::bFireButtonPressed'
+    [17/20] FinalProjectCharacter.cpp
+    [18/20] UE4Editor-FinalProject-0007.lib
+       Creating library D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0007.lib and object D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0007.exp
+    [19/20] UE4Editor-FinalProject-0007.dll
+       Creating library D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0007.suppressed.lib and object D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0007.suppressed.exp
+    [20/20] FinalProjectEditor.target
+  Total time in Parallel executor: 66.05 seconds
+  Total execution time: 145.86 seconds

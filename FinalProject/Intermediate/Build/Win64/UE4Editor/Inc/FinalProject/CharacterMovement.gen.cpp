@@ -30,13 +30,73 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 		*(float*)Z_Param__Result=P_THIS->GetCrosshairSpreadMultiplier();
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(ACharacterMovement::execAutoFireReset)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->AutoFireReset();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(ACharacterMovement::execFinishCrosshairBulletFire)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->FinishCrosshairBulletFire();
+		P_NATIVE_END;
+	}
 	void ACharacterMovement::StaticRegisterNativesACharacterMovement()
 	{
 		UClass* Class = ACharacterMovement::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "AutoFireReset", &ACharacterMovement::execAutoFireReset },
+			{ "FinishCrosshairBulletFire", &ACharacterMovement::execFinishCrosshairBulletFire },
 			{ "GetCrosshairSpreadMultiplier", &ACharacterMovement::execGetCrosshairSpreadMultiplier },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_ACharacterMovement_AutoFireReset_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACharacterMovement_AutoFireReset_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACharacterMovement_AutoFireReset_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACharacterMovement, nullptr, "AutoFireReset", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACharacterMovement_AutoFireReset_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterMovement_AutoFireReset_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ACharacterMovement_AutoFireReset()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ACharacterMovement_AutoFireReset_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ACharacterMovement_FinishCrosshairBulletFire_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACharacterMovement_FinishCrosshairBulletFire_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACharacterMovement_FinishCrosshairBulletFire_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACharacterMovement, nullptr, "FinishCrosshairBulletFire", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACharacterMovement_FinishCrosshairBulletFire_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterMovement_FinishCrosshairBulletFire_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ACharacterMovement_FinishCrosshairBulletFire()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ACharacterMovement_FinishCrosshairBulletFire_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_ACharacterMovement_GetCrosshairSpreadMultiplier_Statics
 	{
@@ -187,6 +247,8 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_FinalProject,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ACharacterMovement_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_ACharacterMovement_AutoFireReset, "AutoFireReset" }, // 847656714
+		{ &Z_Construct_UFunction_ACharacterMovement_FinishCrosshairBulletFire, "FinishCrosshairBulletFire" }, // 2062173036
 		{ &Z_Construct_UFunction_ACharacterMovement_GetCrosshairSpreadMultiplier, "GetCrosshairSpreadMultiplier" }, // 3800122887
 	};
 #if WITH_METADATA
@@ -507,7 +569,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ACharacterMovement, 1071761058);
+	IMPLEMENT_CLASS(ACharacterMovement, 3173906481);
 	template<> FINALPROJECT_API UClass* StaticClass<ACharacterMovement>()
 	{
 		return ACharacterMovement::StaticClass();

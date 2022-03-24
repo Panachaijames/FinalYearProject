@@ -42,7 +42,11 @@ ACharacterMovement::ACharacterMovement() :
 	CrosshairShootingFactor(0.f),
 	//Bullet fire timer variable
 	ShootTimeDuration(0.05f),
-	bFiringBullet(false)
+	bFiringBullet(false),
+	//Automatic fire variable
+	AutomaticFireRate(0.1f),
+	bShouldFire(true),
+	bFireButtonPressed(false)
 	
 {
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
@@ -396,6 +400,40 @@ void ACharacterMovement::FinishCrosshairBulletFire()
 	bFiringBullet = false;
 }
 
+void ACharacterMovement::FireButtonPressed()
+{
+	bFireButtonPressed = true;
+	StartFireTimer();
+}
+
+void ACharacterMovement::FireButtonReleased()
+{
+	bFireButtonPressed = false;
+}
+
+void ACharacterMovement::StartFireTimer()
+{
+	if (bShouldFire)
+	{
+		FireWeapon();
+		bShouldFire = false;
+		GetWorldTimerManager().SetTimer(
+			AutoFireTimer,
+			this,
+			&ACharacterMovement::AutoFireReset,
+			AutomaticFireRate);
+	}
+}
+
+void ACharacterMovement::AutoFireReset()
+{
+	bShouldFire = true;
+	if (bFireButtonPressed)
+	{
+		StartFireTimer();
+	}
+}
+
 // Called every frame
 void ACharacterMovement::Tick(float DeltaTime)
 {
@@ -428,7 +466,9 @@ void ACharacterMovement::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 
 	PlayerInputComponent->BindAction("FireButton", IE_Pressed, this,
-		&ACharacterMovement::FireWeapon);
+		&ACharacterMovement::FireButtonPressed);
+	PlayerInputComponent->BindAction("FireButton", IE_Released, this,
+		&ACharacterMovement::FireButtonReleased);
 
 	PlayerInputComponent->BindAction("AimingButton", IE_Pressed, this,
 		&ACharacterMovement::AimingButtonPressed);

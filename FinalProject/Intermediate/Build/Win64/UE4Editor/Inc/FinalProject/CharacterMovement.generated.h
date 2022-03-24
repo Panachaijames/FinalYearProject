@@ -16,12 +16,16 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FinalProject_Source_FinalProject_CharacterMovement_h_12_SPARSE_DATA
 #define FinalProject_Source_FinalProject_CharacterMovement_h_12_RPC_WRAPPERS \
  \
-	DECLARE_FUNCTION(execGetCrosshairSpreadMultiplier);
+	DECLARE_FUNCTION(execGetCrosshairSpreadMultiplier); \
+	DECLARE_FUNCTION(execAutoFireReset); \
+	DECLARE_FUNCTION(execFinishCrosshairBulletFire);
 
 
 #define FinalProject_Source_FinalProject_CharacterMovement_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execGetCrosshairSpreadMultiplier);
+	DECLARE_FUNCTION(execGetCrosshairSpreadMultiplier); \
+	DECLARE_FUNCTION(execAutoFireReset); \
+	DECLARE_FUNCTION(execFinishCrosshairBulletFire);
 
 
 #define FinalProject_Source_FinalProject_CharacterMovement_h_12_INCLASS_NO_PURE_DECLS \
