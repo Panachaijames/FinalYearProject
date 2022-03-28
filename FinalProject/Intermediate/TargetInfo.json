@@ -2,12 +2,12 @@
 	"Targets": [
 		{
 			"Name": "FinalProject",
-			"Path": "C:\\Users\\james\\Desktop\\GithubRepo\\FinalYearProject\\FinalProject\\Source\\FinalProject.Target.cs",
+			"Path": "D:\\GithubRepo\\FinalYearProject\\FinalProject\\Source\\FinalProject.Target.cs",
 			"Type": "Game"
 		},
 		{
 			"Name": "FinalProjectEditor",
-			"Path": "C:\\Users\\james\\Desktop\\GithubRepo\\FinalYearProject\\FinalProject\\Source\\FinalProjectEditor.Target.cs",
+			"Path": "D:\\GithubRepo\\FinalYearProject\\FinalProject\\Source\\FinalProjectEditor.Target.cs",
 			"Type": "Editor"
 		}
 	]
