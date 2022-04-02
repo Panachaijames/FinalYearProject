@@ -1,25 +1,13 @@
 ﻿  Using 'git status' to determine working set for adaptive non-unity build (D:\GithubRepo\FinalYearProject).
-  Parsing headers for FinalProjectEditor
-    Running UnrealHeaderTool "D:\GithubRepo\FinalYearProject\FinalProject\FinalProject.uproject" "D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\FinalProjectEditor\Development\FinalProjectEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\james\AppData\Local\UnrealBuildTool\Log_UHT.txt" -installed
-  LogInit: Display: Loading text-based GConfig....
-  Reflection code generated for FinalProjectEditor in 36.6745178 seconds
   Building FinalProjectEditor...
   Using Visual Studio 2019 14.29.30137 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.19041.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  Building 11 actions with 12 processes...
-    [1/11] FinalProject.init.gen.cpp
-    [2/11] Weapon.cpp
-    [3/11] Weapon.gen.cpp
-    [4/11] Item.gen.cpp
-    [5/11] CharacterMovement.gen.cpp
-    [6/11] ShooterAnimInstance.cpp
-    [7/11] Item.cpp
-    [8/11] CharacterMovement.cpp
-D:\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\CharacterMovement.cpp(49): warning C5038: data member 'ACharacterMovement::AutomaticFireRate' will be initialized after data member 'ACharacterMovement::bShouldFire'
-D:\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\CharacterMovement.cpp(50): warning C5038: data member 'ACharacterMovement::bShouldFire' will be initialized after data member 'ACharacterMovement::bFireButtonPressed'
-    [9/11] UE4Editor-FinalProject-0012.lib
-       Creating library D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0012.lib and object D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0012.exp
-    [10/11] UE4Editor-FinalProject-0012.dll
-       Creating library D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0012.suppressed.lib and object D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0012.suppressed.exp
-    [11/11] FinalProjectEditor.target
-  Total time in Parallel executor: 356.93 seconds
-  Total execution time: 398.42 seconds
+  Building 4 actions with 12 processes...
+    [1/4] Item.cpp
+D:\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\Item.cpp(18): warning C5038: data member 'AItem::ZCurveTime' will be initialized after data member 'AItem::ItemInterpStartLocation'
+    [2/4] UE4Editor-FinalProject-0010.lib
+       Creating library D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0010.lib and object D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0010.exp
+    [3/4] UE4Editor-FinalProject-0010.dll
+       Creating library D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0010.suppressed.lib and object D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0010.suppressed.exp
+    [4/4] FinalProjectEditor.target
+  Total time in Parallel executor: 729.94 seconds
+  Total execution time: 738.44 seconds

@@ -83,6 +83,23 @@ protected:
 	/**Trace For items if OverlappedItemCount >0 */
 	void TraceForItems();
 
+	/** Spawns a default weapon and equip it*/
+	class AWeapon* SpawnDefaultWeapon();
+
+	/** Takes a weapon and attaches it to the mesh*/
+	void EquipWeapon(AWeapon* WeaponToEquip);
+
+	/** Detach weapon and let it drop to the ground*/
+	void DropWeapon();
+
+	void SelectButtonPressed();
+	void SelectButtonReleased();
+
+	/**Drops currently equip weapon and equip TraceHitItem*/
+	void SwapWeapon(AWeapon* WeaponToSwap);
+
+
+
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -172,7 +189,7 @@ private:
 
 	/**Interp speed for zooming when aiming*/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Combat, meta = (AllowPrivateAccess = "true"))
-	float ZoomInterSpeed;
+	float ZoomInterpSpeed;
 
 	/** Determines the spread of the crosshairs */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Crosshairs, meta = (AllowPrivateAccess = "true"))
@@ -218,6 +235,31 @@ private:
 
 	/** Number of overlapped AItems*/
 	int8 OverlappedItemCount;
+
+	/** The AItem we hit last frame */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Items, meta = (AllowPrivateAccess = "true"))
+	class AItem* TraceHitItemLastFrame;
+
+	/** Currently equpped Weapon*/
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Combat, meta = (AllowPrivateAccess = "true"))
+	AWeapon* EquippedWeapon;
+
+	/**Set this in blueprints for the default weapon class*/
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Combat, meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<AWeapon> DefaultWeaponClass;
+
+	/** The Item current hit by our trace in TraceFor Items could be null*/
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Combat, meta = (AllowPrivateAccess = "true"))
+	AItem* TraceHitItem;
+
+	/** Distance outward from the camera for the interp destination*/
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Items, meta = (AllowPrivateAccess = "true"))
+	float CameraInterpDistance;
+
+	/** Distance upward from the camera for the interp destination*/
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Items, meta = (AllowPrivateAccess = "true"))
+	float CameraInterpElevation;
+
 public:
 	/** Returns CameraBoom subobject */
 	FORCEINLINE USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
@@ -233,4 +275,8 @@ public:
 
 	/** Adds/Subtract to/from OverlappedItemCount and updates bShouldTraceForItems*/
 	void IncrementOverlappedItemCount(int8 Amount);
+
+	FVector GetCameraInterpLocation();
+
+	void GetPickupItem(AItem* Item);
 };

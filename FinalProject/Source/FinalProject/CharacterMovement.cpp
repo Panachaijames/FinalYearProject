@@ -12,6 +12,9 @@
 #include "Particles/ParticleSystemComponent.h"
 #include "Item.h"
 #include "Components/WidgetComponent.h"
+#include "Weapon.h"
+#include "Components/SphereComponent.h"
+#include "Components/BoxComponent.h"
 
 // Sets default values
 ACharacterMovement::ACharacterMovement() : 
@@ -35,7 +38,7 @@ ACharacterMovement::ACharacterMovement() :
 	CameraDefaultFOV(0.f), // set in BeginPlay
 	CameraZoomedFOV(35.f),
 	CameraCurrentFOV(0.f),
-	ZoomInterSpeed(20.f),
+	ZoomInterpSpeed(20.f),
 	//Crosshair spread factor
 	CrosshairSpreadMultiplier(0.f),
 	CrosshairVelocityFactor(0.f),
@@ -49,7 +52,9 @@ ACharacterMovement::ACharacterMovement() :
 	AutomaticFireRate(0.1f),
 	bShouldFire(true),
 	bFireButtonPressed(false),
-	bShouldTraceForItems(false)
+	bShouldTraceForItems(false),
+	CameraInterpDistance(250.f),
+	CameraInterpElevation(65.f)
 	
 {
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
@@ -89,6 +94,9 @@ void ACharacterMovement::BeginPlay()
 		CameraDefaultFOV = GetFollowCamera()->FieldOfView;
 		CameraCurrentFOV = CameraDefaultFOV;
 	}
+	// Spawn the default weapon and equip it to the mesh
+	EquipWeapon(SpawnDefaultWeapon());
+	
 }
 
 void ACharacterMovement::MoveForward(float Value)
@@ -261,27 +269,25 @@ void ACharacterMovement::AimingButtonReleased()
 void ACharacterMovement::CameraInterpZoom(float DeltaTime)
 {
 
-	//Set current camera field of view
-	
+	// Set current camera field of view
 	if (bAiming)
 	{
+		// Interpolate to zoomed FOV
 		CameraCurrentFOV = FMath::FInterpTo(
 			CameraCurrentFOV,
 			CameraZoomedFOV,
 			DeltaTime,
-			ZoomInterSpeed);
+			ZoomInterpSpeed);
 	}
 	else
 	{
-		//Interpolate to default FOV
+		// Interpolate to default FOV
 		CameraCurrentFOV = FMath::FInterpTo(
 			CameraCurrentFOV,
 			CameraDefaultFOV,
 			DeltaTime,
-			ZoomInterSpeed);
+			ZoomInterpSpeed);
 	}
-		
-	
 	GetFollowCamera()->SetFieldOfView(CameraCurrentFOV);
 	
 }
@@ -303,50 +309,56 @@ void ACharacterMovement::CalculateCrosshairSpread(float DeltaTime)
 {
 	FVector2D WalkSpeedRange{ 0.f, 600.f };
 	FVector2D VelocityMultiplierRange{ 0.f, 1.f };
-	FVector Velocity{GetVelocity()};
+	FVector Velocity{ GetVelocity() };
 	Velocity.Z = 0.f;
+
+	// Calculate crosshair velocity factor
 	CrosshairVelocityFactor = FMath::GetMappedRangeValueClamped(
 		WalkSpeedRange,
 		VelocityMultiplierRange,
 		Velocity.Size());
 
-	//Cal crosshair in air function
-	if (GetCharacterMovement()->IsFalling())
+	// Calculate crosshair in air factor
+	if (GetCharacterMovement()->IsFalling()) // is in air?
 	{
-		CrosshairInAirFactor = FMath::FInterpTo(CrosshairInAirFactor,
+		// Spread the crosshairs slowly while in air
+		CrosshairInAirFactor = FMath::FInterpTo(
+			CrosshairInAirFactor,
 			2.25f,
 			DeltaTime,
 			2.25f);
 	}
-	else // Char on the ground
+	else // Character is on the ground
 	{
-		//shrink the crosshair rapidly
+		// Shrink the crosshairs rapidly while on the ground
 		CrosshairInAirFactor = FMath::FInterpTo(
 			CrosshairInAirFactor,
 			0.f,
 			DeltaTime,
 			30.f);
 	}
-	//cal crosshair aim factor
-	if (bAiming)// check if aiming
+
+	// Calculate crosshair aim factor
+	if (bAiming) // Are we aiming?
 	{
-		//Shrink Crosshair a small amont very quickly
+		// Shrink crosshairs a small amount very quickly
 		CrosshairAimFactor = FMath::FInterpTo(
 			CrosshairAimFactor,
 			0.6f,
 			DeltaTime,
 			30.f);
 	}
-	else //not aiming
+	else // Not aiming
 	{
-		//spread crosshair back to normal
+		// Spread crosshairs back to normal very quickly
 		CrosshairAimFactor = FMath::FInterpTo(
 			CrosshairAimFactor,
 			0.f,
 			DeltaTime,
 			30.f);
 	}
-	//True 0.05 sec after firing
+
+	// True 0.05 second after firing
 	if (bFiringBullet)
 	{
 		CrosshairShootingFactor = FMath::FInterpTo(
@@ -363,10 +375,12 @@ void ACharacterMovement::CalculateCrosshairSpread(float DeltaTime)
 			DeltaTime,
 			60.f);
 	}
-	CrosshairSpreadMultiplier = 0.5f + 
-		CrosshairVelocityFactor + 
-		CrosshairInAirFactor - 
-		CrosshairAimFactor + 
+
+	CrosshairSpreadMultiplier =
+		0.5f +
+		CrosshairVelocityFactor +
+		CrosshairInAirFactor -
+		CrosshairAimFactor +
 		CrosshairShootingFactor;
 
 }
@@ -474,14 +488,97 @@ void ACharacterMovement::TraceForItems()
 		TraceUnderCrosshairs(ItemTraceResult, HitLocation);
 		if (ItemTraceResult.bBlockingHit)
 		{
-			AItem* HitItem = Cast<AItem>(ItemTraceResult.Actor);
-			if (HitItem && HitItem->GetPickupWidget())
+			TraceHitItem = Cast<AItem>(ItemTraceResult.Actor);
+			if (TraceHitItem && TraceHitItem->GetPickupWidget())
 			{
 				//Show Item's PickupWidget;
-				HitItem->GetPickupWidget()->SetVisibility(true);
+				TraceHitItem->GetPickupWidget()->SetVisibility(true);
 			}
+
+			//we hit an AItem last Frame
+			if (TraceHitItemLastFrame)
+			{
+				if (TraceHitItem != TraceHitItemLastFrame)
+				{
+					//We are hitting a different AItem this frame from last frame
+					//Or AItem is null.
+					TraceHitItemLastFrame->GetPickupWidget()->SetVisibility(false);
+				}
+			}
+			//Store a ref to HitItem fr next frame
+			TraceHitItemLastFrame = TraceHitItem;
 		}
 	}
+	else if (TraceHitItemLastFrame)
+	{
+		// No longer overlapping any items.
+		//item last frame should not show widget
+		TraceHitItemLastFrame->GetPickupWidget()->SetVisibility(false);
+	}
+}
+
+AWeapon* ACharacterMovement::SpawnDefaultWeapon()
+{
+	// Check the TSubclassOf Variable
+	if (DefaultWeaponClass)
+	{
+		//Spawn the Weapon
+		return GetWorld()->SpawnActor<AWeapon>(DefaultWeaponClass);
+		
+	}
+	return nullptr;
+}
+
+void ACharacterMovement::EquipWeapon(AWeapon* WeaponToEquip)
+{
+	if (WeaponToEquip)
+	{
+		//Get the Hand Socket
+		const USkeletalMeshSocket* HandSocket = GetMesh()->GetSocketByName(
+			FName("RightHandSocket"));
+		if (HandSocket)
+		{
+			//Attach the weapon to the hand socket RightHandSocket
+			HandSocket->AttachActor(WeaponToEquip, GetMesh());
+		}
+		//Set EquippedWeapon to the newly sqawned Weapon
+		EquippedWeapon = WeaponToEquip;
+		EquippedWeapon->SetItemState(EItemState::EIS_Equipped);
+	}
+}
+
+void ACharacterMovement::DropWeapon()
+{
+	if (EquippedWeapon)
+	{
+		FDetachmentTransformRules DetachmentTransformRules(EDetachmentRule::KeepWorld, true);
+		EquippedWeapon->GetItemMesh()->DetachFromComponent(DetachmentTransformRules);
+
+		EquippedWeapon->SetItemState(EItemState::EIS_Falling);
+		EquippedWeapon->ThrowWeapon();
+	}
+}
+
+void ACharacterMovement::SelectButtonPressed()
+{
+	if (TraceHitItem)
+	{
+		TraceHitItem->StartItemCurve(this);
+	}
+	
+}
+
+void ACharacterMovement::SelectButtonReleased()
+{
+
+}
+
+void ACharacterMovement::SwapWeapon(AWeapon* WeaponToSwap)
+{
+	DropWeapon();
+	EquipWeapon(WeaponToSwap);
+	TraceHitItem = nullptr;
+	TraceHitItemLastFrame = nullptr;
 }
 
 // Called every frame
@@ -528,6 +625,11 @@ void ACharacterMovement::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 		&ACharacterMovement::AimingButtonPressed);
 	PlayerInputComponent->BindAction("AimingButton", IE_Released, this,
 		&ACharacterMovement::AimingButtonReleased);
+
+	PlayerInputComponent->BindAction("Select", IE_Pressed, this,
+		&ACharacterMovement::SelectButtonPressed);
+	PlayerInputComponent->BindAction("Select", IE_Released, this,
+		&ACharacterMovement::SelectButtonReleased);
 }
 
 float ACharacterMovement::GetCrosshairSpreadMultiplier() const
@@ -546,5 +648,24 @@ void ACharacterMovement::IncrementOverlappedItemCount(int8 Amount)
 	{
 		OverlappedItemCount += Amount;
 		bShouldTraceForItems = true;
+	}
+}
+
+//FVector ACharacterMovement::GetCameraInterpLocation()
+//{
+//	FVector CameraWorldLocation{ FollowCamera->GetComponentLocation() };
+//	FVector CameraForward{ FollowCamera->GetForwardVector() };
+//	// Desired = CameraWorldLocation + Forward * A + Up * B
+//	return CameraWorldLocation + CameraForward * CameraInterpDistance
+//		+ FVector(0.f, 0.f, CameraInterpElevation);
+//
+//}
+
+void ACharacterMovement::GetPickupItem(AItem* Item)
+{
+	auto Weapon = Cast<AWeapon>(Item);
+	if (Weapon)
+	{
+		SwapWeapon(Weapon);
 	}
 }

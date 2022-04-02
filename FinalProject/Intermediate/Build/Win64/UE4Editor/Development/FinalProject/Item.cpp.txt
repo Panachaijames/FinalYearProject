@@ -108,6 +108,8 @@ D:\UE4.27\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\UserWidget.g
 D:\UE4.27\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\WidgetComponent.generated.h
 D:\UE4.27\UE_4.27\Engine\Source\Runtime\Engine\Classes\Components/SphereComponent.h
 D:\UE4.27\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\SphereComponent.generated.h
+D:\UE4.27\UE_4.27\Engine\Source\Runtime\Engine\Classes\Camera/CameraComponent.h
+D:\UE4.27\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CameraComponent.generated.h
 D:\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\CharacterMovement.h
 D:\UE4.27\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
 D:\UE4.27\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/CharacterMovementReplication.h

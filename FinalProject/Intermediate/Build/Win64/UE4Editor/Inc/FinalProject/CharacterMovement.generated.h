@@ -89,12 +89,18 @@ public: \
 	FORCEINLINE static uint32 __PPO__ImpactParticles() { return STRUCT_OFFSET(ACharacterMovement, ImpactParticles); } \
 	FORCEINLINE static uint32 __PPO__BeamParticles() { return STRUCT_OFFSET(ACharacterMovement, BeamParticles); } \
 	FORCEINLINE static uint32 __PPO__bAiming() { return STRUCT_OFFSET(ACharacterMovement, bAiming); } \
-	FORCEINLINE static uint32 __PPO__ZoomInterSpeed() { return STRUCT_OFFSET(ACharacterMovement, ZoomInterSpeed); } \
+	FORCEINLINE static uint32 __PPO__ZoomInterpSpeed() { return STRUCT_OFFSET(ACharacterMovement, ZoomInterpSpeed); } \
 	FORCEINLINE static uint32 __PPO__CrosshairSpreadMultiplier() { return STRUCT_OFFSET(ACharacterMovement, CrosshairSpreadMultiplier); } \
 	FORCEINLINE static uint32 __PPO__CrosshairVelocityFactor() { return STRUCT_OFFSET(ACharacterMovement, CrosshairVelocityFactor); } \
 	FORCEINLINE static uint32 __PPO__CrosshairInAirFactor() { return STRUCT_OFFSET(ACharacterMovement, CrosshairInAirFactor); } \
 	FORCEINLINE static uint32 __PPO__CrosshairAimFactor() { return STRUCT_OFFSET(ACharacterMovement, CrosshairAimFactor); } \
-	FORCEINLINE static uint32 __PPO__CrosshairShootingFactor() { return STRUCT_OFFSET(ACharacterMovement, CrosshairShootingFactor); }
+	FORCEINLINE static uint32 __PPO__CrosshairShootingFactor() { return STRUCT_OFFSET(ACharacterMovement, CrosshairShootingFactor); } \
+	FORCEINLINE static uint32 __PPO__TraceHitItemLastFrame() { return STRUCT_OFFSET(ACharacterMovement, TraceHitItemLastFrame); } \
+	FORCEINLINE static uint32 __PPO__EquippedWeapon() { return STRUCT_OFFSET(ACharacterMovement, EquippedWeapon); } \
+	FORCEINLINE static uint32 __PPO__DefaultWeaponClass() { return STRUCT_OFFSET(ACharacterMovement, DefaultWeaponClass); } \
+	FORCEINLINE static uint32 __PPO__TraceHitItem() { return STRUCT_OFFSET(ACharacterMovement, TraceHitItem); } \
+	FORCEINLINE static uint32 __PPO__CameraInterpDistance() { return STRUCT_OFFSET(ACharacterMovement, CameraInterpDistance); } \
+	FORCEINLINE static uint32 __PPO__CameraInterpElevation() { return STRUCT_OFFSET(ACharacterMovement, CameraInterpElevation); }
 
 
 #define FinalProject_Source_FinalProject_CharacterMovement_h_9_PROLOG
