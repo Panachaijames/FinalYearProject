@@ -54,7 +54,10 @@ ACharacterMovement::ACharacterMovement() :
 	bFireButtonPressed(false),
 	bShouldTraceForItems(false),
 	CameraInterpDistance(250.f),
-	CameraInterpElevation(65.f)
+	CameraInterpElevation(65.f),
+	//Starting ammo amount
+	Starting9mmAmmo(85),
+	StartingARAmmo(120)
 	
 {
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
@@ -97,6 +100,7 @@ void ACharacterMovement::BeginPlay()
 	// Spawn the default weapon and equip it to the mesh
 	EquipWeapon(SpawnDefaultWeapon());
 	
+	InitializeAmmoMap();
 }
 
 void ACharacterMovement::MoveForward(float Value)
@@ -168,14 +172,18 @@ void ACharacterMovement::LookUp(float Value)
 
 void ACharacterMovement::FireWeapon()
 {
+	if (EquippedWeapon == nullptr) return;
+
 	if (FireSound)
 	{
 		UGameplayStatics::PlaySound2D(this, FireSound);
 	}
-	const USkeletalMeshSocket* BarrelSocket = GetMesh()->GetSocketByName("BarrelSocket");
+	const USkeletalMeshSocket* BarrelSocket = 
+		EquippedWeapon->GetItemMesh()->GetSocketByName("BarrelSocket");
 	if (BarrelSocket)
 	{
-		const FTransform SocketTransform = BarrelSocket->GetSocketTransform(GetMesh());
+		const FTransform SocketTransform = BarrelSocket->GetSocketTransform(
+			EquippedWeapon->GetItemMesh());
 
 		if (MuzzleFlash)
 		{
@@ -211,7 +219,11 @@ void ACharacterMovement::FireWeapon()
 		AnimInstance->Montage_Play(HipFireMontage);
 		AnimInstance->Montage_JumpToSection(FName("StartFire"));
 	}
-
+	if (EquippedWeapon)
+	{
+		//Subtract one from the weapon's Ammo
+		EquippedWeapon->DecrementAmmo();
+	}
 	//Start bullet fire timer for crosshairs
 	StartCrosshairBulletFire();
 }
@@ -403,8 +415,12 @@ void ACharacterMovement::FinishCrosshairBulletFire()
 
 void ACharacterMovement::FireButtonPressed()
 {
-	bFireButtonPressed = true;
-	StartFireTimer();
+	if (WeaponHasAmmo())
+	{
+		bFireButtonPressed = true;
+		StartFireTimer();
+	}
+	
 }
 
 void ACharacterMovement::FireButtonReleased()
@@ -428,11 +444,15 @@ void ACharacterMovement::StartFireTimer()
 
 void ACharacterMovement::AutoFireReset()
 {
-	bShouldFire = true;
-	if (bFireButtonPressed)
+	if (WeaponHasAmmo())
 	{
-		StartFireTimer();
+		bShouldFire = true;
+		if (bFireButtonPressed)
+		{
+			StartFireTimer();
+		}
 	}
+	
 }
 
 bool ACharacterMovement::TraceUnderCrosshairs(
@@ -579,6 +599,19 @@ void ACharacterMovement::SwapWeapon(AWeapon* WeaponToSwap)
 	EquipWeapon(WeaponToSwap);
 	TraceHitItem = nullptr;
 	TraceHitItemLastFrame = nullptr;
+}
+
+void ACharacterMovement::InitializeAmmoMap()
+{
+	AmmoMap.Add(EAmmoType::EAT_9mm, Starting9mmAmmo);
+	AmmoMap.Add(EAmmoType::EAT_AR, StartingARAmmo);
+}
+
+bool ACharacterMovement::WeaponHasAmmo()
+{
+	if(EquippedWeapon == nullptr) return false;
+
+	return EquippedWeapon->GetAmmo() > 0;
 }
 
 // Called every frame

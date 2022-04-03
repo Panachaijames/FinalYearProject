@@ -13,10 +13,11 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 // Cross Module References
+	FINALPROJECT_API UEnum* Z_Construct_UEnum_FinalProject_EAmmoType();
+	UPackage* Z_Construct_UPackage__Script_FinalProject();
 	FINALPROJECT_API UClass* Z_Construct_UClass_ACharacterMovement_NoRegister();
 	FINALPROJECT_API UClass* Z_Construct_UClass_ACharacterMovement();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
-	UPackage* Z_Construct_UPackage__Script_FinalProject();
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USoundCue_NoRegister();
@@ -26,6 +27,65 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 	FINALPROJECT_API UClass* Z_Construct_UClass_AWeapon_NoRegister();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 // End Cross Module References
+	static UEnum* EAmmoType_StaticEnum()
+	{
+		static UEnum* Singleton = nullptr;
+		if (!Singleton)
+		{
+			Singleton = GetStaticEnum(Z_Construct_UEnum_FinalProject_EAmmoType, Z_Construct_UPackage__Script_FinalProject(), TEXT("EAmmoType"));
+		}
+		return Singleton;
+	}
+	template<> FINALPROJECT_API UEnum* StaticEnum<EAmmoType>()
+	{
+		return EAmmoType_StaticEnum();
+	}
+	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EAmmoType(EAmmoType_StaticEnum, TEXT("/Script/FinalProject"), TEXT("EAmmoType"), false, nullptr, nullptr);
+	uint32 Get_Z_Construct_UEnum_FinalProject_EAmmoType_Hash() { return 3632969605U; }
+	UEnum* Z_Construct_UEnum_FinalProject_EAmmoType()
+	{
+#if WITH_HOT_RELOAD
+		UPackage* Outer = Z_Construct_UPackage__Script_FinalProject();
+		static UEnum* ReturnEnum = FindExistingEnumIfHotReloadOrDynamic(Outer, TEXT("EAmmoType"), 0, Get_Z_Construct_UEnum_FinalProject_EAmmoType_Hash(), false);
+#else
+		static UEnum* ReturnEnum = nullptr;
+#endif // WITH_HOT_RELOAD
+		if (!ReturnEnum)
+		{
+			static const UE4CodeGen_Private::FEnumeratorParam Enumerators[] = {
+				{ "EAmmoType::EAT_9mm", (int64)EAmmoType::EAT_9mm },
+				{ "EAmmoType::EAT_AR", (int64)EAmmoType::EAT_AR },
+				{ "EAmmoType::EAT_MAX", (int64)EAmmoType::EAT_MAX },
+			};
+#if WITH_METADATA
+			const UE4CodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
+				{ "BlueprintType", "true" },
+				{ "EAT_9mm.DisplayName", "9mm" },
+				{ "EAT_9mm.Name", "EAmmoType::EAT_9mm" },
+				{ "EAT_AR.DisplayName", "Assault Rifle" },
+				{ "EAT_AR.Name", "EAmmoType::EAT_AR" },
+				{ "EAT_MAX.DisplayName", "DefaultMAX" },
+				{ "EAT_MAX.Name", "EAmmoType::EAT_MAX" },
+				{ "ModuleRelativePath", "CharacterMovement.h" },
+			};
+#endif
+			static const UE4CodeGen_Private::FEnumParams EnumParams = {
+				(UObject*(*)())Z_Construct_UPackage__Script_FinalProject,
+				nullptr,
+				"EAmmoType",
+				"EAmmoType",
+				Enumerators,
+				UE_ARRAY_COUNT(Enumerators),
+				RF_Public|RF_Transient|RF_MarkAsNative,
+				EEnumFlags::None,
+				UE4CodeGen_Private::EDynamicType::NotDynamic,
+				(uint8)UEnum::ECppForm::EnumClass,
+				METADATA_PARAMS(Enum_MetaDataParams, UE_ARRAY_COUNT(Enum_MetaDataParams))
+			};
+			UE4CodeGen_Private::ConstructUEnum(ReturnEnum, EnumParams);
+		}
+		return ReturnEnum;
+	}
 	DEFINE_FUNCTION(ACharacterMovement::execGetCrosshairSpreadMultiplier)
 	{
 		P_FINISH;
@@ -265,6 +325,21 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CameraInterpElevation_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_CameraInterpElevation;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_AmmoMap_ValueProp;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_AmmoMap_Key_KeyProp_Underlying;
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_AmmoMap_Key_KeyProp;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AmmoMap_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FMapPropertyParams NewProp_AmmoMap;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Starting9mmAmmo_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_Starting9mmAmmo;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_StartingARAmmo_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_StartingARAmmo;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -603,6 +678,39 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 	};
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CameraInterpElevation = { "CameraInterpElevation", nullptr, (EPropertyFlags)0x0040000000000015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, CameraInterpElevation), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CameraInterpElevation_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CameraInterpElevation_MetaData)) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_AmmoMap_ValueProp = { "AmmoMap", nullptr, (EPropertyFlags)0x0000000000020001, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, 1, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_AmmoMap_Key_KeyProp_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_AmmoMap_Key_KeyProp = { "AmmoMap_Key", nullptr, (EPropertyFlags)0x0000000000020001, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UEnum_FinalProject_EAmmoType, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_AmmoMap_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Items" },
+		{ "Comment", "/** Map to keep track of ammo of the different ammo types */" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Map to keep track of ammo of the different ammo types" },
+	};
+#endif
+	const UE4CodeGen_Private::FMapPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_AmmoMap = { "AmmoMap", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, AmmoMap), EMapPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_AmmoMap_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_AmmoMap_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_Starting9mmAmmo_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Items" },
+		{ "Comment", "/** Starting amount of 9mm ammo*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Starting amount of 9mm ammo" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_Starting9mmAmmo = { "Starting9mmAmmo", nullptr, (EPropertyFlags)0x0040000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, Starting9mmAmmo), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_Starting9mmAmmo_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_Starting9mmAmmo_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_StartingARAmmo_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Items" },
+		{ "Comment", "/** Starting amount of AR ammo*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Starting amount of AR ammo" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_StartingARAmmo = { "StartingARAmmo", nullptr, (EPropertyFlags)0x0040000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, StartingARAmmo), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_StartingARAmmo_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_StartingARAmmo_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ACharacterMovement_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CameraBoom,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_FollowCamera,
@@ -634,6 +742,12 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_TraceHitItem,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CameraInterpDistance,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CameraInterpElevation,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_AmmoMap_ValueProp,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_AmmoMap_Key_KeyProp_Underlying,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_AmmoMap_Key_KeyProp,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_AmmoMap,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_Starting9mmAmmo,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_StartingARAmmo,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ACharacterMovement_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ACharacterMovement>::IsAbstract,
@@ -662,7 +776,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ACharacterMovement, 532776295);
+	IMPLEMENT_CLASS(ACharacterMovement, 660440467);
 	template<> FINALPROJECT_API UClass* StaticClass<ACharacterMovement>()
 	{
 		return ACharacterMovement::StaticClass();

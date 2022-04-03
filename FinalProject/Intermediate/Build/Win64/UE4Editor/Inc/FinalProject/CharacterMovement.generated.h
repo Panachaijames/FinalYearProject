@@ -13,22 +13,22 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define FINALPROJECT_CharacterMovement_generated_h
 
-#define FinalProject_Source_FinalProject_CharacterMovement_h_12_SPARSE_DATA
-#define FinalProject_Source_FinalProject_CharacterMovement_h_12_RPC_WRAPPERS \
+#define FinalProject_Source_FinalProject_CharacterMovement_h_21_SPARSE_DATA
+#define FinalProject_Source_FinalProject_CharacterMovement_h_21_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execGetCrosshairSpreadMultiplier); \
 	DECLARE_FUNCTION(execAutoFireReset); \
 	DECLARE_FUNCTION(execFinishCrosshairBulletFire);
 
 
-#define FinalProject_Source_FinalProject_CharacterMovement_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FinalProject_Source_FinalProject_CharacterMovement_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execGetCrosshairSpreadMultiplier); \
 	DECLARE_FUNCTION(execAutoFireReset); \
 	DECLARE_FUNCTION(execFinishCrosshairBulletFire);
 
 
-#define FinalProject_Source_FinalProject_CharacterMovement_h_12_INCLASS_NO_PURE_DECLS \
+#define FinalProject_Source_FinalProject_CharacterMovement_h_21_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesACharacterMovement(); \
 	friend struct Z_Construct_UClass_ACharacterMovement_Statics; \
@@ -37,7 +37,7 @@ public: \
 	DECLARE_SERIALIZER(ACharacterMovement)
 
 
-#define FinalProject_Source_FinalProject_CharacterMovement_h_12_INCLASS \
+#define FinalProject_Source_FinalProject_CharacterMovement_h_21_INCLASS \
 private: \
 	static void StaticRegisterNativesACharacterMovement(); \
 	friend struct Z_Construct_UClass_ACharacterMovement_Statics; \
@@ -46,7 +46,7 @@ public: \
 	DECLARE_SERIALIZER(ACharacterMovement)
 
 
-#define FinalProject_Source_FinalProject_CharacterMovement_h_12_STANDARD_CONSTRUCTORS \
+#define FinalProject_Source_FinalProject_CharacterMovement_h_21_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ACharacterMovement(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ACharacterMovement) \
@@ -59,7 +59,7 @@ private: \
 public:
 
 
-#define FinalProject_Source_FinalProject_CharacterMovement_h_12_ENHANCED_CONSTRUCTORS \
+#define FinalProject_Source_FinalProject_CharacterMovement_h_21_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ACharacterMovement(ACharacterMovement&&); \
@@ -70,7 +70,7 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ACharacterMovement)
 
 
-#define FinalProject_Source_FinalProject_CharacterMovement_h_12_PRIVATE_PROPERTY_OFFSET \
+#define FinalProject_Source_FinalProject_CharacterMovement_h_21_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__CameraBoom() { return STRUCT_OFFSET(ACharacterMovement, CameraBoom); } \
 	FORCEINLINE static uint32 __PPO__FollowCamera() { return STRUCT_OFFSET(ACharacterMovement, FollowCamera); } \
 	FORCEINLINE static uint32 __PPO__BaseTurnRate() { return STRUCT_OFFSET(ACharacterMovement, BaseTurnRate); } \
@@ -100,30 +100,33 @@ public: \
 	FORCEINLINE static uint32 __PPO__DefaultWeaponClass() { return STRUCT_OFFSET(ACharacterMovement, DefaultWeaponClass); } \
 	FORCEINLINE static uint32 __PPO__TraceHitItem() { return STRUCT_OFFSET(ACharacterMovement, TraceHitItem); } \
 	FORCEINLINE static uint32 __PPO__CameraInterpDistance() { return STRUCT_OFFSET(ACharacterMovement, CameraInterpDistance); } \
-	FORCEINLINE static uint32 __PPO__CameraInterpElevation() { return STRUCT_OFFSET(ACharacterMovement, CameraInterpElevation); }
+	FORCEINLINE static uint32 __PPO__CameraInterpElevation() { return STRUCT_OFFSET(ACharacterMovement, CameraInterpElevation); } \
+	FORCEINLINE static uint32 __PPO__AmmoMap() { return STRUCT_OFFSET(ACharacterMovement, AmmoMap); } \
+	FORCEINLINE static uint32 __PPO__Starting9mmAmmo() { return STRUCT_OFFSET(ACharacterMovement, Starting9mmAmmo); } \
+	FORCEINLINE static uint32 __PPO__StartingARAmmo() { return STRUCT_OFFSET(ACharacterMovement, StartingARAmmo); }
 
 
-#define FinalProject_Source_FinalProject_CharacterMovement_h_9_PROLOG
-#define FinalProject_Source_FinalProject_CharacterMovement_h_12_GENERATED_BODY_LEGACY \
+#define FinalProject_Source_FinalProject_CharacterMovement_h_18_PROLOG
+#define FinalProject_Source_FinalProject_CharacterMovement_h_21_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FinalProject_Source_FinalProject_CharacterMovement_h_12_PRIVATE_PROPERTY_OFFSET \
-	FinalProject_Source_FinalProject_CharacterMovement_h_12_SPARSE_DATA \
-	FinalProject_Source_FinalProject_CharacterMovement_h_12_RPC_WRAPPERS \
-	FinalProject_Source_FinalProject_CharacterMovement_h_12_INCLASS \
-	FinalProject_Source_FinalProject_CharacterMovement_h_12_STANDARD_CONSTRUCTORS \
+	FinalProject_Source_FinalProject_CharacterMovement_h_21_PRIVATE_PROPERTY_OFFSET \
+	FinalProject_Source_FinalProject_CharacterMovement_h_21_SPARSE_DATA \
+	FinalProject_Source_FinalProject_CharacterMovement_h_21_RPC_WRAPPERS \
+	FinalProject_Source_FinalProject_CharacterMovement_h_21_INCLASS \
+	FinalProject_Source_FinalProject_CharacterMovement_h_21_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FinalProject_Source_FinalProject_CharacterMovement_h_12_GENERATED_BODY \
+#define FinalProject_Source_FinalProject_CharacterMovement_h_21_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FinalProject_Source_FinalProject_CharacterMovement_h_12_PRIVATE_PROPERTY_OFFSET \
-	FinalProject_Source_FinalProject_CharacterMovement_h_12_SPARSE_DATA \
-	FinalProject_Source_FinalProject_CharacterMovement_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	FinalProject_Source_FinalProject_CharacterMovement_h_12_INCLASS_NO_PURE_DECLS \
-	FinalProject_Source_FinalProject_CharacterMovement_h_12_ENHANCED_CONSTRUCTORS \
+	FinalProject_Source_FinalProject_CharacterMovement_h_21_PRIVATE_PROPERTY_OFFSET \
+	FinalProject_Source_FinalProject_CharacterMovement_h_21_SPARSE_DATA \
+	FinalProject_Source_FinalProject_CharacterMovement_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+	FinalProject_Source_FinalProject_CharacterMovement_h_21_INCLASS_NO_PURE_DECLS \
+	FinalProject_Source_FinalProject_CharacterMovement_h_21_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -133,5 +136,12 @@ template<> FINALPROJECT_API UClass* StaticClass<class ACharacterMovement>();
 #undef CURRENT_FILE_ID
 #define CURRENT_FILE_ID FinalProject_Source_FinalProject_CharacterMovement_h
 
+
+#define FOREACH_ENUM_EAMMOTYPE(op) \
+	op(EAmmoType::EAT_9mm) \
+	op(EAmmoType::EAT_AR) 
+
+enum class EAmmoType : uint8;
+template<> FINALPROJECT_API UEnum* StaticEnum<EAmmoType>();
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
