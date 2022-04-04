@@ -75,7 +75,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{B8987533-CA09-4B75-9CB4-8549F9AB1B07}</ProjectGuid>
+    <ProjectGuid>{609737BF-5D94-4813-A327-8EA368F49C4A}</ProjectGuid>
     <Keyword>MakeFileProj</Keyword>
     <RootNamespace>FinalProject</RootNamespace>
     <PlatformToolset>v142</PlatformToolset>
@@ -399,6 +399,7 @@
     <None Include="..\..\Config\DefaultEngine.ini"/>
     <None Include="..\..\Config\DefaultGame.ini"/>
     <None Include="..\..\Config\DefaultInput.ini"/>
+    <ClInclude Include="..\..\Source\FinalProject\AmmoType.h"/>
     <ClCompile Include="..\..\Source\FinalProject\CharacterMovement.cpp">
       <AdditionalIncludeDirectories>$(NMakeIncludeSearchPath);D:\UE4.27\UE_4.27\Engine\Source\ThirdParty\PhysX3\PxShared\include;D:\UE4.27\UE_4.27\Engine\Source\ThirdParty\PhysX3\PxShared\include\cudamanager;D:\UE4.27\UE_4.27\Engine\Source\ThirdParty\PhysX3\PxShared\include\filebuf;D:\UE4.27\UE_4.27\Engine\Source\ThirdParty\PhysX3\PxShared\include\foundation;D:\UE4.27\UE_4.27\Engine\Source\ThirdParty\PhysX3\PxShared\include\pvd;D:\UE4.27\UE_4.27\Engine\Source\ThirdParty\PhysX3\PxShared\include\task;D:\UE4.27\UE_4.27\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include;D:\UE4.27\UE_4.27\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\cooking;D:\UE4.27\UE_4.27\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\common;D:\UE4.27\UE_4.27\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\extensions;D:\UE4.27\UE_4.27\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\geometry;D:\UE4.27\UE_4.27\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include;D:\UE4.27\UE_4.27\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\clothing;D:\UE4.27\UE_4.27\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\nvparameterized;D:\UE4.27\UE_4.27\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\legacy;D:\UE4.27\UE_4.27\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\PhysX3;D:\UE4.27\UE_4.27\Engine\Source\ThirdParty\PhysX3\APEX_1.4\common\include;D:\UE4.27\UE_4.27\Engine\Source\ThirdParty\PhysX3\APEX_1.4\common\include\autogen;D:\UE4.27\UE_4.27\Engine\Source\ThirdParty\PhysX3\APEX_1.4\framework\include;D:\UE4.27\UE_4.27\Engine\Source\ThirdParty\PhysX3\APEX_1.4\framework\include\autogen;D:\UE4.27\UE_4.27\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\general\RenderDebug\public;D:\UE4.27\UE_4.27\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\general\PairFilter\include;D:\UE4.27\UE_4.27\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\internal\include;</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(SolutionDir)Intermediate\Build\Win64\FinalProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h;$(SolutionDir)Intermediate\Build\Win64\UE4Editor\Development\FinalProject\Definitions.FinalProject.h</ForcedIncludeFiles>

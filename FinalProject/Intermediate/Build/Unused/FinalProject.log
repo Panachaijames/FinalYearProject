@@ -5,10 +5,10 @@
     [1/4] CharacterMovement.cpp
 D:\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\CharacterMovement.cpp(52): warning C5038: data member 'ACharacterMovement::AutomaticFireRate' will be initialized after data member 'ACharacterMovement::bShouldFire'
 D:\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\CharacterMovement.cpp(53): warning C5038: data member 'ACharacterMovement::bShouldFire' will be initialized after data member 'ACharacterMovement::bFireButtonPressed'
-    [2/4] UE4Editor-FinalProject-0019.lib
-       Creating library D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0019.lib and object D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0019.exp
-    [3/4] UE4Editor-FinalProject-0019.dll
-       Creating library D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0019.suppressed.lib and object D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0019.suppressed.exp
+    [2/4] UE4Editor-FinalProject-0010.lib
+       Creating library D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0010.lib and object D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0010.exp
+    [3/4] UE4Editor-FinalProject-0010.dll
+       Creating library D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0010.suppressed.lib and object D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0010.suppressed.exp
     [4/4] FinalProjectEditor.target
-  Total time in Parallel executor: 601.75 seconds
-  Total execution time: 648.26 seconds
+  Total time in Parallel executor: 559.81 seconds
+  Total execution time: 575.46 seconds

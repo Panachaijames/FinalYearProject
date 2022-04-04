@@ -13,7 +13,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 // Cross Module References
-	FINALPROJECT_API UEnum* Z_Construct_UEnum_FinalProject_EAmmoType();
+	FINALPROJECT_API UEnum* Z_Construct_UEnum_FinalProject_ECombatState();
 	UPackage* Z_Construct_UPackage__Script_FinalProject();
 	FINALPROJECT_API UClass* Z_Construct_UClass_ACharacterMovement_NoRegister();
 	FINALPROJECT_API UClass* Z_Construct_UClass_ACharacterMovement();
@@ -26,54 +26,60 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 	FINALPROJECT_API UClass* Z_Construct_UClass_AItem_NoRegister();
 	FINALPROJECT_API UClass* Z_Construct_UClass_AWeapon_NoRegister();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+	FINALPROJECT_API UEnum* Z_Construct_UEnum_FinalProject_EAmmoType();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FTransform();
+	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 // End Cross Module References
-	static UEnum* EAmmoType_StaticEnum()
+	static UEnum* ECombatState_StaticEnum()
 	{
 		static UEnum* Singleton = nullptr;
 		if (!Singleton)
 		{
-			Singleton = GetStaticEnum(Z_Construct_UEnum_FinalProject_EAmmoType, Z_Construct_UPackage__Script_FinalProject(), TEXT("EAmmoType"));
+			Singleton = GetStaticEnum(Z_Construct_UEnum_FinalProject_ECombatState, Z_Construct_UPackage__Script_FinalProject(), TEXT("ECombatState"));
 		}
 		return Singleton;
 	}
-	template<> FINALPROJECT_API UEnum* StaticEnum<EAmmoType>()
+	template<> FINALPROJECT_API UEnum* StaticEnum<ECombatState>()
 	{
-		return EAmmoType_StaticEnum();
+		return ECombatState_StaticEnum();
 	}
-	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EAmmoType(EAmmoType_StaticEnum, TEXT("/Script/FinalProject"), TEXT("EAmmoType"), false, nullptr, nullptr);
-	uint32 Get_Z_Construct_UEnum_FinalProject_EAmmoType_Hash() { return 3632969605U; }
-	UEnum* Z_Construct_UEnum_FinalProject_EAmmoType()
+	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ECombatState(ECombatState_StaticEnum, TEXT("/Script/FinalProject"), TEXT("ECombatState"), false, nullptr, nullptr);
+	uint32 Get_Z_Construct_UEnum_FinalProject_ECombatState_Hash() { return 2890171723U; }
+	UEnum* Z_Construct_UEnum_FinalProject_ECombatState()
 	{
 #if WITH_HOT_RELOAD
 		UPackage* Outer = Z_Construct_UPackage__Script_FinalProject();
-		static UEnum* ReturnEnum = FindExistingEnumIfHotReloadOrDynamic(Outer, TEXT("EAmmoType"), 0, Get_Z_Construct_UEnum_FinalProject_EAmmoType_Hash(), false);
+		static UEnum* ReturnEnum = FindExistingEnumIfHotReloadOrDynamic(Outer, TEXT("ECombatState"), 0, Get_Z_Construct_UEnum_FinalProject_ECombatState_Hash(), false);
 #else
 		static UEnum* ReturnEnum = nullptr;
 #endif // WITH_HOT_RELOAD
 		if (!ReturnEnum)
 		{
 			static const UE4CodeGen_Private::FEnumeratorParam Enumerators[] = {
-				{ "EAmmoType::EAT_9mm", (int64)EAmmoType::EAT_9mm },
-				{ "EAmmoType::EAT_AR", (int64)EAmmoType::EAT_AR },
-				{ "EAmmoType::EAT_MAX", (int64)EAmmoType::EAT_MAX },
+				{ "ECombatState::ECS_Unoccupied", (int64)ECombatState::ECS_Unoccupied },
+				{ "ECombatState::ECS_FireTimerInProgress", (int64)ECombatState::ECS_FireTimerInProgress },
+				{ "ECombatState::ECS_Reloading", (int64)ECombatState::ECS_Reloading },
+				{ "ECombatState::ECS_MAX", (int64)ECombatState::ECS_MAX },
 			};
 #if WITH_METADATA
 			const UE4CodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
 				{ "BlueprintType", "true" },
-				{ "EAT_9mm.DisplayName", "9mm" },
-				{ "EAT_9mm.Name", "EAmmoType::EAT_9mm" },
-				{ "EAT_AR.DisplayName", "Assault Rifle" },
-				{ "EAT_AR.Name", "EAmmoType::EAT_AR" },
-				{ "EAT_MAX.DisplayName", "DefaultMAX" },
-				{ "EAT_MAX.Name", "EAmmoType::EAT_MAX" },
+				{ "ECS_FireTimerInProgress.DisplayName", "FireTimerInProgress" },
+				{ "ECS_FireTimerInProgress.Name", "ECombatState::ECS_FireTimerInProgress" },
+				{ "ECS_MAX.DisplayName", "DefaultMAX" },
+				{ "ECS_MAX.Name", "ECombatState::ECS_MAX" },
+				{ "ECS_Reloading.DisplayName", "Reloading" },
+				{ "ECS_Reloading.Name", "ECombatState::ECS_Reloading" },
+				{ "ECS_Unoccupied.DisplayName", "Unoccupied" },
+				{ "ECS_Unoccupied.Name", "ECombatState::ECS_Unoccupied" },
 				{ "ModuleRelativePath", "CharacterMovement.h" },
 			};
 #endif
 			static const UE4CodeGen_Private::FEnumParams EnumParams = {
 				(UObject*(*)())Z_Construct_UPackage__Script_FinalProject,
 				nullptr,
-				"EAmmoType",
-				"EAmmoType",
+				"ECombatState",
+				"ECombatState",
 				Enumerators,
 				UE_ARRAY_COUNT(Enumerators),
 				RF_Public|RF_Transient|RF_MarkAsNative,
@@ -91,6 +97,27 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 		P_FINISH;
 		P_NATIVE_BEGIN;
 		*(float*)Z_Param__Result=P_THIS->GetCrosshairSpreadMultiplier();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(ACharacterMovement::execReleaseClip)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->ReleaseClip();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(ACharacterMovement::execGrabClip)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->GrabClip();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(ACharacterMovement::execFinishReloading)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->FinishReloading();
 		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(ACharacterMovement::execAutoFireReset)
@@ -113,7 +140,10 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 		static const FNameNativePtrPair Funcs[] = {
 			{ "AutoFireReset", &ACharacterMovement::execAutoFireReset },
 			{ "FinishCrosshairBulletFire", &ACharacterMovement::execFinishCrosshairBulletFire },
+			{ "FinishReloading", &ACharacterMovement::execFinishReloading },
 			{ "GetCrosshairSpreadMultiplier", &ACharacterMovement::execGetCrosshairSpreadMultiplier },
+			{ "GrabClip", &ACharacterMovement::execGrabClip },
+			{ "ReleaseClip", &ACharacterMovement::execReleaseClip },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -161,6 +191,28 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_ACharacterMovement_FinishReloading_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACharacterMovement_FinishReloading_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACharacterMovement_FinishReloading_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACharacterMovement, nullptr, "FinishReloading", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACharacterMovement_FinishReloading_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterMovement_FinishReloading_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ACharacterMovement_FinishReloading()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ACharacterMovement_FinishReloading_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_ACharacterMovement_GetCrosshairSpreadMultiplier_Statics
 	{
 		struct CharacterMovement_eventGetCrosshairSpreadMultiplier_Parms
@@ -190,6 +242,54 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ACharacterMovement_GetCrosshairSpreadMultiplier_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ACharacterMovement_GrabClip_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACharacterMovement_GrabClip_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "/** Called from Animation Blueprint with Grab Clip notify*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Called from Animation Blueprint with Grab Clip notify" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACharacterMovement_GrabClip_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACharacterMovement, nullptr, "GrabClip", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACharacterMovement_GrabClip_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterMovement_GrabClip_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ACharacterMovement_GrabClip()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ACharacterMovement_GrabClip_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ACharacterMovement_ReleaseClip_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACharacterMovement_ReleaseClip_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "/** Called from Animation Blueprint with Realease Clip notify*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Called from Animation Blueprint with Realease Clip notify" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACharacterMovement_ReleaseClip_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACharacterMovement, nullptr, "ReleaseClip", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACharacterMovement_ReleaseClip_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterMovement_ReleaseClip_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ACharacterMovement_ReleaseClip()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ACharacterMovement_ReleaseClip_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -340,6 +440,23 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_StartingARAmmo_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FIntPropertyParams NewProp_StartingARAmmo;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_CombatState_Underlying;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CombatState_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_CombatState;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ReloadMontage_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ReloadMontage;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ClipTransform_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_ClipTransform;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_HandSceneComponent_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_HandSceneComponent;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -351,7 +468,10 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_ACharacterMovement_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_ACharacterMovement_AutoFireReset, "AutoFireReset" }, // 847656714
 		{ &Z_Construct_UFunction_ACharacterMovement_FinishCrosshairBulletFire, "FinishCrosshairBulletFire" }, // 2062173036
+		{ &Z_Construct_UFunction_ACharacterMovement_FinishReloading, "FinishReloading" }, // 574205581
 		{ &Z_Construct_UFunction_ACharacterMovement_GetCrosshairSpreadMultiplier, "GetCrosshairSpreadMultiplier" }, // 3800122887
+		{ &Z_Construct_UFunction_ACharacterMovement_GrabClip, "GrabClip" }, // 1563805584
+		{ &Z_Construct_UFunction_ACharacterMovement_ReleaseClip, "ReleaseClip" }, // 879950769
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::Class_MetaDataParams[] = {
@@ -711,6 +831,48 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 	};
 #endif
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_StartingARAmmo = { "StartingARAmmo", nullptr, (EPropertyFlags)0x0040000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, StartingARAmmo), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_StartingARAmmo_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_StartingARAmmo_MetaData)) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CombatState_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CombatState_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Combat" },
+		{ "Comment", "/** Combat state can only fire or reload if unoccupied*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Combat state can only fire or reload if unoccupied" },
+	};
+#endif
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CombatState = { "CombatState", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, CombatState), Z_Construct_UEnum_FinalProject_ECombatState, METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CombatState_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CombatState_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_ReloadMontage_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Combat" },
+		{ "Comment", "/** Montage for reload animation*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Montage for reload animation" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_ReloadMontage = { "ReloadMontage", nullptr, (EPropertyFlags)0x0040000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, ReloadMontage), Z_Construct_UClass_UAnimMontage_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_ReloadMontage_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_ReloadMontage_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_ClipTransform_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Combat" },
+		{ "Comment", "/** Transform of the clip when we first grab the clip during reloading*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Transform of the clip when we first grab the clip during reloading" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_ClipTransform = { "ClipTransform", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, ClipTransform), Z_Construct_UScriptStruct_FTransform, METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_ClipTransform_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_ClipTransform_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HandSceneComponent_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Combat" },
+		{ "Comment", "/** Scene component to attach to the Character's hand during reloading*/" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Scene component to attach to the Character's hand during reloading" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HandSceneComponent = { "HandSceneComponent", nullptr, (EPropertyFlags)0x00400000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, HandSceneComponent), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HandSceneComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HandSceneComponent_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ACharacterMovement_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CameraBoom,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_FollowCamera,
@@ -748,6 +910,11 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_AmmoMap,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_Starting9mmAmmo,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_StartingARAmmo,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CombatState_Underlying,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CombatState,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_ReloadMontage,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_ClipTransform,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HandSceneComponent,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ACharacterMovement_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ACharacterMovement>::IsAbstract,
@@ -776,7 +943,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ACharacterMovement, 660440467);
+	IMPLEMENT_CLASS(ACharacterMovement, 4267868303);
 	template<> FINALPROJECT_API UClass* StaticClass<ACharacterMovement>()
 	{
 		return ACharacterMovement::StaticClass();
