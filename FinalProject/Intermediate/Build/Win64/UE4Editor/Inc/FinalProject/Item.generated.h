@@ -16,20 +16,20 @@ struct FHitResult;
 #endif
 #define FINALPROJECT_Item_generated_h
 
-#define FinalProject_Source_FinalProject_Item_h_36_SPARSE_DATA
-#define FinalProject_Source_FinalProject_Item_h_36_RPC_WRAPPERS \
+#define FinalProject_Source_FinalProject_Item_h_44_SPARSE_DATA
+#define FinalProject_Source_FinalProject_Item_h_44_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execOnSphereEndOverlap); \
 	DECLARE_FUNCTION(execOnSphereOverlap);
 
 
-#define FinalProject_Source_FinalProject_Item_h_36_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FinalProject_Source_FinalProject_Item_h_44_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execOnSphereEndOverlap); \
 	DECLARE_FUNCTION(execOnSphereOverlap);
 
 
-#define FinalProject_Source_FinalProject_Item_h_36_INCLASS_NO_PURE_DECLS \
+#define FinalProject_Source_FinalProject_Item_h_44_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAItem(); \
 	friend struct Z_Construct_UClass_AItem_Statics; \
@@ -38,7 +38,7 @@ public: \
 	DECLARE_SERIALIZER(AItem)
 
 
-#define FinalProject_Source_FinalProject_Item_h_36_INCLASS \
+#define FinalProject_Source_FinalProject_Item_h_44_INCLASS \
 private: \
 	static void StaticRegisterNativesAItem(); \
 	friend struct Z_Construct_UClass_AItem_Statics; \
@@ -47,7 +47,7 @@ public: \
 	DECLARE_SERIALIZER(AItem)
 
 
-#define FinalProject_Source_FinalProject_Item_h_36_STANDARD_CONSTRUCTORS \
+#define FinalProject_Source_FinalProject_Item_h_44_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AItem(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AItem) \
@@ -60,7 +60,7 @@ private: \
 public:
 
 
-#define FinalProject_Source_FinalProject_Item_h_36_ENHANCED_CONSTRUCTORS \
+#define FinalProject_Source_FinalProject_Item_h_44_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AItem(AItem&&); \
@@ -71,7 +71,7 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AItem)
 
 
-#define FinalProject_Source_FinalProject_Item_h_36_PRIVATE_PROPERTY_OFFSET \
+#define FinalProject_Source_FinalProject_Item_h_44_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__ItemMesh() { return STRUCT_OFFSET(AItem, ItemMesh); } \
 	FORCEINLINE static uint32 __PPO__CollisionBox() { return STRUCT_OFFSET(AItem, CollisionBox); } \
 	FORCEINLINE static uint32 __PPO__PickupWidget() { return STRUCT_OFFSET(AItem, PickupWidget); } \
@@ -88,30 +88,32 @@ public: \
 	FORCEINLINE static uint32 __PPO__ZCurveTime() { return STRUCT_OFFSET(AItem, ZCurveTime); } \
 	FORCEINLINE static uint32 __PPO__Character() { return STRUCT_OFFSET(AItem, Character); } \
 	FORCEINLINE static uint32 __PPO__PickupSound() { return STRUCT_OFFSET(AItem, PickupSound); } \
-	FORCEINLINE static uint32 __PPO__EquipSound() { return STRUCT_OFFSET(AItem, EquipSound); }
+	FORCEINLINE static uint32 __PPO__EquipSound() { return STRUCT_OFFSET(AItem, EquipSound); } \
+	FORCEINLINE static uint32 __PPO__ItemType() { return STRUCT_OFFSET(AItem, ItemType); } \
+	FORCEINLINE static uint32 __PPO__InterpLocIndex() { return STRUCT_OFFSET(AItem, InterpLocIndex); }
 
 
-#define FinalProject_Source_FinalProject_Item_h_33_PROLOG
-#define FinalProject_Source_FinalProject_Item_h_36_GENERATED_BODY_LEGACY \
+#define FinalProject_Source_FinalProject_Item_h_41_PROLOG
+#define FinalProject_Source_FinalProject_Item_h_44_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FinalProject_Source_FinalProject_Item_h_36_PRIVATE_PROPERTY_OFFSET \
-	FinalProject_Source_FinalProject_Item_h_36_SPARSE_DATA \
-	FinalProject_Source_FinalProject_Item_h_36_RPC_WRAPPERS \
-	FinalProject_Source_FinalProject_Item_h_36_INCLASS \
-	FinalProject_Source_FinalProject_Item_h_36_STANDARD_CONSTRUCTORS \
+	FinalProject_Source_FinalProject_Item_h_44_PRIVATE_PROPERTY_OFFSET \
+	FinalProject_Source_FinalProject_Item_h_44_SPARSE_DATA \
+	FinalProject_Source_FinalProject_Item_h_44_RPC_WRAPPERS \
+	FinalProject_Source_FinalProject_Item_h_44_INCLASS \
+	FinalProject_Source_FinalProject_Item_h_44_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FinalProject_Source_FinalProject_Item_h_36_GENERATED_BODY \
+#define FinalProject_Source_FinalProject_Item_h_44_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FinalProject_Source_FinalProject_Item_h_36_PRIVATE_PROPERTY_OFFSET \
-	FinalProject_Source_FinalProject_Item_h_36_SPARSE_DATA \
-	FinalProject_Source_FinalProject_Item_h_36_RPC_WRAPPERS_NO_PURE_DECLS \
-	FinalProject_Source_FinalProject_Item_h_36_INCLASS_NO_PURE_DECLS \
-	FinalProject_Source_FinalProject_Item_h_36_ENHANCED_CONSTRUCTORS \
+	FinalProject_Source_FinalProject_Item_h_44_PRIVATE_PROPERTY_OFFSET \
+	FinalProject_Source_FinalProject_Item_h_44_SPARSE_DATA \
+	FinalProject_Source_FinalProject_Item_h_44_RPC_WRAPPERS_NO_PURE_DECLS \
+	FinalProject_Source_FinalProject_Item_h_44_INCLASS_NO_PURE_DECLS \
+	FinalProject_Source_FinalProject_Item_h_44_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -121,6 +123,13 @@ template<> FINALPROJECT_API UClass* StaticClass<class AItem>();
 #undef CURRENT_FILE_ID
 #define CURRENT_FILE_ID FinalProject_Source_FinalProject_Item_h
 
+
+#define FOREACH_ENUM_EITEMTYPE(op) \
+	op(EItemType::EIT_Ammo) \
+	op(EItemType::EIT_Weapon) 
+
+enum class EItemType : uint8;
+template<> FINALPROJECT_API UEnum* StaticEnum<EItemType>();
 
 #define FOREACH_ENUM_EITEMSTATE(op) \
 	op(EItemState::EIS_Pickup) \

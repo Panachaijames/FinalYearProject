@@ -162,3 +162,5 @@ D:\UE4.27\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ShapeComp
 D:\UE4.27\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\SphereComponent.generated.h
 D:\UE4.27\UE_4.27\Engine\Source\Runtime\Engine\Classes\Components/BoxComponent.h
 D:\UE4.27\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\BoxComponent.generated.h
+D:\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\Ammo.h
+D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Inc\FinalProject\Ammo.generated.h

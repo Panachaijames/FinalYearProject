@@ -7,6 +7,7 @@
 /IGNORE:4221
 /NODEFAULTLIB
 "D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\FinalProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\Ammo.cpp.obj"
 "D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\CharacterMovement.cpp.obj"
 "D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\FinalProject.cpp.obj"
 "D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\FinalProjectCharacter.cpp.obj"
@@ -18,6 +19,7 @@
 "D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\ShooterAnimInstance.cpp.obj"
 "D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\ShooterPlayerController.cpp.obj"
 "D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\Weapon.cpp.obj"
+"D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\Ammo.gen.cpp.obj"
 "D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\AmmoType.gen.cpp.obj"
 "D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\CharacterMovement.gen.cpp.obj"
 "D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\FinalProject.init.gen.cpp.obj"
