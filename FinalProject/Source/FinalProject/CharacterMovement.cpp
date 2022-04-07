@@ -127,6 +127,8 @@ void ACharacterMovement::BeginPlay()
 	}
 	// Spawn the default weapon and equip it to the mesh
 	EquipWeapon(SpawnDefaultWeapon());
+	EquippedWeapon->DisableCustomDepth();
+	EquippedWeapon->DisableGlowMaterial();
 	
 	InitializeAmmoMap();
 
@@ -507,6 +509,7 @@ void ACharacterMovement::TraceForItems()
 			{
 				//Show Item's PickupWidget;
 				TraceHitItem->GetPickupWidget()->SetVisibility(true);
+				TraceHitItem->EnableCustomDepth();
 			}
 
 			//we hit an AItem last Frame
@@ -517,6 +520,7 @@ void ACharacterMovement::TraceForItems()
 					//We are hitting a different AItem this frame from last frame
 					//Or AItem is null.
 					TraceHitItemLastFrame->GetPickupWidget()->SetVisibility(false);
+					TraceHitItemLastFrame->DisableCustomDepth();
 				}
 			}
 			//Store a ref to HitItem fr next frame
@@ -528,6 +532,7 @@ void ACharacterMovement::TraceForItems()
 		// No longer overlapping any items.
 		//item last frame should not show widget
 		TraceHitItemLastFrame->GetPickupWidget()->SetVisibility(false);
+		TraceHitItemLastFrame->DisableCustomDepth();
 	}
 }
 

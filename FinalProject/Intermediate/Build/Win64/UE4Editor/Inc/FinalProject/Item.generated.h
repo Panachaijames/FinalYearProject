@@ -90,7 +90,15 @@ public: \
 	FORCEINLINE static uint32 __PPO__PickupSound() { return STRUCT_OFFSET(AItem, PickupSound); } \
 	FORCEINLINE static uint32 __PPO__EquipSound() { return STRUCT_OFFSET(AItem, EquipSound); } \
 	FORCEINLINE static uint32 __PPO__ItemType() { return STRUCT_OFFSET(AItem, ItemType); } \
-	FORCEINLINE static uint32 __PPO__InterpLocIndex() { return STRUCT_OFFSET(AItem, InterpLocIndex); }
+	FORCEINLINE static uint32 __PPO__InterpLocIndex() { return STRUCT_OFFSET(AItem, InterpLocIndex); } \
+	FORCEINLINE static uint32 __PPO__MaterialIndex() { return STRUCT_OFFSET(AItem, MaterialIndex); } \
+	FORCEINLINE static uint32 __PPO__DynamicMaterialInstance() { return STRUCT_OFFSET(AItem, DynamicMaterialInstance); } \
+	FORCEINLINE static uint32 __PPO__MaterialInstance() { return STRUCT_OFFSET(AItem, MaterialInstance); } \
+	FORCEINLINE static uint32 __PPO__PulseCurve() { return STRUCT_OFFSET(AItem, PulseCurve); } \
+	FORCEINLINE static uint32 __PPO__PulseCurveTime() { return STRUCT_OFFSET(AItem, PulseCurveTime); } \
+	FORCEINLINE static uint32 __PPO__GlowAmount() { return STRUCT_OFFSET(AItem, GlowAmount); } \
+	FORCEINLINE static uint32 __PPO__FresnelExponent() { return STRUCT_OFFSET(AItem, FresnelExponent); } \
+	FORCEINLINE static uint32 __PPO__FresnelReflectFraction() { return STRUCT_OFFSET(AItem, FresnelReflectFraction); }
 
 
 #define FinalProject_Source_FinalProject_Item_h_41_PROLOG
