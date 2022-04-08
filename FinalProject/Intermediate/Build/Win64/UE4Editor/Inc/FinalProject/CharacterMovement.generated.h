@@ -20,8 +20,23 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 template<> FINALPROJECT_API UScriptStruct* StaticStruct<struct FInterpLocation>();
 
-#define FinalProject_Source_FinalProject_CharacterMovement_h_39_SPARSE_DATA
-#define FinalProject_Source_FinalProject_CharacterMovement_h_39_RPC_WRAPPERS \
+#define FinalProject_Source_FinalProject_CharacterMovement_h_36_DELEGATE \
+struct _Script_FinalProject_eventEquipItemDelegate_Parms \
+{ \
+	int32 CurrentSlotIndex; \
+	int32 NewSlotIndex; \
+}; \
+static inline void FEquipItemDelegate_DelegateWrapper(const FMulticastScriptDelegate& EquipItemDelegate, int32 CurrentSlotIndex, int32 NewSlotIndex) \
+{ \
+	_Script_FinalProject_eventEquipItemDelegate_Parms Parms; \
+	Parms.CurrentSlotIndex=CurrentSlotIndex; \
+	Parms.NewSlotIndex=NewSlotIndex; \
+	EquipItemDelegate.ProcessMulticastDelegate<UObject>(&Parms); \
+}
+
+
+#define FinalProject_Source_FinalProject_CharacterMovement_h_41_SPARSE_DATA
+#define FinalProject_Source_FinalProject_CharacterMovement_h_41_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execGetCrosshairSpreadMultiplier); \
 	DECLARE_FUNCTION(execReleaseClip); \
@@ -31,7 +46,7 @@ template<> FINALPROJECT_API UScriptStruct* StaticStruct<struct FInterpLocation>(
 	DECLARE_FUNCTION(execFinishCrosshairBulletFire);
 
 
-#define FinalProject_Source_FinalProject_CharacterMovement_h_39_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FinalProject_Source_FinalProject_CharacterMovement_h_41_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execGetCrosshairSpreadMultiplier); \
 	DECLARE_FUNCTION(execReleaseClip); \
@@ -41,7 +56,7 @@ template<> FINALPROJECT_API UScriptStruct* StaticStruct<struct FInterpLocation>(
 	DECLARE_FUNCTION(execFinishCrosshairBulletFire);
 
 
-#define FinalProject_Source_FinalProject_CharacterMovement_h_39_INCLASS_NO_PURE_DECLS \
+#define FinalProject_Source_FinalProject_CharacterMovement_h_41_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesACharacterMovement(); \
 	friend struct Z_Construct_UClass_ACharacterMovement_Statics; \
@@ -50,7 +65,7 @@ public: \
 	DECLARE_SERIALIZER(ACharacterMovement)
 
 
-#define FinalProject_Source_FinalProject_CharacterMovement_h_39_INCLASS \
+#define FinalProject_Source_FinalProject_CharacterMovement_h_41_INCLASS \
 private: \
 	static void StaticRegisterNativesACharacterMovement(); \
 	friend struct Z_Construct_UClass_ACharacterMovement_Statics; \
@@ -59,7 +74,7 @@ public: \
 	DECLARE_SERIALIZER(ACharacterMovement)
 
 
-#define FinalProject_Source_FinalProject_CharacterMovement_h_39_STANDARD_CONSTRUCTORS \
+#define FinalProject_Source_FinalProject_CharacterMovement_h_41_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ACharacterMovement(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ACharacterMovement) \
@@ -72,7 +87,7 @@ private: \
 public:
 
 
-#define FinalProject_Source_FinalProject_CharacterMovement_h_39_ENHANCED_CONSTRUCTORS \
+#define FinalProject_Source_FinalProject_CharacterMovement_h_41_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ACharacterMovement(ACharacterMovement&&); \
@@ -83,7 +98,7 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ACharacterMovement)
 
 
-#define FinalProject_Source_FinalProject_CharacterMovement_h_39_PRIVATE_PROPERTY_OFFSET \
+#define FinalProject_Source_FinalProject_CharacterMovement_h_41_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__CameraBoom() { return STRUCT_OFFSET(ACharacterMovement, CameraBoom); } \
 	FORCEINLINE static uint32 __PPO__FollowCamera() { return STRUCT_OFFSET(ACharacterMovement, FollowCamera); } \
 	FORCEINLINE static uint32 __PPO__BaseTurnRate() { return STRUCT_OFFSET(ACharacterMovement, BaseTurnRate); } \
@@ -130,30 +145,32 @@ public: \
 	FORCEINLINE static uint32 __PPO__InterpComp6() { return STRUCT_OFFSET(ACharacterMovement, InterpComp6); } \
 	FORCEINLINE static uint32 __PPO__InterpLocation() { return STRUCT_OFFSET(ACharacterMovement, InterpLocation); } \
 	FORCEINLINE static uint32 __PPO__PickupSoundResetTime() { return STRUCT_OFFSET(ACharacterMovement, PickupSoundResetTime); } \
-	FORCEINLINE static uint32 __PPO__EquipSoundResetTime() { return STRUCT_OFFSET(ACharacterMovement, EquipSoundResetTime); }
+	FORCEINLINE static uint32 __PPO__EquipSoundResetTime() { return STRUCT_OFFSET(ACharacterMovement, EquipSoundResetTime); } \
+	FORCEINLINE static uint32 __PPO__Inventory() { return STRUCT_OFFSET(ACharacterMovement, Inventory); } \
+	FORCEINLINE static uint32 __PPO__EquipItemDelegate() { return STRUCT_OFFSET(ACharacterMovement, EquipItemDelegate); }
 
 
-#define FinalProject_Source_FinalProject_CharacterMovement_h_36_PROLOG
-#define FinalProject_Source_FinalProject_CharacterMovement_h_39_GENERATED_BODY_LEGACY \
+#define FinalProject_Source_FinalProject_CharacterMovement_h_38_PROLOG
+#define FinalProject_Source_FinalProject_CharacterMovement_h_41_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FinalProject_Source_FinalProject_CharacterMovement_h_39_PRIVATE_PROPERTY_OFFSET \
-	FinalProject_Source_FinalProject_CharacterMovement_h_39_SPARSE_DATA \
-	FinalProject_Source_FinalProject_CharacterMovement_h_39_RPC_WRAPPERS \
-	FinalProject_Source_FinalProject_CharacterMovement_h_39_INCLASS \
-	FinalProject_Source_FinalProject_CharacterMovement_h_39_STANDARD_CONSTRUCTORS \
+	FinalProject_Source_FinalProject_CharacterMovement_h_41_PRIVATE_PROPERTY_OFFSET \
+	FinalProject_Source_FinalProject_CharacterMovement_h_41_SPARSE_DATA \
+	FinalProject_Source_FinalProject_CharacterMovement_h_41_RPC_WRAPPERS \
+	FinalProject_Source_FinalProject_CharacterMovement_h_41_INCLASS \
+	FinalProject_Source_FinalProject_CharacterMovement_h_41_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FinalProject_Source_FinalProject_CharacterMovement_h_39_GENERATED_BODY \
+#define FinalProject_Source_FinalProject_CharacterMovement_h_41_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FinalProject_Source_FinalProject_CharacterMovement_h_39_PRIVATE_PROPERTY_OFFSET \
-	FinalProject_Source_FinalProject_CharacterMovement_h_39_SPARSE_DATA \
-	FinalProject_Source_FinalProject_CharacterMovement_h_39_RPC_WRAPPERS_NO_PURE_DECLS \
-	FinalProject_Source_FinalProject_CharacterMovement_h_39_INCLASS_NO_PURE_DECLS \
-	FinalProject_Source_FinalProject_CharacterMovement_h_39_ENHANCED_CONSTRUCTORS \
+	FinalProject_Source_FinalProject_CharacterMovement_h_41_PRIVATE_PROPERTY_OFFSET \
+	FinalProject_Source_FinalProject_CharacterMovement_h_41_SPARSE_DATA \
+	FinalProject_Source_FinalProject_CharacterMovement_h_41_RPC_WRAPPERS_NO_PURE_DECLS \
+	FinalProject_Source_FinalProject_CharacterMovement_h_41_INCLASS_NO_PURE_DECLS \
+	FinalProject_Source_FinalProject_CharacterMovement_h_41_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

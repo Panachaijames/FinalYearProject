@@ -127,6 +127,8 @@ void ACharacterMovement::BeginPlay()
 	}
 	// Spawn the default weapon and equip it to the mesh
 	EquipWeapon(SpawnDefaultWeapon());
+	Inventory.Add(EquippedWeapon);
+	EquippedWeapon->SetSlotIndex(0);
 	EquippedWeapon->DisableCustomDepth();
 	EquippedWeapon->DisableGlowMaterial();
 	
@@ -505,6 +507,12 @@ void ACharacterMovement::TraceForItems()
 		if (ItemTraceResult.bBlockingHit)
 		{
 			TraceHitItem = Cast<AItem>(ItemTraceResult.Actor);
+
+			if (TraceHitItem && TraceHitItem->GetItemState() == EItemState::EIS_EquipInterping)
+			{
+				TraceHitItem = nullptr;
+			}
+
 			if (TraceHitItem && TraceHitItem->GetPickupWidget())
 			{
 				//Show Item's PickupWidget;
@@ -560,6 +568,15 @@ void ACharacterMovement::EquipWeapon(AWeapon* WeaponToEquip)
 			//Attach the weapon to the hand socket RightHandSocket
 			HandSocket->AttachActor(WeaponToEquip, GetMesh());
 		}
+		if (EquippedWeapon == nullptr)
+		{
+			//-1 == no equip weapon yet
+			EquipItemDelegate.Broadcast(-1, WeaponToEquip->GetSlotIndex());
+		}
+		else
+		{
+			EquipItemDelegate.Broadcast(EquippedWeapon->GetSlotIndex(), WeaponToEquip->GetSlotIndex());
+		}
 		//Set EquippedWeapon to the newly sqawned Weapon
 		EquippedWeapon = WeaponToEquip;
 		EquippedWeapon->SetItemState(EItemState::EIS_Equipped);
@@ -583,7 +600,7 @@ void ACharacterMovement::SelectButtonPressed()
 	if (TraceHitItem)
 	{
 		TraceHitItem->StartItemCurve(this);
-
+		TraceHitItem = nullptr;
 		
 	}
 	
@@ -591,11 +608,17 @@ void ACharacterMovement::SelectButtonPressed()
 
 void ACharacterMovement::SelectButtonReleased()
 {
-
 }
 
 void ACharacterMovement::SwapWeapon(AWeapon* WeaponToSwap)
 {
+
+	if (Inventory.Num() - 1 >= EquippedWeapon->GetSlotIndex())
+	{
+		Inventory[EquippedWeapon->GetSlotIndex()] = WeaponToSwap;
+		WeaponToSwap->SetSlotIndex(EquippedWeapon->GetSlotIndex());
+	}
+
 	DropWeapon();
 	EquipWeapon(WeaponToSwap);
 	TraceHitItem = nullptr;
@@ -821,6 +844,60 @@ void ACharacterMovement::InitializeInterpLocations()
 	InterpLocation.Add(InterpLoc6);
 }
 
+void ACharacterMovement::FKeyPressed()
+{
+	if (EquippedWeapon->GetSlotIndex() == 0) return;
+
+	ExchangeInventoryItems(EquippedWeapon->GetSlotIndex(), 0);
+	
+}
+
+void ACharacterMovement::OneKeyPressed()
+{
+	if (EquippedWeapon->GetSlotIndex() == 1) return;
+
+	ExchangeInventoryItems(EquippedWeapon->GetSlotIndex(), 1);
+}
+
+void ACharacterMovement::TwoKeyPressed()
+{
+	if (EquippedWeapon->GetSlotIndex() == 2) return;
+
+	ExchangeInventoryItems(EquippedWeapon->GetSlotIndex(), 2);
+}
+
+void ACharacterMovement::ThreeKeyPressed()
+{
+	if (EquippedWeapon->GetSlotIndex() == 3) return;
+
+	ExchangeInventoryItems(EquippedWeapon->GetSlotIndex(), 3);
+}
+
+void ACharacterMovement::FourKeyPressed()
+{
+	if (EquippedWeapon->GetSlotIndex() == 4) return;
+
+	ExchangeInventoryItems(EquippedWeapon->GetSlotIndex(), 4);
+}
+
+void ACharacterMovement::FiveKeyPressed()
+{
+	if (EquippedWeapon->GetSlotIndex() == 5) return;
+
+	ExchangeInventoryItems(EquippedWeapon->GetSlotIndex(), 5);
+}
+
+void ACharacterMovement::ExchangeInventoryItems(int32 CurrentItemIndex, int32 NewItemIndex)
+{
+	if ((CurrentItemIndex == NewItemIndex)||(NewItemIndex >= Inventory.Num())) return;
+	auto OldEquippedWeapon = EquippedWeapon;
+	auto NewWeapon = Cast<AWeapon>(Inventory[NewItemIndex]);
+	EquipWeapon(NewWeapon);
+
+	OldEquippedWeapon->SetItemState(EItemState::EIS_Pickedup);
+	NewWeapon->SetItemState(EItemState::EIS_Equipped);
+}
+
 int32 ACharacterMovement::GetInterpLocationIndex()
 {
 	int32 LowestIndex = 1;
@@ -891,6 +968,18 @@ void ACharacterMovement::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 	PlayerInputComponent->BindAction("ReloadButton", IE_Pressed, this,
 		&ACharacterMovement::ReloadButtonPressed);
 
+	PlayerInputComponent->BindAction("FKey", IE_Pressed, this,
+		&ACharacterMovement::FKeyPressed);
+	PlayerInputComponent->BindAction("1Key", IE_Pressed, this,
+		&ACharacterMovement::OneKeyPressed);
+	PlayerInputComponent->BindAction("2Key", IE_Pressed, this,
+		&ACharacterMovement::TwoKeyPressed);
+	PlayerInputComponent->BindAction("3Key", IE_Pressed, this,
+		&ACharacterMovement::ThreeKeyPressed);
+	PlayerInputComponent->BindAction("4Key", IE_Pressed, this,
+		&ACharacterMovement::FourKeyPressed);
+	PlayerInputComponent->BindAction("5Key", IE_Pressed, this,
+		&ACharacterMovement::FiveKeyPressed);
 }
 
 void ACharacterMovement::ResetPickupSoundTimer()
@@ -939,7 +1028,17 @@ void ACharacterMovement::GetPickupItem(AItem* Item)
 	auto Weapon = Cast<AWeapon>(Item);
 	if (Weapon)
 	{
-		SwapWeapon(Weapon);
+		if (Inventory.Num() < INVENTORY_CAPACITY)
+		{
+			Weapon->SetSlotIndex(Inventory.Num());
+			Inventory.Add(Weapon);
+			Weapon->SetItemState(EItemState::EIS_Pickedup);
+		}
+		else // Inventory is full! Swap with EquippedWeapon
+		{
+			SwapWeapon(Weapon);
+		}
+		
 	}
 
 	auto Ammo = Cast<AAmmo>(Item);

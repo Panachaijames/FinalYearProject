@@ -13,8 +13,9 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 // Cross Module References
-	FINALPROJECT_API UEnum* Z_Construct_UEnum_FinalProject_ECombatState();
+	FINALPROJECT_API UFunction* Z_Construct_UDelegateFunction_FinalProject_EquipItemDelegate__DelegateSignature();
 	UPackage* Z_Construct_UPackage__Script_FinalProject();
+	FINALPROJECT_API UEnum* Z_Construct_UEnum_FinalProject_ECombatState();
 	FINALPROJECT_API UScriptStruct* Z_Construct_UScriptStruct_FInterpLocation();
 	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 	FINALPROJECT_API UClass* Z_Construct_UClass_ACharacterMovement_NoRegister();
@@ -31,6 +32,42 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 	FINALPROJECT_API UEnum* Z_Construct_UEnum_FinalProject_EAmmoType();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FTransform();
 // End Cross Module References
+	struct Z_Construct_UDelegateFunction_FinalProject_EquipItemDelegate__DelegateSignature_Statics
+	{
+		struct _Script_FinalProject_eventEquipItemDelegate_Parms
+		{
+			int32 CurrentSlotIndex;
+			int32 NewSlotIndex;
+		};
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_CurrentSlotIndex;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_NewSlotIndex;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UDelegateFunction_FinalProject_EquipItemDelegate__DelegateSignature_Statics::NewProp_CurrentSlotIndex = { "CurrentSlotIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(_Script_FinalProject_eventEquipItemDelegate_Parms, CurrentSlotIndex), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UDelegateFunction_FinalProject_EquipItemDelegate__DelegateSignature_Statics::NewProp_NewSlotIndex = { "NewSlotIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(_Script_FinalProject_eventEquipItemDelegate_Parms, NewSlotIndex), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_FinalProject_EquipItemDelegate__DelegateSignature_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_FinalProject_EquipItemDelegate__DelegateSignature_Statics::NewProp_CurrentSlotIndex,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_FinalProject_EquipItemDelegate__DelegateSignature_Statics::NewProp_NewSlotIndex,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_FinalProject_EquipItemDelegate__DelegateSignature_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_FinalProject_EquipItemDelegate__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_FinalProject, nullptr, "EquipItemDelegate__DelegateSignature", nullptr, nullptr, sizeof(_Script_FinalProject_eventEquipItemDelegate_Parms), Z_Construct_UDelegateFunction_FinalProject_EquipItemDelegate__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_FinalProject_EquipItemDelegate__DelegateSignature_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(Z_Construct_UDelegateFunction_FinalProject_EquipItemDelegate__DelegateSignature_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_FinalProject_EquipItemDelegate__DelegateSignature_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UDelegateFunction_FinalProject_EquipItemDelegate__DelegateSignature()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UDelegateFunction_FinalProject_EquipItemDelegate__DelegateSignature_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	static UEnum* ECombatState_StaticEnum()
 	{
 		static UEnum* Singleton = nullptr;
@@ -600,6 +637,15 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_EquipSoundResetTime_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_EquipSoundResetTime;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Inventory_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Inventory_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Inventory;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_EquipItemDelegate_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FMulticastDelegatePropertyParams NewProp_EquipItemDelegate;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -1110,6 +1156,27 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 	};
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_EquipSoundResetTime = { "EquipSoundResetTime", nullptr, (EPropertyFlags)0x0040000000000015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, EquipSoundResetTime), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_EquipSoundResetTime_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_EquipSoundResetTime_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_Inventory_Inner = { "Inventory", nullptr, (EPropertyFlags)0x0000000000020000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_AItem_NoRegister, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_Inventory_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Inventory" },
+		{ "Comment", "/** An Array of AItem for inventory*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "An Array of AItem for inventory" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_Inventory = { "Inventory", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, Inventory), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_Inventory_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_Inventory_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_EquipItemDelegate_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Delegates" },
+		{ "Comment", "/** Delegate for sending slot info to inventory bar when equipping*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Delegate for sending slot info to inventory bar when equipping" },
+	};
+#endif
+	const UE4CodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_EquipItemDelegate = { "EquipItemDelegate", nullptr, (EPropertyFlags)0x0040000010080000, UE4CodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, EquipItemDelegate), Z_Construct_UDelegateFunction_FinalProject_EquipItemDelegate__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_EquipItemDelegate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_EquipItemDelegate_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ACharacterMovement_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CameraBoom,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_FollowCamera,
@@ -1163,6 +1230,9 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_InterpLocation,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_PickupSoundResetTime,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_EquipSoundResetTime,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_Inventory_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_Inventory,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_EquipItemDelegate,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ACharacterMovement_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ACharacterMovement>::IsAbstract,
@@ -1191,7 +1261,7 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ACharacterMovement, 927957544);
+	IMPLEMENT_CLASS(ACharacterMovement, 2269474553);
 	template<> FINALPROJECT_API UClass* StaticClass<ACharacterMovement>()
 	{
 		return ACharacterMovement::StaticClass();
