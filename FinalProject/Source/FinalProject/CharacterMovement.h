@@ -467,4 +467,6 @@ public:
 	void UnHighlightInventorySlot();
 	void StartPickupSoundTimer();
 	void StartEquipSoundTimer();
+
+	FORCEINLINE AWeapon* GetEquippedWeapon() const { return EquippedWeapon; }
 };

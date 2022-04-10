@@ -5,6 +5,8 @@
 #include "CharacterMovement.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "Weapon.h"
+#include "WeaponType.h"
 
 UShooterAnimInstance::UShooterAnimInstance() :
 	Speed(0.f),
@@ -15,7 +17,9 @@ UShooterAnimInstance::UShooterAnimInstance() :
 	bAiming(false),
 	CharacterYaw(0.f),
 	CharacterYawLastFrame(0.f),
-	RootYawOffset(0.f)
+	RootYawOffset(0.f),
+	EquippedWeaponType(EWeaponType::EWT_MAX),
+	bShouldUseFABRIK(false)
 {
 
 }
@@ -29,6 +33,7 @@ void  UShooterAnimInstance::UpdateAnimationProperties(float DeltaTime)
 	if (ShooterCharacter) 
 	{
 		bEquipping = ShooterCharacter->GetCombatState() == ECombatState::ECS_Equipping;
+		bShouldUseFABRIK = ShooterCharacter->GetCombatState() == ECombatState::ECS_Unoccupied || ShooterCharacter->GetCombatState() == ECombatState::ECS_FireTimerInProgress;
 
 		//Get the lateral speed of the character from velocity
 
@@ -63,6 +68,11 @@ void  UShooterAnimInstance::UpdateAnimationProperties(float DeltaTime)
 		
 		bAiming = ShooterCharacter->GetAiming();
 
+		//Check if shooterCharacter has a valid EquippedWeapon
+		if (ShooterCharacter->GetEquippedWeapon())
+		{
+			EquippedWeaponType = ShooterCharacter->GetEquippedWeapon()->GetWeaponType();
+		}
 	}
 	TurnInPlace();
 }
