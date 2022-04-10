@@ -52,6 +52,9 @@ D:\UE4.27\UE_4.27\Engine\Source\Runtime\Engine\Classes\Particles/Emitter.h
 D:\UE4.27\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Emitter.generated.h
 D:\UE4.27\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ParticleSystemComponent.generated.h
 D:\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\Item.h
+D:\UE4.27\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/DataTable.h
+D:\UE4.27\UE_4.27\Engine\Source\Runtime\Engine\Public\DataTableUtils.h
+D:\UE4.27\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DataTable.generated.h
 D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Inc\FinalProject\Item.generated.h
 D:\UE4.27\UE_4.27\Engine\Source\Runtime\UMG\Public\Components/WidgetComponent.h
 D:\UE4.27\UE_4.27\Engine\Source\Runtime\UMG\Public\Blueprint/UserWidget.h

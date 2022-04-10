@@ -28,6 +28,8 @@ void  UShooterAnimInstance::UpdateAnimationProperties(float DeltaTime)
 	}
 	if (ShooterCharacter) 
 	{
+		bEquipping = ShooterCharacter->GetCombatState() == ECombatState::ECS_Equipping;
+
 		//Get the lateral speed of the character from velocity
 
 		FVector Velocity{ ShooterCharacter->GetVelocity() };

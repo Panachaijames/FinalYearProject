@@ -64,7 +64,9 @@ ACharacterMovement::ACharacterMovement() :
 	bShouldPlayPickupSound(true),
 	bShouldPlayEquipSound(true),
 	PickupSoundResetTime(0.2f),
-	EquipSoundResetTime(0.2f)
+	EquipSoundResetTime(0.2f),
+	// Icon animation property
+	HighlightedSlot(-1)
 	
 {
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
@@ -131,6 +133,7 @@ void ACharacterMovement::BeginPlay()
 	EquippedWeapon->SetSlotIndex(0);
 	EquippedWeapon->DisableCustomDepth();
 	EquippedWeapon->DisableGlowMaterial();
+	EquippedWeapon->SetCharacter(this);
 	
 	InitializeAmmoMap();
 
@@ -507,6 +510,25 @@ void ACharacterMovement::TraceForItems()
 		if (ItemTraceResult.bBlockingHit)
 		{
 			TraceHitItem = Cast<AItem>(ItemTraceResult.Actor);
+			const auto TraceHitWeapon = Cast<AWeapon>(TraceHitItem);
+
+			if (TraceHitWeapon)
+			{
+				if (HighlightedSlot == -1)
+				{
+					//Not currently highlight a slot; highlight one
+					HighlightInventorySlot();
+				}
+			}
+			else
+			{
+				//Is a slot being highlight?
+				if (HighlightedSlot != -1)
+				{
+					//UnHighlight the slot
+					UnHighlightInventorySlot();
+				}
+			}
 
 			if (TraceHitItem && TraceHitItem->GetItemState() == EItemState::EIS_EquipInterping)
 			{
@@ -518,6 +540,17 @@ void ACharacterMovement::TraceForItems()
 				//Show Item's PickupWidget;
 				TraceHitItem->GetPickupWidget()->SetVisibility(true);
 				TraceHitItem->EnableCustomDepth();
+
+				if (Inventory.Num() >= INVENTORY_CAPACITY)
+				{
+					//Inventory is full
+					TraceHitItem->SetCharacterInventoryFull(true);
+				}
+				else
+				{
+					//Inventory has room
+					TraceHitItem->SetCharacterInventoryFull(false);
+				}
 			}
 
 			//we hit an AItem last Frame
@@ -556,7 +589,7 @@ AWeapon* ACharacterMovement::SpawnDefaultWeapon()
 	return nullptr;
 }
 
-void ACharacterMovement::EquipWeapon(AWeapon* WeaponToEquip)
+void ACharacterMovement::EquipWeapon(AWeapon* WeaponToEquip, bool bSwapping)
 {
 	if (WeaponToEquip)
 	{
@@ -573,7 +606,7 @@ void ACharacterMovement::EquipWeapon(AWeapon* WeaponToEquip)
 			//-1 == no equip weapon yet
 			EquipItemDelegate.Broadcast(-1, WeaponToEquip->GetSlotIndex());
 		}
-		else
+		else if (!bSwapping)
 		{
 			EquipItemDelegate.Broadcast(EquippedWeapon->GetSlotIndex(), WeaponToEquip->GetSlotIndex());
 		}
@@ -597,9 +630,11 @@ void ACharacterMovement::DropWeapon()
 
 void ACharacterMovement::SelectButtonPressed()
 {
+	if (CombatState != ECombatState::ECS_Unoccupied) return;
+
 	if (TraceHitItem)
 	{
-		TraceHitItem->StartItemCurve(this);
+		TraceHitItem->StartItemCurve(this, true);
 		TraceHitItem = nullptr;
 		
 	}
@@ -620,7 +655,7 @@ void ACharacterMovement::SwapWeapon(AWeapon* WeaponToSwap)
 	}
 
 	DropWeapon();
-	EquipWeapon(WeaponToSwap);
+	EquipWeapon(WeaponToSwap, true);
 	TraceHitItem = nullptr;
 	TraceHitItemLastFrame = nullptr;
 }
@@ -889,13 +924,58 @@ void ACharacterMovement::FiveKeyPressed()
 
 void ACharacterMovement::ExchangeInventoryItems(int32 CurrentItemIndex, int32 NewItemIndex)
 {
-	if ((CurrentItemIndex == NewItemIndex)||(NewItemIndex >= Inventory.Num())) return;
-	auto OldEquippedWeapon = EquippedWeapon;
-	auto NewWeapon = Cast<AWeapon>(Inventory[NewItemIndex]);
-	EquipWeapon(NewWeapon);
+	const bool bCanExchangeItems =
+		(CurrentItemIndex != NewItemIndex) &&
+		(NewItemIndex < Inventory.Num()) && 
+		(CombatState == ECombatState::ECS_Unoccupied || CombatState == ECombatState::ECS_Equipping);
 
-	OldEquippedWeapon->SetItemState(EItemState::EIS_Pickedup);
-	NewWeapon->SetItemState(EItemState::EIS_Equipped);
+	if (bCanExchangeItems)
+	{
+		auto OldEquippedWeapon = EquippedWeapon;
+		auto NewWeapon = Cast<AWeapon>(Inventory[NewItemIndex]);
+		EquipWeapon(NewWeapon);
+
+		OldEquippedWeapon->SetItemState(EItemState::EIS_Pickedup);
+		NewWeapon->SetItemState(EItemState::EIS_Equipped);
+
+		CombatState = ECombatState::ECS_Equipping;
+		UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+		if (AnimInstance && EquipMontage)
+		{
+			AnimInstance->Montage_Play(EquipMontage, 1.0f);
+			AnimInstance->Montage_JumpToSection(FName("Equip"));
+		}
+		NewWeapon->PlayEquipSound(true);
+	}
+}
+
+int32 ACharacterMovement::GetEmptyInventorySlot()
+{
+	for (int32 i=0; i< Inventory.Num();i++)
+	{
+		if (Inventory[i] == nullptr)
+		{
+			return i;
+		}
+	}
+	if (Inventory.Num() < INVENTORY_CAPACITY)
+	{
+		return Inventory.Num();
+	}
+	return -1;//inventory is full
+}
+
+void ACharacterMovement::HighlightInventorySlot()
+{
+	const int32 EmptySlot{ GetEmptyInventorySlot() };
+	HighlightIconDelegate.Broadcast(EmptySlot, true);
+	HighlightedSlot = EmptySlot;
+}
+
+void ACharacterMovement::UnHighlightInventorySlot()
+{
+	HighlightIconDelegate.Broadcast(HighlightedSlot, false);
+	HighlightedSlot = -1;
 }
 
 int32 ACharacterMovement::GetInterpLocationIndex()
@@ -980,6 +1060,11 @@ void ACharacterMovement::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 		&ACharacterMovement::FourKeyPressed);
 	PlayerInputComponent->BindAction("5Key", IE_Pressed, this,
 		&ACharacterMovement::FiveKeyPressed);
+}
+
+void ACharacterMovement::FinishEquipping()
+{
+	CombatState = ECombatState::ECS_Unoccupied;
 }
 
 void ACharacterMovement::ResetPickupSoundTimer()

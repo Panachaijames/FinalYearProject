@@ -16,20 +16,28 @@ struct FHitResult;
 #endif
 #define FINALPROJECT_Item_generated_h
 
-#define FinalProject_Source_FinalProject_Item_h_44_SPARSE_DATA
-#define FinalProject_Source_FinalProject_Item_h_44_RPC_WRAPPERS \
+#define FinalProject_Source_FinalProject_Item_h_45_GENERATED_BODY \
+	friend struct Z_Construct_UScriptStruct_FItemRarityTable_Statics; \
+	FINALPROJECT_API static class UScriptStruct* StaticStruct(); \
+	typedef FTableRowBase Super;
+
+
+template<> FINALPROJECT_API UScriptStruct* StaticStruct<struct FItemRarityTable>();
+
+#define FinalProject_Source_FinalProject_Item_h_70_SPARSE_DATA
+#define FinalProject_Source_FinalProject_Item_h_70_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execOnSphereEndOverlap); \
 	DECLARE_FUNCTION(execOnSphereOverlap);
 
 
-#define FinalProject_Source_FinalProject_Item_h_44_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FinalProject_Source_FinalProject_Item_h_70_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execOnSphereEndOverlap); \
 	DECLARE_FUNCTION(execOnSphereOverlap);
 
 
-#define FinalProject_Source_FinalProject_Item_h_44_INCLASS_NO_PURE_DECLS \
+#define FinalProject_Source_FinalProject_Item_h_70_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAItem(); \
 	friend struct Z_Construct_UClass_AItem_Statics; \
@@ -38,7 +46,7 @@ public: \
 	DECLARE_SERIALIZER(AItem)
 
 
-#define FinalProject_Source_FinalProject_Item_h_44_INCLASS \
+#define FinalProject_Source_FinalProject_Item_h_70_INCLASS \
 private: \
 	static void StaticRegisterNativesAItem(); \
 	friend struct Z_Construct_UClass_AItem_Statics; \
@@ -47,7 +55,7 @@ public: \
 	DECLARE_SERIALIZER(AItem)
 
 
-#define FinalProject_Source_FinalProject_Item_h_44_STANDARD_CONSTRUCTORS \
+#define FinalProject_Source_FinalProject_Item_h_70_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AItem(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AItem) \
@@ -60,7 +68,7 @@ private: \
 public:
 
 
-#define FinalProject_Source_FinalProject_Item_h_44_ENHANCED_CONSTRUCTORS \
+#define FinalProject_Source_FinalProject_Item_h_70_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AItem(AItem&&); \
@@ -71,7 +79,7 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AItem)
 
 
-#define FinalProject_Source_FinalProject_Item_h_44_PRIVATE_PROPERTY_OFFSET \
+#define FinalProject_Source_FinalProject_Item_h_70_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__ItemMesh() { return STRUCT_OFFSET(AItem, ItemMesh); } \
 	FORCEINLINE static uint32 __PPO__CollisionBox() { return STRUCT_OFFSET(AItem, CollisionBox); } \
 	FORCEINLINE static uint32 __PPO__PickupWidget() { return STRUCT_OFFSET(AItem, PickupWidget); } \
@@ -100,33 +108,39 @@ public: \
 	FORCEINLINE static uint32 __PPO__GlowAmount() { return STRUCT_OFFSET(AItem, GlowAmount); } \
 	FORCEINLINE static uint32 __PPO__FresnelExponent() { return STRUCT_OFFSET(AItem, FresnelExponent); } \
 	FORCEINLINE static uint32 __PPO__FresnelReflectFraction() { return STRUCT_OFFSET(AItem, FresnelReflectFraction); } \
-	FORCEINLINE static uint32 __PPO__IconBackground() { return STRUCT_OFFSET(AItem, IconBackground); } \
 	FORCEINLINE static uint32 __PPO__IconItem() { return STRUCT_OFFSET(AItem, IconItem); } \
 	FORCEINLINE static uint32 __PPO__AmmoIcon() { return STRUCT_OFFSET(AItem, AmmoIcon); } \
-	FORCEINLINE static uint32 __PPO__SlotIndex() { return STRUCT_OFFSET(AItem, SlotIndex); }
+	FORCEINLINE static uint32 __PPO__SlotIndex() { return STRUCT_OFFSET(AItem, SlotIndex); } \
+	FORCEINLINE static uint32 __PPO__bCharacterInventoryFull() { return STRUCT_OFFSET(AItem, bCharacterInventoryFull); } \
+	FORCEINLINE static uint32 __PPO__ItemRarityDataTable() { return STRUCT_OFFSET(AItem, ItemRarityDataTable); } \
+	FORCEINLINE static uint32 __PPO__GlowColor() { return STRUCT_OFFSET(AItem, GlowColor); } \
+	FORCEINLINE static uint32 __PPO__LightColor() { return STRUCT_OFFSET(AItem, LightColor); } \
+	FORCEINLINE static uint32 __PPO__DarkColor() { return STRUCT_OFFSET(AItem, DarkColor); } \
+	FORCEINLINE static uint32 __PPO__NumberOfStars() { return STRUCT_OFFSET(AItem, NumberOfStars); } \
+	FORCEINLINE static uint32 __PPO__IconBackground() { return STRUCT_OFFSET(AItem, IconBackground); }
 
 
-#define FinalProject_Source_FinalProject_Item_h_41_PROLOG
-#define FinalProject_Source_FinalProject_Item_h_44_GENERATED_BODY_LEGACY \
+#define FinalProject_Source_FinalProject_Item_h_67_PROLOG
+#define FinalProject_Source_FinalProject_Item_h_70_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FinalProject_Source_FinalProject_Item_h_44_PRIVATE_PROPERTY_OFFSET \
-	FinalProject_Source_FinalProject_Item_h_44_SPARSE_DATA \
-	FinalProject_Source_FinalProject_Item_h_44_RPC_WRAPPERS \
-	FinalProject_Source_FinalProject_Item_h_44_INCLASS \
-	FinalProject_Source_FinalProject_Item_h_44_STANDARD_CONSTRUCTORS \
+	FinalProject_Source_FinalProject_Item_h_70_PRIVATE_PROPERTY_OFFSET \
+	FinalProject_Source_FinalProject_Item_h_70_SPARSE_DATA \
+	FinalProject_Source_FinalProject_Item_h_70_RPC_WRAPPERS \
+	FinalProject_Source_FinalProject_Item_h_70_INCLASS \
+	FinalProject_Source_FinalProject_Item_h_70_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FinalProject_Source_FinalProject_Item_h_44_GENERATED_BODY \
+#define FinalProject_Source_FinalProject_Item_h_70_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FinalProject_Source_FinalProject_Item_h_44_PRIVATE_PROPERTY_OFFSET \
-	FinalProject_Source_FinalProject_Item_h_44_SPARSE_DATA \
-	FinalProject_Source_FinalProject_Item_h_44_RPC_WRAPPERS_NO_PURE_DECLS \
-	FinalProject_Source_FinalProject_Item_h_44_INCLASS_NO_PURE_DECLS \
-	FinalProject_Source_FinalProject_Item_h_44_ENHANCED_CONSTRUCTORS \
+	FinalProject_Source_FinalProject_Item_h_70_PRIVATE_PROPERTY_OFFSET \
+	FinalProject_Source_FinalProject_Item_h_70_SPARSE_DATA \
+	FinalProject_Source_FinalProject_Item_h_70_RPC_WRAPPERS_NO_PURE_DECLS \
+	FinalProject_Source_FinalProject_Item_h_70_INCLASS_NO_PURE_DECLS \
+	FinalProject_Source_FinalProject_Item_h_70_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

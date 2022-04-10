@@ -13,8 +13,9 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 // Cross Module References
-	FINALPROJECT_API UFunction* Z_Construct_UDelegateFunction_FinalProject_EquipItemDelegate__DelegateSignature();
+	FINALPROJECT_API UFunction* Z_Construct_UDelegateFunction_FinalProject_HighlightIconDelegate__DelegateSignature();
 	UPackage* Z_Construct_UPackage__Script_FinalProject();
+	FINALPROJECT_API UFunction* Z_Construct_UDelegateFunction_FinalProject_EquipItemDelegate__DelegateSignature();
 	FINALPROJECT_API UEnum* Z_Construct_UEnum_FinalProject_ECombatState();
 	FINALPROJECT_API UScriptStruct* Z_Construct_UScriptStruct_FInterpLocation();
 	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
@@ -32,6 +33,47 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 	FINALPROJECT_API UEnum* Z_Construct_UEnum_FinalProject_EAmmoType();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FTransform();
 // End Cross Module References
+	struct Z_Construct_UDelegateFunction_FinalProject_HighlightIconDelegate__DelegateSignature_Statics
+	{
+		struct _Script_FinalProject_eventHighlightIconDelegate_Parms
+		{
+			int32 SlotIndex;
+			bool bStartAnimation;
+		};
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SlotIndex;
+		static void NewProp_bStartAnimation_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bStartAnimation;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UDelegateFunction_FinalProject_HighlightIconDelegate__DelegateSignature_Statics::NewProp_SlotIndex = { "SlotIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(_Script_FinalProject_eventHighlightIconDelegate_Parms, SlotIndex), METADATA_PARAMS(nullptr, 0) };
+	void Z_Construct_UDelegateFunction_FinalProject_HighlightIconDelegate__DelegateSignature_Statics::NewProp_bStartAnimation_SetBit(void* Obj)
+	{
+		((_Script_FinalProject_eventHighlightIconDelegate_Parms*)Obj)->bStartAnimation = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UDelegateFunction_FinalProject_HighlightIconDelegate__DelegateSignature_Statics::NewProp_bStartAnimation = { "bStartAnimation", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(_Script_FinalProject_eventHighlightIconDelegate_Parms), &Z_Construct_UDelegateFunction_FinalProject_HighlightIconDelegate__DelegateSignature_Statics::NewProp_bStartAnimation_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_FinalProject_HighlightIconDelegate__DelegateSignature_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_FinalProject_HighlightIconDelegate__DelegateSignature_Statics::NewProp_SlotIndex,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_FinalProject_HighlightIconDelegate__DelegateSignature_Statics::NewProp_bStartAnimation,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_FinalProject_HighlightIconDelegate__DelegateSignature_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_FinalProject_HighlightIconDelegate__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_FinalProject, nullptr, "HighlightIconDelegate__DelegateSignature", nullptr, nullptr, sizeof(_Script_FinalProject_eventHighlightIconDelegate_Parms), Z_Construct_UDelegateFunction_FinalProject_HighlightIconDelegate__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_FinalProject_HighlightIconDelegate__DelegateSignature_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(Z_Construct_UDelegateFunction_FinalProject_HighlightIconDelegate__DelegateSignature_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_FinalProject_HighlightIconDelegate__DelegateSignature_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UDelegateFunction_FinalProject_HighlightIconDelegate__DelegateSignature()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UDelegateFunction_FinalProject_HighlightIconDelegate__DelegateSignature_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UDelegateFunction_FinalProject_EquipItemDelegate__DelegateSignature_Statics
 	{
 		struct _Script_FinalProject_eventEquipItemDelegate_Parms
@@ -82,7 +124,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 		return ECombatState_StaticEnum();
 	}
 	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ECombatState(ECombatState_StaticEnum, TEXT("/Script/FinalProject"), TEXT("ECombatState"), false, nullptr, nullptr);
-	uint32 Get_Z_Construct_UEnum_FinalProject_ECombatState_Hash() { return 2890171723U; }
+	uint32 Get_Z_Construct_UEnum_FinalProject_ECombatState_Hash() { return 2988631399U; }
 	UEnum* Z_Construct_UEnum_FinalProject_ECombatState()
 	{
 #if WITH_HOT_RELOAD
@@ -97,11 +139,14 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 				{ "ECombatState::ECS_Unoccupied", (int64)ECombatState::ECS_Unoccupied },
 				{ "ECombatState::ECS_FireTimerInProgress", (int64)ECombatState::ECS_FireTimerInProgress },
 				{ "ECombatState::ECS_Reloading", (int64)ECombatState::ECS_Reloading },
+				{ "ECombatState::ECS_Equipping", (int64)ECombatState::ECS_Equipping },
 				{ "ECombatState::ECS_MAX", (int64)ECombatState::ECS_MAX },
 			};
 #if WITH_METADATA
 			const UE4CodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
 				{ "BlueprintType", "true" },
+				{ "ECS_Equipping.DisplayName", "Equipping" },
+				{ "ECS_Equipping.Name", "ECombatState::ECS_Equipping" },
 				{ "ECS_FireTimerInProgress.DisplayName", "FireTimerInProgress" },
 				{ "ECS_FireTimerInProgress.Name", "ECombatState::ECS_FireTimerInProgress" },
 				{ "ECS_MAX.DisplayName", "DefaultMAX" },
@@ -238,6 +283,13 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 		*(float*)Z_Param__Result=P_THIS->GetCrosshairSpreadMultiplier();
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(ACharacterMovement::execFinishEquipping)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->FinishEquipping();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(ACharacterMovement::execReleaseClip)
 	{
 		P_FINISH;
@@ -279,6 +331,7 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 		static const FNameNativePtrPair Funcs[] = {
 			{ "AutoFireReset", &ACharacterMovement::execAutoFireReset },
 			{ "FinishCrosshairBulletFire", &ACharacterMovement::execFinishCrosshairBulletFire },
+			{ "FinishEquipping", &ACharacterMovement::execFinishEquipping },
 			{ "FinishReloading", &ACharacterMovement::execFinishReloading },
 			{ "GetCrosshairSpreadMultiplier", &ACharacterMovement::execGetCrosshairSpreadMultiplier },
 			{ "GrabClip", &ACharacterMovement::execGrabClip },
@@ -327,6 +380,28 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ACharacterMovement_FinishCrosshairBulletFire_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ACharacterMovement_FinishEquipping_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACharacterMovement_FinishEquipping_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACharacterMovement_FinishEquipping_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACharacterMovement, nullptr, "FinishEquipping", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04040401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACharacterMovement_FinishEquipping_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterMovement_FinishEquipping_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ACharacterMovement_FinishEquipping()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ACharacterMovement_FinishEquipping_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -589,6 +664,10 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ReloadMontage;
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_EquipMontage_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_EquipMontage;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ClipTransform_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FStructPropertyParams NewProp_ClipTransform;
@@ -646,6 +725,14 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_EquipItemDelegate_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FMulticastDelegatePropertyParams NewProp_EquipItemDelegate;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_HighlightIconDelegate_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FMulticastDelegatePropertyParams NewProp_HighlightIconDelegate;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_HighlightedSlot_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_HighlightedSlot;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -657,6 +744,7 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 	const FClassFunctionLinkInfo Z_Construct_UClass_ACharacterMovement_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_ACharacterMovement_AutoFireReset, "AutoFireReset" }, // 847656714
 		{ &Z_Construct_UFunction_ACharacterMovement_FinishCrosshairBulletFire, "FinishCrosshairBulletFire" }, // 2062173036
+		{ &Z_Construct_UFunction_ACharacterMovement_FinishEquipping, "FinishEquipping" }, // 483444009
 		{ &Z_Construct_UFunction_ACharacterMovement_FinishReloading, "FinishReloading" }, // 574205581
 		{ &Z_Construct_UFunction_ACharacterMovement_GetCrosshairSpreadMultiplier, "GetCrosshairSpreadMultiplier" }, // 3800122887
 		{ &Z_Construct_UFunction_ACharacterMovement_GrabClip, "GrabClip" }, // 1563805584
@@ -1042,6 +1130,16 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_ReloadMontage = { "ReloadMontage", nullptr, (EPropertyFlags)0x0040000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, ReloadMontage), Z_Construct_UClass_UAnimMontage_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_ReloadMontage_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_ReloadMontage_MetaData)) };
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_EquipMontage_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Combat" },
+		{ "Comment", "/** Montage for Equip animation*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Montage for Equip animation" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_EquipMontage = { "EquipMontage", nullptr, (EPropertyFlags)0x0040000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, EquipMontage), Z_Construct_UClass_UAnimMontage_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_EquipMontage_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_EquipMontage_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_ClipTransform_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Combat" },
@@ -1177,6 +1275,26 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 	};
 #endif
 	const UE4CodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_EquipItemDelegate = { "EquipItemDelegate", nullptr, (EPropertyFlags)0x0040000010080000, UE4CodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, EquipItemDelegate), Z_Construct_UDelegateFunction_FinalProject_EquipItemDelegate__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_EquipItemDelegate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_EquipItemDelegate_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HighlightIconDelegate_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Delegates" },
+		{ "Comment", "/** Delegate for sending slot information for playing the icon animation*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Delegate for sending slot information for playing the icon animation" },
+	};
+#endif
+	const UE4CodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HighlightIconDelegate = { "HighlightIconDelegate", nullptr, (EPropertyFlags)0x0040000010080000, UE4CodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, HighlightIconDelegate), Z_Construct_UDelegateFunction_FinalProject_HighlightIconDelegate__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HighlightIconDelegate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HighlightIconDelegate_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HighlightedSlot_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Inventory" },
+		{ "Comment", "/** The index for the currently highlighted slot*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "The index for the currently highlighted slot" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HighlightedSlot = { "HighlightedSlot", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, HighlightedSlot), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HighlightedSlot_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HighlightedSlot_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ACharacterMovement_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CameraBoom,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_FollowCamera,
@@ -1217,6 +1335,7 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CombatState_Underlying,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CombatState,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_ReloadMontage,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_EquipMontage,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_ClipTransform,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HandSceneComponent,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_WeaponInterpComp,
@@ -1233,6 +1352,8 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_Inventory_Inner,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_Inventory,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_EquipItemDelegate,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HighlightIconDelegate,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HighlightedSlot,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ACharacterMovement_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ACharacterMovement>::IsAbstract,
@@ -1261,7 +1382,7 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ACharacterMovement, 2269474553);
+	IMPLEMENT_CLASS(ACharacterMovement, 2952913359);
 	template<> FINALPROJECT_API UClass* StaticClass<ACharacterMovement>()
 	{
 		return ACharacterMovement::StaticClass();

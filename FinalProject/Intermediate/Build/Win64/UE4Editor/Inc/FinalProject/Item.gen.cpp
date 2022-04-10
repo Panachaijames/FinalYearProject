@@ -17,6 +17,10 @@ void EmptyLinkFunctionForGeneratedCodeItem() {}
 	UPackage* Z_Construct_UPackage__Script_FinalProject();
 	FINALPROJECT_API UEnum* Z_Construct_UEnum_FinalProject_EItemState();
 	FINALPROJECT_API UEnum* Z_Construct_UEnum_FinalProject_EItemRarity();
+	FINALPROJECT_API UScriptStruct* Z_Construct_UScriptStruct_FItemRarityTable();
+	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FTableRowBase();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FLinearColor();
+	ENGINE_API UClass* Z_Construct_UClass_UTexture2D_NoRegister();
 	FINALPROJECT_API UClass* Z_Construct_UClass_AItem_NoRegister();
 	FINALPROJECT_API UClass* Z_Construct_UClass_AItem();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
@@ -34,7 +38,7 @@ void EmptyLinkFunctionForGeneratedCodeItem() {}
 	ENGINE_API UClass* Z_Construct_UClass_UMaterialInstanceDynamic_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UMaterialInstance_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCurveVector_NoRegister();
-	ENGINE_API UClass* Z_Construct_UClass_UTexture2D_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UDataTable_NoRegister();
 // End Cross Module References
 	static UEnum* EItemType_StaticEnum()
 	{
@@ -231,6 +235,153 @@ void EmptyLinkFunctionForGeneratedCodeItem() {}
 		}
 		return ReturnEnum;
 	}
+
+static_assert(std::is_polymorphic<FItemRarityTable>() == std::is_polymorphic<FTableRowBase>(), "USTRUCT FItemRarityTable cannot be polymorphic unless super FTableRowBase is polymorphic");
+
+class UScriptStruct* FItemRarityTable::StaticStruct()
+{
+	static class UScriptStruct* Singleton = NULL;
+	if (!Singleton)
+	{
+		extern FINALPROJECT_API uint32 Get_Z_Construct_UScriptStruct_FItemRarityTable_Hash();
+		Singleton = GetStaticStruct(Z_Construct_UScriptStruct_FItemRarityTable, Z_Construct_UPackage__Script_FinalProject(), TEXT("ItemRarityTable"), sizeof(FItemRarityTable), Get_Z_Construct_UScriptStruct_FItemRarityTable_Hash());
+	}
+	return Singleton;
+}
+template<> FINALPROJECT_API UScriptStruct* StaticStruct<FItemRarityTable>()
+{
+	return FItemRarityTable::StaticStruct();
+}
+static FCompiledInDeferStruct Z_CompiledInDeferStruct_UScriptStruct_FItemRarityTable(FItemRarityTable::StaticStruct, TEXT("/Script/FinalProject"), TEXT("ItemRarityTable"), false, nullptr, nullptr);
+static struct FScriptStruct_FinalProject_StaticRegisterNativesFItemRarityTable
+{
+	FScriptStruct_FinalProject_StaticRegisterNativesFItemRarityTable()
+	{
+		UScriptStruct::DeferCppStructOps<FItemRarityTable>(FName(TEXT("ItemRarityTable")));
+	}
+} ScriptStruct_FinalProject_StaticRegisterNativesFItemRarityTable;
+	struct Z_Construct_UScriptStruct_FItemRarityTable_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[];
+#endif
+		static void* NewStructOps();
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_GlowColor_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_GlowColor;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_LightColor_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_LightColor;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_DarkColor_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_DarkColor;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_NumberOfStars_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_NumberOfStars;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_IconBackground_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_IconBackground;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CustomDepthStencil_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_CustomDepthStencil;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+		static const UE4CodeGen_Private::FStructParams ReturnStructParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FItemRarityTable_Statics::Struct_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
+		{ "ModuleRelativePath", "Item.h" },
+	};
+#endif
+	void* Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewStructOps()
+	{
+		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FItemRarityTable>();
+	}
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_GlowColor_MetaData[] = {
+		{ "Category", "ItemRarityTable" },
+		{ "ModuleRelativePath", "Item.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_GlowColor = { "GlowColor", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FItemRarityTable, GlowColor), Z_Construct_UScriptStruct_FLinearColor, METADATA_PARAMS(Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_GlowColor_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_GlowColor_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_LightColor_MetaData[] = {
+		{ "Category", "ItemRarityTable" },
+		{ "ModuleRelativePath", "Item.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_LightColor = { "LightColor", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FItemRarityTable, LightColor), Z_Construct_UScriptStruct_FLinearColor, METADATA_PARAMS(Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_LightColor_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_LightColor_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_DarkColor_MetaData[] = {
+		{ "Category", "ItemRarityTable" },
+		{ "ModuleRelativePath", "Item.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_DarkColor = { "DarkColor", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FItemRarityTable, DarkColor), Z_Construct_UScriptStruct_FLinearColor, METADATA_PARAMS(Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_DarkColor_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_DarkColor_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_NumberOfStars_MetaData[] = {
+		{ "Category", "ItemRarityTable" },
+		{ "ModuleRelativePath", "Item.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_NumberOfStars = { "NumberOfStars", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FItemRarityTable, NumberOfStars), METADATA_PARAMS(Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_NumberOfStars_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_NumberOfStars_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_IconBackground_MetaData[] = {
+		{ "Category", "ItemRarityTable" },
+		{ "ModuleRelativePath", "Item.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_IconBackground = { "IconBackground", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FItemRarityTable, IconBackground), Z_Construct_UClass_UTexture2D_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_IconBackground_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_IconBackground_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_CustomDepthStencil_MetaData[] = {
+		{ "Category", "ItemRarityTable" },
+		{ "ModuleRelativePath", "Item.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_CustomDepthStencil = { "CustomDepthStencil", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FItemRarityTable, CustomDepthStencil), METADATA_PARAMS(Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_CustomDepthStencil_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_CustomDepthStencil_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FItemRarityTable_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_GlowColor,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_LightColor,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_DarkColor,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_NumberOfStars,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_IconBackground,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FItemRarityTable_Statics::NewProp_CustomDepthStencil,
+	};
+	const UE4CodeGen_Private::FStructParams Z_Construct_UScriptStruct_FItemRarityTable_Statics::ReturnStructParams = {
+		(UObject* (*)())Z_Construct_UPackage__Script_FinalProject,
+		Z_Construct_UScriptStruct_FTableRowBase,
+		&NewStructOps,
+		"ItemRarityTable",
+		sizeof(FItemRarityTable),
+		alignof(FItemRarityTable),
+		Z_Construct_UScriptStruct_FItemRarityTable_Statics::PropPointers,
+		UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FItemRarityTable_Statics::PropPointers),
+		RF_Public|RF_Transient|RF_MarkAsNative,
+		EStructFlags(0x00000001),
+		METADATA_PARAMS(Z_Construct_UScriptStruct_FItemRarityTable_Statics::Struct_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FItemRarityTable_Statics::Struct_MetaDataParams))
+	};
+	UScriptStruct* Z_Construct_UScriptStruct_FItemRarityTable()
+	{
+#if WITH_HOT_RELOAD
+		extern uint32 Get_Z_Construct_UScriptStruct_FItemRarityTable_Hash();
+		UPackage* Outer = Z_Construct_UPackage__Script_FinalProject();
+		static UScriptStruct* ReturnStruct = FindExistingStructIfHotReloadOrDynamic(Outer, TEXT("ItemRarityTable"), sizeof(FItemRarityTable), Get_Z_Construct_UScriptStruct_FItemRarityTable_Hash(), false);
+#else
+		static UScriptStruct* ReturnStruct = nullptr;
+#endif
+		if (!ReturnStruct)
+		{
+			UE4CodeGen_Private::ConstructUScriptStruct(ReturnStruct, Z_Construct_UScriptStruct_FItemRarityTable_Statics::ReturnStructParams);
+		}
+		return ReturnStruct;
+	}
+	uint32 Get_Z_Construct_UScriptStruct_FItemRarityTable_Hash() { return 3771943895U; }
 	DEFINE_FUNCTION(AItem::execOnSphereEndOverlap)
 	{
 		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OverlappedComponent);
@@ -538,10 +689,6 @@ void EmptyLinkFunctionForGeneratedCodeItem() {}
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_FresnelReflectFraction;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_IconBackground_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_IconBackground;
-#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_IconItem_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_IconItem;
@@ -553,6 +700,35 @@ void EmptyLinkFunctionForGeneratedCodeItem() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SlotIndex_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SlotIndex;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bCharacterInventoryFull_MetaData[];
+#endif
+		static void NewProp_bCharacterInventoryFull_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bCharacterInventoryFull;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ItemRarityDataTable_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ItemRarityDataTable;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_GlowColor_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_GlowColor;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_LightColor_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_LightColor;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_DarkColor_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_DarkColor;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_NumberOfStars_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_NumberOfStars;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_IconBackground_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_IconBackground;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -852,16 +1028,6 @@ void EmptyLinkFunctionForGeneratedCodeItem() {}
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AItem_Statics::NewProp_FresnelReflectFraction = { "FresnelReflectFraction", nullptr, (EPropertyFlags)0x0040000000020001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AItem, FresnelReflectFraction), METADATA_PARAMS(Z_Construct_UClass_AItem_Statics::NewProp_FresnelReflectFraction_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AItem_Statics::NewProp_FresnelReflectFraction_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AItem_Statics::NewProp_IconBackground_MetaData[] = {
-		{ "AllowPrivateAccess", "true" },
-		{ "Category", "Inventory" },
-		{ "Comment", "/** Background for this item in the inventory*/" },
-		{ "ModuleRelativePath", "Item.h" },
-		{ "ToolTip", "Background for this item in the inventory" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AItem_Statics::NewProp_IconBackground = { "IconBackground", nullptr, (EPropertyFlags)0x0040000000000015, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AItem, IconBackground), Z_Construct_UClass_UTexture2D_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AItem_Statics::NewProp_IconBackground_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AItem_Statics::NewProp_IconBackground_MetaData)) };
-#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AItem_Statics::NewProp_IconItem_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Inventory" },
@@ -891,6 +1057,80 @@ void EmptyLinkFunctionForGeneratedCodeItem() {}
 	};
 #endif
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_AItem_Statics::NewProp_SlotIndex = { "SlotIndex", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AItem, SlotIndex), METADATA_PARAMS(Z_Construct_UClass_AItem_Statics::NewProp_SlotIndex_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AItem_Statics::NewProp_SlotIndex_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AItem_Statics::NewProp_bCharacterInventoryFull_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Inventory" },
+		{ "Comment", "/** true when the character inventory is full*/" },
+		{ "ModuleRelativePath", "Item.h" },
+		{ "ToolTip", "true when the character inventory is full" },
+	};
+#endif
+	void Z_Construct_UClass_AItem_Statics::NewProp_bCharacterInventoryFull_SetBit(void* Obj)
+	{
+		((AItem*)Obj)->bCharacterInventoryFull = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AItem_Statics::NewProp_bCharacterInventoryFull = { "bCharacterInventoryFull", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AItem), &Z_Construct_UClass_AItem_Statics::NewProp_bCharacterInventoryFull_SetBit, METADATA_PARAMS(Z_Construct_UClass_AItem_Statics::NewProp_bCharacterInventoryFull_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AItem_Statics::NewProp_bCharacterInventoryFull_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AItem_Statics::NewProp_ItemRarityDataTable_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "DataTable" },
+		{ "Comment", "/** Item rarity data table*/" },
+		{ "ModuleRelativePath", "Item.h" },
+		{ "ToolTip", "Item rarity data table" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AItem_Statics::NewProp_ItemRarityDataTable = { "ItemRarityDataTable", nullptr, (EPropertyFlags)0x0040000000010015, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AItem, ItemRarityDataTable), Z_Construct_UClass_UDataTable_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AItem_Statics::NewProp_ItemRarityDataTable_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AItem_Statics::NewProp_ItemRarityDataTable_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AItem_Statics::NewProp_GlowColor_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Rarity" },
+		{ "Comment", "/** Color in the glow material*/" },
+		{ "ModuleRelativePath", "Item.h" },
+		{ "ToolTip", "Color in the glow material" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_AItem_Statics::NewProp_GlowColor = { "GlowColor", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AItem, GlowColor), Z_Construct_UScriptStruct_FLinearColor, METADATA_PARAMS(Z_Construct_UClass_AItem_Statics::NewProp_GlowColor_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AItem_Statics::NewProp_GlowColor_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AItem_Statics::NewProp_LightColor_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Rarity" },
+		{ "Comment", "/** Light color in pickup widget*/" },
+		{ "ModuleRelativePath", "Item.h" },
+		{ "ToolTip", "Light color in pickup widget" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_AItem_Statics::NewProp_LightColor = { "LightColor", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AItem, LightColor), Z_Construct_UScriptStruct_FLinearColor, METADATA_PARAMS(Z_Construct_UClass_AItem_Statics::NewProp_LightColor_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AItem_Statics::NewProp_LightColor_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AItem_Statics::NewProp_DarkColor_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Rarity" },
+		{ "Comment", "/** Dark color in pickup widget*/" },
+		{ "ModuleRelativePath", "Item.h" },
+		{ "ToolTip", "Dark color in pickup widget" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_AItem_Statics::NewProp_DarkColor = { "DarkColor", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AItem, DarkColor), Z_Construct_UScriptStruct_FLinearColor, METADATA_PARAMS(Z_Construct_UClass_AItem_Statics::NewProp_DarkColor_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AItem_Statics::NewProp_DarkColor_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AItem_Statics::NewProp_NumberOfStars_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Rarity" },
+		{ "Comment", "/** Number of star in the pickup widget*/" },
+		{ "ModuleRelativePath", "Item.h" },
+		{ "ToolTip", "Number of star in the pickup widget" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_AItem_Statics::NewProp_NumberOfStars = { "NumberOfStars", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AItem, NumberOfStars), METADATA_PARAMS(Z_Construct_UClass_AItem_Statics::NewProp_NumberOfStars_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AItem_Statics::NewProp_NumberOfStars_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AItem_Statics::NewProp_IconBackground_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Rarity" },
+		{ "Comment", "/** Background icon for the invantory*/" },
+		{ "ModuleRelativePath", "Item.h" },
+		{ "ToolTip", "Background icon for the invantory" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AItem_Statics::NewProp_IconBackground = { "IconBackground", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AItem, IconBackground), Z_Construct_UClass_UTexture2D_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AItem_Statics::NewProp_IconBackground_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AItem_Statics::NewProp_IconBackground_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AItem_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_ItemMesh,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_CollisionBox,
@@ -924,10 +1164,16 @@ void EmptyLinkFunctionForGeneratedCodeItem() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_GlowAmount,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_FresnelExponent,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_FresnelReflectFraction,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_IconBackground,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_IconItem,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_AmmoIcon,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_SlotIndex,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_bCharacterInventoryFull,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_ItemRarityDataTable,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_GlowColor,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_LightColor,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_DarkColor,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_NumberOfStars,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_IconBackground,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AItem_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AItem>::IsAbstract,
@@ -956,7 +1202,7 @@ void EmptyLinkFunctionForGeneratedCodeItem() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AItem, 3725881850);
+	IMPLEMENT_CLASS(AItem, 306783584);
 	template<> FINALPROJECT_API UClass* StaticClass<AItem>()
 	{
 		return AItem::StaticClass();

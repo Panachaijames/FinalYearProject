@@ -2,13 +2,13 @@
   Building FinalProjectEditor...
   Using Visual Studio 2019 14.29.30137 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.19041.0 SDK (C:\Program Files (x86)\Windows Kits\10).
   Building 4 actions with 12 processes...
-    [1/4] CharacterMovement.cpp
-D:\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\CharacterMovement.cpp(53): warning C5038: data member 'ACharacterMovement::AutomaticFireRate' will be initialized after data member 'ACharacterMovement::bShouldFire'
-D:\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\CharacterMovement.cpp(54): warning C5038: data member 'ACharacterMovement::bShouldFire' will be initialized after data member 'ACharacterMovement::bFireButtonPressed'
-    [2/4] UE4Editor-FinalProject-0042.lib
-       Creating library D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0042.lib and object D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0042.exp
-    [3/4] UE4Editor-FinalProject-0042.dll
-       Creating library D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0042.suppressed.lib and object D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0042.suppressed.exp
+    [1/4] Item.cpp
+D:\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\Item.cpp(21): warning C5038: data member 'AItem::ZCurveTime' will be initialized after data member 'AItem::ItemInterpStartLocation'
+D:\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\Item.cpp(35): warning C5038: data member 'AItem::FresnelReflectFraction' will be initialized after data member 'AItem::PulseCurveTime'
+    [2/4] UE4Editor-FinalProject-0059.lib
+       Creating library D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0059.lib and object D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0059.exp
+    [3/4] UE4Editor-FinalProject-0059.dll
+       Creating library D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0059.suppressed.lib and object D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\UE4Editor-FinalProject-0059.suppressed.exp
     [4/4] FinalProjectEditor.target
-  Total time in Parallel executor: 949.88 seconds
-  Total execution time: 966.04 seconds
+  Total time in Parallel executor: 790.03 seconds
+  Total execution time: 799.45 seconds
