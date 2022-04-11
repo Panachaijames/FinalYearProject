@@ -128,8 +128,6 @@ public: \
 	FORCEINLINE static uint32 __PPO__MouseHipLookUpRate() { return STRUCT_OFFSET(ACharacterMovement, MouseHipLookUpRate); } \
 	FORCEINLINE static uint32 __PPO__MouseAimingTurnRate() { return STRUCT_OFFSET(ACharacterMovement, MouseAimingTurnRate); } \
 	FORCEINLINE static uint32 __PPO__MouseAimingLookUpRate() { return STRUCT_OFFSET(ACharacterMovement, MouseAimingLookUpRate); } \
-	FORCEINLINE static uint32 __PPO__FireSound() { return STRUCT_OFFSET(ACharacterMovement, FireSound); } \
-	FORCEINLINE static uint32 __PPO__MuzzleFlash() { return STRUCT_OFFSET(ACharacterMovement, MuzzleFlash); } \
 	FORCEINLINE static uint32 __PPO__HipFireMontage() { return STRUCT_OFFSET(ACharacterMovement, HipFireMontage); } \
 	FORCEINLINE static uint32 __PPO__ImpactParticles() { return STRUCT_OFFSET(ACharacterMovement, ImpactParticles); } \
 	FORCEINLINE static uint32 __PPO__BeamParticles() { return STRUCT_OFFSET(ACharacterMovement, BeamParticles); } \

@@ -65,7 +65,7 @@ void AWeapon::OnConstruction(const FTransform& Transform)
 {
 	Super::OnConstruction(Transform);
 	//WeaponTableObject loading in data table using the path that provided
-	const FString WeaponTablePath{ TEXT("DataTable'/Game/_Game/DataTable/weaponDataTable.WeaponDataTable'") };
+	const FString WeaponTablePath{ TEXT("DataTable'/Game/_Game/DataTable/weaponDataTable.WeaponDataTable'")};
 	UDataTable* WeaponTableObject = Cast<UDataTable>(StaticLoadObject(UDataTable::StaticClass(), nullptr, *WeaponTablePath));
 	
 	//check if WeaponTableObject valid
@@ -106,6 +106,14 @@ void AWeapon::OnConstruction(const FTransform& Transform)
 			SetClipBoneName(WeaponDataRow->ClipBoneName);
 			SetReloadMontageSection(WeaponDataRow->ReloadMontageSection);
 			GetItemMesh()->SetAnimInstanceClass(WeaponDataRow->AnimBP);
+			CrosshairsMiddle = WeaponDataRow->CrosshairsMiddle;
+			CrosshairsLeft = WeaponDataRow->CrosshairsLeft;
+			CrosshairsRight = WeaponDataRow->CrosshairsRight;
+			CrosshairsTop = WeaponDataRow->CrosshairsTop;
+			CrosshairsBottom = WeaponDataRow->CrosshairsBottom;
+			AutoFireRate = WeaponDataRow->AutoFireRate;
+			MuzzleFlash = WeaponDataRow->MuzzleFlash;
+			FireSound = WeaponDataRow->FireSound;
 		}
 
 		//get GetMaterialInstance

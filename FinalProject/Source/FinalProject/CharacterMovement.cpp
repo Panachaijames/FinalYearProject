@@ -49,8 +49,6 @@ ACharacterMovement::ACharacterMovement() :
 	//Bullet fire timer variable
 	ShootTimeDuration(0.05f),
 	bFiringBullet(false),
-	//Automatic fire variable
-	AutomaticFireRate(0.1f),
 	bShouldFire(true),
 	bFireButtonPressed(false),
 	bShouldTraceForItems(false),
@@ -428,13 +426,15 @@ void ACharacterMovement::FireButtonReleased()
 
 void ACharacterMovement::StartFireTimer()
 {
+	if (EquippedWeapon == nullptr) return;
+
 	CombatState = ECombatState::ECS_FireTimerInProgress;
 
 	GetWorldTimerManager().SetTimer(
 		AutoFireTimer,
 		this,
 		&ACharacterMovement::AutoFireReset,
-		AutomaticFireRate);
+		EquippedWeapon->GetAutoFireRate());
 	
 }
 
@@ -676,9 +676,9 @@ bool ACharacterMovement::WeaponHasAmmo()
 void ACharacterMovement::PlayFireSound()
 {
 	// Play Fire Sound
-	if (FireSound)
+	if (EquippedWeapon->GetFireSound())
 	{
-		UGameplayStatics::PlaySound2D(this, FireSound);
+		UGameplayStatics::PlaySound2D(this, EquippedWeapon->GetFireSound());
 	}
 }
 
@@ -692,9 +692,9 @@ void ACharacterMovement::SendBullet()
 		const FTransform SocketTransform = BarrelSocket->GetSocketTransform(
 			EquippedWeapon->GetItemMesh());
 
-		if (MuzzleFlash)
+		if (EquippedWeapon->GetMuzzleFlash())
 		{
-			UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), MuzzleFlash, SocketTransform);
+			UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), EquippedWeapon->GetMuzzleFlash(), SocketTransform);
 		}
 
 		FVector BeamEnd;
