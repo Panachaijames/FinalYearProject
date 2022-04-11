@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"D:\\GithubRepo\\FinalYearProject\\FinalProject\\Source\\FinalProject\\FinalProject.Build.cs",
-		"D:\\GithubRepo\\FinalYearProject\\FinalProject\\Source\\FinalProject.Target.cs",
-		"D:\\GithubRepo\\FinalYearProject\\FinalProject\\Source\\FinalProjectEditor.Target.cs"
+		"D:\\FinalYearProject\\FinalYearProject\\FinalProject\\Source\\FinalProject\\FinalProject.Build.cs",
+		"D:\\FinalYearProject\\FinalYearProject\\FinalProject\\Source\\FinalProject.Target.cs",
+		"D:\\FinalYearProject\\FinalYearProject\\FinalProject\\Source\\FinalProjectEditor.Target.cs"
 	],
 	"EngineVersion": "4.27.2"
 }

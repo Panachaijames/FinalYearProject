@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\FinalProject.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{F8C2C8B5-66E3-4FD9-AF62-FD1DA2FD59AD}</UniqueIdentifier>
+      <UniqueIdentifier>{6E9E1257-0540-4019-B9AB-36F81B2BDFB7}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\FinalProject.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{195F36B4-A921-469B-BA2B-F33724233AC9}</UniqueIdentifier>
+      <UniqueIdentifier>{97D47913-D9CF-4027-8982-97C8BD56321B}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\FinalProject">
-      <UniqueIdentifier>{5F242956-BCEA-4D4E-AE58-D5058A119C1D}</UniqueIdentifier>
+      <UniqueIdentifier>{0DBE6BFF-83E9-405D-AEB6-4F1FDAAD2CC3}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\FinalProject\Ammo.cpp">
       <Filter>Source\FinalProject</Filter>
@@ -110,6 +110,11 @@
       <Filter>Source\FinalProject</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\FinalProject\Weapon.h">
+      <Filter>Source\FinalProject</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\FinalProject\WeaponType.h">
       <Filter>Source\FinalProject</Filter>
     </ClInclude>
   </ItemGroup>
