@@ -221,6 +221,12 @@ void ACharacterMovement::FireWeapon()
 		EquippedWeapon->DecrementAmmo();
 
 		StartFireTimer();
+
+		if (EquippedWeapon->GetWeaponType() == EWeaponType::EWT_Pistol)
+		{
+			//Start moving slide timer
+			EquippedWeapon->StartSlideTimer();
+		}
 	}
 	
 	//Start bullet fire timer for crosshairs
@@ -441,10 +447,10 @@ void ACharacterMovement::StartFireTimer()
 void ACharacterMovement::AutoFireReset()
 {
 	CombatState = ECombatState::ECS_Unoccupied;
-
+	if (EquippedWeapon == nullptr) return;
 	if (WeaponHasAmmo())
 	{
-		if (bFireButtonPressed)
+		if (bFireButtonPressed && EquippedWeapon->GetAutomatic())
 		{
 			FireWeapon();
 		}
@@ -1065,6 +1071,7 @@ void ACharacterMovement::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 void ACharacterMovement::FinishEquipping()
 {
 	CombatState = ECombatState::ECS_Unoccupied;
+	
 }
 
 void ACharacterMovement::ResetPickupSoundTimer()

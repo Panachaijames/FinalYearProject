@@ -29,6 +29,7 @@ void EmptyLinkFunctionForGeneratedCodeWeapon() {}
 	FINALPROJECT_API UClass* Z_Construct_UClass_AItem();
 	FINALPROJECT_API UEnum* Z_Construct_UEnum_FinalProject_EWeaponType();
 	ENGINE_API UClass* Z_Construct_UClass_UDataTable_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UCurveFloat_NoRegister();
 // End Cross Module References
 
 static_assert(std::is_polymorphic<FWeaponDataTable>() == std::is_polymorphic<FTableRowBase>(), "USTRUCT FWeaponDataTable cannot be polymorphic unless super FTableRowBase is polymorphic");
@@ -150,6 +151,15 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFWeaponDataTable
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FireSound_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_FireSound;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BoneToHide_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FNamePropertyParams NewProp_BoneToHide;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bAutomatic_MetaData[];
+#endif
+		static void NewProp_bAutomatic_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bAutomatic;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UE4CodeGen_Private::FStructParams ReturnStructParams;
 	};
@@ -318,6 +328,24 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFWeaponDataTable
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FWeaponDataTable_Statics::NewProp_FireSound = { "FireSound", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FWeaponDataTable, FireSound), Z_Construct_UClass_USoundCue_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FWeaponDataTable_Statics::NewProp_FireSound_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FWeaponDataTable_Statics::NewProp_FireSound_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FWeaponDataTable_Statics::NewProp_BoneToHide_MetaData[] = {
+		{ "Category", "WeaponDataTable" },
+		{ "ModuleRelativePath", "Weapon.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FNamePropertyParams Z_Construct_UScriptStruct_FWeaponDataTable_Statics::NewProp_BoneToHide = { "BoneToHide", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FWeaponDataTable, BoneToHide), METADATA_PARAMS(Z_Construct_UScriptStruct_FWeaponDataTable_Statics::NewProp_BoneToHide_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FWeaponDataTable_Statics::NewProp_BoneToHide_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FWeaponDataTable_Statics::NewProp_bAutomatic_MetaData[] = {
+		{ "Category", "WeaponDataTable" },
+		{ "ModuleRelativePath", "Weapon.h" },
+	};
+#endif
+	void Z_Construct_UScriptStruct_FWeaponDataTable_Statics::NewProp_bAutomatic_SetBit(void* Obj)
+	{
+		((FWeaponDataTable*)Obj)->bAutomatic = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FWeaponDataTable_Statics::NewProp_bAutomatic = { "bAutomatic", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(FWeaponDataTable), &Z_Construct_UScriptStruct_FWeaponDataTable_Statics::NewProp_bAutomatic_SetBit, METADATA_PARAMS(Z_Construct_UScriptStruct_FWeaponDataTable_Statics::NewProp_bAutomatic_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FWeaponDataTable_Statics::NewProp_bAutomatic_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FWeaponDataTable_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FWeaponDataTable_Statics::NewProp_AmmoType_Underlying,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FWeaponDataTable_Statics::NewProp_AmmoType,
@@ -342,6 +370,8 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFWeaponDataTable
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FWeaponDataTable_Statics::NewProp_AutoFireRate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FWeaponDataTable_Statics::NewProp_MuzzleFlash,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FWeaponDataTable_Statics::NewProp_FireSound,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FWeaponDataTable_Statics::NewProp_BoneToHide,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FWeaponDataTable_Statics::NewProp_bAutomatic,
 	};
 	const UE4CodeGen_Private::FStructParams Z_Construct_UScriptStruct_FWeaponDataTable_Statics::ReturnStructParams = {
 		(UObject* (*)())Z_Construct_UPackage__Script_FinalProject,
@@ -371,7 +401,7 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFWeaponDataTable
 		}
 		return ReturnStruct;
 	}
-	uint32 Get_Z_Construct_UScriptStruct_FWeaponDataTable_Hash() { return 3900587300U; }
+	uint32 Get_Z_Construct_UScriptStruct_FWeaponDataTable_Hash() { return 2967436421U; }
 	void AWeapon::StaticRegisterNativesAWeapon()
 	{
 	}
@@ -452,6 +482,44 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFWeaponDataTable
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FireSound_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_FireSound;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BoneToHide_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FNamePropertyParams NewProp_BoneToHide;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SlideDisplacement_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_SlideDisplacement;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SlideDisplacementCurve_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_SlideDisplacementCurve;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SlideDisplacementTime_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_SlideDisplacementTime;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bMovingSlide_MetaData[];
+#endif
+		static void NewProp_bMovingSlide_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bMovingSlide;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MaxSlideDisplacement_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_MaxSlideDisplacement;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MaxRecoilRotation_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_MaxRecoilRotation;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_RecoilRotation_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_RecoilRotation;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bAutomatic_MetaData[];
+#endif
+		static void NewProp_bAutomatic_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bAutomatic;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -625,6 +693,104 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFWeaponDataTable
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWeapon_Statics::NewProp_FireSound = { "FireSound", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AWeapon, FireSound), Z_Construct_UClass_USoundCue_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AWeapon_Statics::NewProp_FireSound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AWeapon_Statics::NewProp_FireSound_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AWeapon_Statics::NewProp_BoneToHide_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "DataTable" },
+		{ "Comment", "/** Name of the bone to hide on the weapon mesh*/" },
+		{ "ModuleRelativePath", "Weapon.h" },
+		{ "ToolTip", "Name of the bone to hide on the weapon mesh" },
+	};
+#endif
+	const UE4CodeGen_Private::FNamePropertyParams Z_Construct_UClass_AWeapon_Statics::NewProp_BoneToHide = { "BoneToHide", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AWeapon, BoneToHide), METADATA_PARAMS(Z_Construct_UClass_AWeapon_Statics::NewProp_BoneToHide_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AWeapon_Statics::NewProp_BoneToHide_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AWeapon_Statics::NewProp_SlideDisplacement_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Pistol" },
+		{ "Comment", "/** Amount that the slide is push back during pistol fire*/" },
+		{ "ModuleRelativePath", "Weapon.h" },
+		{ "ToolTip", "Amount that the slide is push back during pistol fire" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AWeapon_Statics::NewProp_SlideDisplacement = { "SlideDisplacement", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AWeapon, SlideDisplacement), METADATA_PARAMS(Z_Construct_UClass_AWeapon_Statics::NewProp_SlideDisplacement_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AWeapon_Statics::NewProp_SlideDisplacement_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AWeapon_Statics::NewProp_SlideDisplacementCurve_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Pistol" },
+		{ "Comment", "/** Curve for the slide displacement*/" },
+		{ "ModuleRelativePath", "Weapon.h" },
+		{ "ToolTip", "Curve for the slide displacement" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWeapon_Statics::NewProp_SlideDisplacementCurve = { "SlideDisplacementCurve", nullptr, (EPropertyFlags)0x0040000000000015, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AWeapon, SlideDisplacementCurve), Z_Construct_UClass_UCurveFloat_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AWeapon_Statics::NewProp_SlideDisplacementCurve_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AWeapon_Statics::NewProp_SlideDisplacementCurve_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AWeapon_Statics::NewProp_SlideDisplacementTime_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Pistol" },
+		{ "Comment", "/** Time for displacing the slide during pistol fire*/" },
+		{ "ModuleRelativePath", "Weapon.h" },
+		{ "ToolTip", "Time for displacing the slide during pistol fire" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AWeapon_Statics::NewProp_SlideDisplacementTime = { "SlideDisplacementTime", nullptr, (EPropertyFlags)0x0040000000000015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AWeapon, SlideDisplacementTime), METADATA_PARAMS(Z_Construct_UClass_AWeapon_Statics::NewProp_SlideDisplacementTime_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AWeapon_Statics::NewProp_SlideDisplacementTime_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AWeapon_Statics::NewProp_bMovingSlide_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Pistol" },
+		{ "Comment", "/** True when moving pistol slide*/" },
+		{ "ModuleRelativePath", "Weapon.h" },
+		{ "ToolTip", "True when moving pistol slide" },
+	};
+#endif
+	void Z_Construct_UClass_AWeapon_Statics::NewProp_bMovingSlide_SetBit(void* Obj)
+	{
+		((AWeapon*)Obj)->bMovingSlide = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AWeapon_Statics::NewProp_bMovingSlide = { "bMovingSlide", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AWeapon), &Z_Construct_UClass_AWeapon_Statics::NewProp_bMovingSlide_SetBit, METADATA_PARAMS(Z_Construct_UClass_AWeapon_Statics::NewProp_bMovingSlide_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AWeapon_Statics::NewProp_bMovingSlide_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AWeapon_Statics::NewProp_MaxSlideDisplacement_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Pistol" },
+		{ "Comment", "/** Max distance for the slide on the pistal*/" },
+		{ "ModuleRelativePath", "Weapon.h" },
+		{ "ToolTip", "Max distance for the slide on the pistal" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AWeapon_Statics::NewProp_MaxSlideDisplacement = { "MaxSlideDisplacement", nullptr, (EPropertyFlags)0x0040000000000015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AWeapon, MaxSlideDisplacement), METADATA_PARAMS(Z_Construct_UClass_AWeapon_Statics::NewProp_MaxSlideDisplacement_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AWeapon_Statics::NewProp_MaxSlideDisplacement_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AWeapon_Statics::NewProp_MaxRecoilRotation_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Pistol" },
+		{ "Comment", "/** Max rotation forpistol recoil*/" },
+		{ "ModuleRelativePath", "Weapon.h" },
+		{ "ToolTip", "Max rotation forpistol recoil" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AWeapon_Statics::NewProp_MaxRecoilRotation = { "MaxRecoilRotation", nullptr, (EPropertyFlags)0x0040000000000015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AWeapon, MaxRecoilRotation), METADATA_PARAMS(Z_Construct_UClass_AWeapon_Statics::NewProp_MaxRecoilRotation_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AWeapon_Statics::NewProp_MaxRecoilRotation_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AWeapon_Statics::NewProp_RecoilRotation_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Pistol" },
+		{ "Comment", "/** Amount that the pistol will rotate during pistol fire*/" },
+		{ "ModuleRelativePath", "Weapon.h" },
+		{ "ToolTip", "Amount that the pistol will rotate during pistol fire" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AWeapon_Statics::NewProp_RecoilRotation = { "RecoilRotation", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AWeapon, RecoilRotation), METADATA_PARAMS(Z_Construct_UClass_AWeapon_Statics::NewProp_RecoilRotation_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AWeapon_Statics::NewProp_RecoilRotation_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AWeapon_Statics::NewProp_bAutomatic_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Weapon Properties" },
+		{ "Comment", "/** True for auto gunfire*/" },
+		{ "ModuleRelativePath", "Weapon.h" },
+		{ "ToolTip", "True for auto gunfire" },
+	};
+#endif
+	void Z_Construct_UClass_AWeapon_Statics::NewProp_bAutomatic_SetBit(void* Obj)
+	{
+		((AWeapon*)Obj)->bAutomatic = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AWeapon_Statics::NewProp_bAutomatic = { "bAutomatic", nullptr, (EPropertyFlags)0x0040000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AWeapon), &Z_Construct_UClass_AWeapon_Statics::NewProp_bAutomatic_SetBit, METADATA_PARAMS(Z_Construct_UClass_AWeapon_Statics::NewProp_bAutomatic_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AWeapon_Statics::NewProp_bAutomatic_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AWeapon_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_Statics::NewProp_Ammo,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_Statics::NewProp_MagazineCapacity,
@@ -644,6 +810,15 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFWeaponDataTable
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_Statics::NewProp_AutoFireRate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_Statics::NewProp_MuzzleFlash,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_Statics::NewProp_FireSound,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_Statics::NewProp_BoneToHide,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_Statics::NewProp_SlideDisplacement,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_Statics::NewProp_SlideDisplacementCurve,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_Statics::NewProp_SlideDisplacementTime,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_Statics::NewProp_bMovingSlide,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_Statics::NewProp_MaxSlideDisplacement,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_Statics::NewProp_MaxRecoilRotation,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_Statics::NewProp_RecoilRotation,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_Statics::NewProp_bAutomatic,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AWeapon_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AWeapon>::IsAbstract,
@@ -672,7 +847,7 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFWeaponDataTable
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AWeapon, 1540998976);
+	IMPLEMENT_CLASS(AWeapon, 458251744);
 	template<> FINALPROJECT_API UClass* StaticClass<AWeapon>()
 	{
 		return AWeapon::StaticClass();

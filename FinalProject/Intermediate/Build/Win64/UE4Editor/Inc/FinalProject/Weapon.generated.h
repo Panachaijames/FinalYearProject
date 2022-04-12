@@ -21,10 +21,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 template<> FINALPROJECT_API UScriptStruct* StaticStruct<struct FWeaponDataTable>();
 
-#define FinalProject_Source_FinalProject_Weapon_h_92_SPARSE_DATA
-#define FinalProject_Source_FinalProject_Weapon_h_92_RPC_WRAPPERS
-#define FinalProject_Source_FinalProject_Weapon_h_92_RPC_WRAPPERS_NO_PURE_DECLS
-#define FinalProject_Source_FinalProject_Weapon_h_92_INCLASS_NO_PURE_DECLS \
+#define FinalProject_Source_FinalProject_Weapon_h_99_SPARSE_DATA
+#define FinalProject_Source_FinalProject_Weapon_h_99_RPC_WRAPPERS
+#define FinalProject_Source_FinalProject_Weapon_h_99_RPC_WRAPPERS_NO_PURE_DECLS
+#define FinalProject_Source_FinalProject_Weapon_h_99_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAWeapon(); \
 	friend struct Z_Construct_UClass_AWeapon_Statics; \
@@ -33,7 +33,7 @@ public: \
 	DECLARE_SERIALIZER(AWeapon)
 
 
-#define FinalProject_Source_FinalProject_Weapon_h_92_INCLASS \
+#define FinalProject_Source_FinalProject_Weapon_h_99_INCLASS \
 private: \
 	static void StaticRegisterNativesAWeapon(); \
 	friend struct Z_Construct_UClass_AWeapon_Statics; \
@@ -42,7 +42,7 @@ public: \
 	DECLARE_SERIALIZER(AWeapon)
 
 
-#define FinalProject_Source_FinalProject_Weapon_h_92_STANDARD_CONSTRUCTORS \
+#define FinalProject_Source_FinalProject_Weapon_h_99_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AWeapon(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AWeapon) \
@@ -55,7 +55,7 @@ private: \
 public:
 
 
-#define FinalProject_Source_FinalProject_Weapon_h_92_ENHANCED_CONSTRUCTORS \
+#define FinalProject_Source_FinalProject_Weapon_h_99_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AWeapon(AWeapon&&); \
@@ -66,7 +66,7 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AWeapon)
 
 
-#define FinalProject_Source_FinalProject_Weapon_h_92_PRIVATE_PROPERTY_OFFSET \
+#define FinalProject_Source_FinalProject_Weapon_h_99_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__Ammo() { return STRUCT_OFFSET(AWeapon, Ammo); } \
 	FORCEINLINE static uint32 __PPO__MagazineCapacity() { return STRUCT_OFFSET(AWeapon, MagazineCapacity); } \
 	FORCEINLINE static uint32 __PPO__WeaponType() { return STRUCT_OFFSET(AWeapon, WeaponType); } \
@@ -82,30 +82,39 @@ public: \
 	FORCEINLINE static uint32 __PPO__CrosshairsTop() { return STRUCT_OFFSET(AWeapon, CrosshairsTop); } \
 	FORCEINLINE static uint32 __PPO__AutoFireRate() { return STRUCT_OFFSET(AWeapon, AutoFireRate); } \
 	FORCEINLINE static uint32 __PPO__MuzzleFlash() { return STRUCT_OFFSET(AWeapon, MuzzleFlash); } \
-	FORCEINLINE static uint32 __PPO__FireSound() { return STRUCT_OFFSET(AWeapon, FireSound); }
+	FORCEINLINE static uint32 __PPO__FireSound() { return STRUCT_OFFSET(AWeapon, FireSound); } \
+	FORCEINLINE static uint32 __PPO__BoneToHide() { return STRUCT_OFFSET(AWeapon, BoneToHide); } \
+	FORCEINLINE static uint32 __PPO__SlideDisplacement() { return STRUCT_OFFSET(AWeapon, SlideDisplacement); } \
+	FORCEINLINE static uint32 __PPO__SlideDisplacementCurve() { return STRUCT_OFFSET(AWeapon, SlideDisplacementCurve); } \
+	FORCEINLINE static uint32 __PPO__SlideDisplacementTime() { return STRUCT_OFFSET(AWeapon, SlideDisplacementTime); } \
+	FORCEINLINE static uint32 __PPO__bMovingSlide() { return STRUCT_OFFSET(AWeapon, bMovingSlide); } \
+	FORCEINLINE static uint32 __PPO__MaxSlideDisplacement() { return STRUCT_OFFSET(AWeapon, MaxSlideDisplacement); } \
+	FORCEINLINE static uint32 __PPO__MaxRecoilRotation() { return STRUCT_OFFSET(AWeapon, MaxRecoilRotation); } \
+	FORCEINLINE static uint32 __PPO__RecoilRotation() { return STRUCT_OFFSET(AWeapon, RecoilRotation); } \
+	FORCEINLINE static uint32 __PPO__bAutomatic() { return STRUCT_OFFSET(AWeapon, bAutomatic); }
 
 
-#define FinalProject_Source_FinalProject_Weapon_h_89_PROLOG
-#define FinalProject_Source_FinalProject_Weapon_h_92_GENERATED_BODY_LEGACY \
+#define FinalProject_Source_FinalProject_Weapon_h_96_PROLOG
+#define FinalProject_Source_FinalProject_Weapon_h_99_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FinalProject_Source_FinalProject_Weapon_h_92_PRIVATE_PROPERTY_OFFSET \
-	FinalProject_Source_FinalProject_Weapon_h_92_SPARSE_DATA \
-	FinalProject_Source_FinalProject_Weapon_h_92_RPC_WRAPPERS \
-	FinalProject_Source_FinalProject_Weapon_h_92_INCLASS \
-	FinalProject_Source_FinalProject_Weapon_h_92_STANDARD_CONSTRUCTORS \
+	FinalProject_Source_FinalProject_Weapon_h_99_PRIVATE_PROPERTY_OFFSET \
+	FinalProject_Source_FinalProject_Weapon_h_99_SPARSE_DATA \
+	FinalProject_Source_FinalProject_Weapon_h_99_RPC_WRAPPERS \
+	FinalProject_Source_FinalProject_Weapon_h_99_INCLASS \
+	FinalProject_Source_FinalProject_Weapon_h_99_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FinalProject_Source_FinalProject_Weapon_h_92_GENERATED_BODY \
+#define FinalProject_Source_FinalProject_Weapon_h_99_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FinalProject_Source_FinalProject_Weapon_h_92_PRIVATE_PROPERTY_OFFSET \
-	FinalProject_Source_FinalProject_Weapon_h_92_SPARSE_DATA \
-	FinalProject_Source_FinalProject_Weapon_h_92_RPC_WRAPPERS_NO_PURE_DECLS \
-	FinalProject_Source_FinalProject_Weapon_h_92_INCLASS_NO_PURE_DECLS \
-	FinalProject_Source_FinalProject_Weapon_h_92_ENHANCED_CONSTRUCTORS \
+	FinalProject_Source_FinalProject_Weapon_h_99_PRIVATE_PROPERTY_OFFSET \
+	FinalProject_Source_FinalProject_Weapon_h_99_SPARSE_DATA \
+	FinalProject_Source_FinalProject_Weapon_h_99_RPC_WRAPPERS_NO_PURE_DECLS \
+	FinalProject_Source_FinalProject_Weapon_h_99_INCLASS_NO_PURE_DECLS \
+	FinalProject_Source_FinalProject_Weapon_h_99_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
