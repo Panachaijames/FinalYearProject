@@ -22,6 +22,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 	FINALPROJECT_API UClass* Z_Construct_UClass_ACharacterMovement_NoRegister();
 	FINALPROJECT_API UClass* Z_Construct_UClass_ACharacterMovement();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
+	PHYSICSCORE_API UEnum* Z_Construct_UEnum_PhysicsCore_EPhysicalSurface();
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
@@ -289,6 +290,13 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 		P_THIS->FinishEquipping();
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(ACharacterMovement::execGetSurfaceType)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(TEnumAsByte<EPhysicalSurface>*)Z_Param__Result=P_THIS->GetSurfaceType();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(ACharacterMovement::execReleaseClip)
 	{
 		P_FINISH;
@@ -333,6 +341,7 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 			{ "FinishEquipping", &ACharacterMovement::execFinishEquipping },
 			{ "FinishReloading", &ACharacterMovement::execFinishReloading },
 			{ "GetCrosshairSpreadMultiplier", &ACharacterMovement::execGetCrosshairSpreadMultiplier },
+			{ "GetSurfaceType", &ACharacterMovement::execGetSurfaceType },
 			{ "GrabClip", &ACharacterMovement::execGrabClip },
 			{ "ReleaseClip", &ACharacterMovement::execReleaseClip },
 		};
@@ -455,6 +464,38 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ACharacterMovement_GetCrosshairSpreadMultiplier_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ACharacterMovement_GetSurfaceType_Statics
+	{
+		struct CharacterMovement_eventGetSurfaceType_Parms
+		{
+			TEnumAsByte<EPhysicalSurface> ReturnValue;
+		};
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_ACharacterMovement_GetSurfaceType_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(CharacterMovement_eventGetSurfaceType_Parms, ReturnValue), Z_Construct_UEnum_PhysicsCore_EPhysicalSurface, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ACharacterMovement_GetSurfaceType_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ACharacterMovement_GetSurfaceType_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACharacterMovement_GetSurfaceType_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACharacterMovement_GetSurfaceType_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACharacterMovement, nullptr, "GetSurfaceType", nullptr, nullptr, sizeof(CharacterMovement_eventGetSurfaceType_Parms), Z_Construct_UFunction_ACharacterMovement_GetSurfaceType_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterMovement_GetSurfaceType_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACharacterMovement_GetSurfaceType_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterMovement_GetSurfaceType_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ACharacterMovement_GetSurfaceType()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ACharacterMovement_GetSurfaceType_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -738,6 +779,7 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 		{ &Z_Construct_UFunction_ACharacterMovement_FinishEquipping, "FinishEquipping" }, // 483444009
 		{ &Z_Construct_UFunction_ACharacterMovement_FinishReloading, "FinishReloading" }, // 574205581
 		{ &Z_Construct_UFunction_ACharacterMovement_GetCrosshairSpreadMultiplier, "GetCrosshairSpreadMultiplier" }, // 3800122887
+		{ &Z_Construct_UFunction_ACharacterMovement_GetSurfaceType, "GetSurfaceType" }, // 539931369
 		{ &Z_Construct_UFunction_ACharacterMovement_GrabClip, "GrabClip" }, // 1563805584
 		{ &Z_Construct_UFunction_ACharacterMovement_ReleaseClip, "ReleaseClip" }, // 879950769
 	};
@@ -1351,7 +1393,7 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ACharacterMovement, 3757483582);
+	IMPLEMENT_CLASS(ACharacterMovement, 3633469907);
 	template<> FINALPROJECT_API UClass* StaticClass<ACharacterMovement>()
 	{
 		return ACharacterMovement::StaticClass();
