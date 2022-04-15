@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\FinalProject.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{08A687B3-F778-4B57-B48B-980F5CB3F289}</UniqueIdentifier>
+      <UniqueIdentifier>{102CDC52-1F87-43FF-87A3-FF7EF9A1147A}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\FinalProject.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{ED394788-D101-40BC-B391-E115E0D6BDF5}</UniqueIdentifier>
+      <UniqueIdentifier>{FDC8CB06-BAF6-4890-AD25-28098F9DFD54}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\FinalProject">
-      <UniqueIdentifier>{87581A73-2D86-45D4-8146-2E47A1728D11}</UniqueIdentifier>
+      <UniqueIdentifier>{BECA0B62-B315-45EC-BB7E-12103F9197A8}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\FinalProject\Ammo.cpp">
       <Filter>Source\FinalProject</Filter>
@@ -43,10 +43,28 @@
     <ClInclude Include="..\..\Source\FinalProject\AmmoType.h">
       <Filter>Source\FinalProject</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\FinalProject\BulletHitInterface.cpp">
+      <Filter>Source\FinalProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FinalProject\BulletHitInterface.h">
+      <Filter>Source\FinalProject</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\FinalProject\CharacterMovement.cpp">
       <Filter>Source\FinalProject</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\FinalProject\CharacterMovement.h">
+      <Filter>Source\FinalProject</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FinalProject\Enemy.cpp">
+      <Filter>Source\FinalProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FinalProject\Enemy.h">
+      <Filter>Source\FinalProject</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FinalProject\Explosive.cpp">
+      <Filter>Source\FinalProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FinalProject\Explosive.h">
       <Filter>Source\FinalProject</Filter>
     </ClInclude>
     <None Include="..\..\Source\FinalProject\FinalProject.Build.cs">
@@ -80,6 +98,12 @@
       <Filter>Source\FinalProject</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\FinalProject\FinalProjectProjectile.h">
+      <Filter>Source\FinalProject</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FinalProject\GruxAnimInstance.cpp">
+      <Filter>Source\FinalProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FinalProject\GruxAnimInstance.h">
       <Filter>Source\FinalProject</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\FinalProject\Item.cpp">

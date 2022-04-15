@@ -1,10 +1,10 @@
-D:\FinalYearProject\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\Definitions.FinalProject.h
-D:\FinalYearProject\FinalYearProject\FinalProject\Source\FinalProject\Weapon.h
-D:\FinalYearProject\FinalYearProject\FinalProject\Source\FinalProject\Item.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/DataTable.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Public\DataTableUtils.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DataTable.generated.h
-D:\FinalYearProject\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Inc\FinalProject\Item.generated.h
-D:\FinalYearProject\FinalYearProject\FinalProject\Source\FinalProject\AmmoType.h
-D:\FinalYearProject\FinalYearProject\FinalProject\Source\FinalProject\WeaponType.h
-D:\FinalYearProject\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Inc\FinalProject\Weapon.generated.h
+D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\Definitions.FinalProject.h
+D:\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\Weapon.h
+D:\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\Item.h
+D:\UE4.27\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/DataTable.h
+D:\UE4.27\UE_4.27\Engine\Source\Runtime\Engine\Public\DataTableUtils.h
+D:\UE4.27\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DataTable.generated.h
+D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Inc\FinalProject\Item.generated.h
+D:\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\AmmoType.h
+D:\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\WeaponType.h
+D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Inc\FinalProject\Weapon.generated.h

@@ -1,11 +1,11 @@
-D:\FinalYearProject\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\Definitions.FinalProject.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
-D:\FinalYearProject\FinalYearProject\FinalProject\Source\FinalProject/Ammo.h
-D:\FinalYearProject\FinalYearProject\FinalProject\Source\FinalProject\Item.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/DataTable.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Public\DataTableUtils.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DataTable.generated.h
-D:\FinalYearProject\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Inc\FinalProject\Item.generated.h
-D:\FinalYearProject\FinalYearProject\FinalProject\Source\FinalProject\AmmoType.h
-D:\FinalYearProject\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Inc\FinalProject\Ammo.generated.h
+D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\Definitions.FinalProject.h
+D:\UE4.27\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+D:\UE4.27\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+D:\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject/Ammo.h
+D:\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\Item.h
+D:\UE4.27\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/DataTable.h
+D:\UE4.27\UE_4.27\Engine\Source\Runtime\Engine\Public\DataTableUtils.h
+D:\UE4.27\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DataTable.generated.h
+D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Inc\FinalProject\Item.generated.h
+D:\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\AmmoType.h
+D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Inc\FinalProject\Ammo.generated.h
