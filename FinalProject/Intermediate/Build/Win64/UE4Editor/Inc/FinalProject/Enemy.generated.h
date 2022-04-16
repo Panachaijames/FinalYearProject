@@ -8,6 +8,9 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UPrimitiveComponent;
+class AActor;
+struct FHitResult;
 class UUserWidget;
 struct FVector;
 #ifdef FINALPROJECT_Enemy_generated_h
@@ -19,12 +22,18 @@ struct FVector;
 #define FinalProject_Source_FinalProject_Enemy_h_13_RPC_WRAPPERS \
 	virtual void ShowHealthBar_Implementation(); \
  \
+	DECLARE_FUNCTION(execSetStunned); \
+	DECLARE_FUNCTION(execAggroSphereOverlap); \
+	DECLARE_FUNCTION(execDestroyHitNumber); \
 	DECLARE_FUNCTION(execStoreHitNumber); \
 	DECLARE_FUNCTION(execShowHealthBar);
 
 
 #define FinalProject_Source_FinalProject_Enemy_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execSetStunned); \
+	DECLARE_FUNCTION(execAggroSphereOverlap); \
+	DECLARE_FUNCTION(execDestroyHitNumber); \
 	DECLARE_FUNCTION(execStoreHitNumber); \
 	DECLARE_FUNCTION(execShowHealthBar);
 
@@ -34,6 +43,7 @@ struct FVector;
 	{ \
 		int32 Damage; \
 		FVector HitLocation; \
+		bool bHeadShot; \
 	};
 
 
@@ -92,7 +102,14 @@ public: \
 	FORCEINLINE static uint32 __PPO__HitMontage() { return STRUCT_OFFSET(AEnemy, HitMontage); } \
 	FORCEINLINE static uint32 __PPO__HitReactTimeMin() { return STRUCT_OFFSET(AEnemy, HitReactTimeMin); } \
 	FORCEINLINE static uint32 __PPO__HitReactTimeMax() { return STRUCT_OFFSET(AEnemy, HitReactTimeMax); } \
-	FORCEINLINE static uint32 __PPO__HitNumbers() { return STRUCT_OFFSET(AEnemy, HitNumbers); }
+	FORCEINLINE static uint32 __PPO__HitNumbers() { return STRUCT_OFFSET(AEnemy, HitNumbers); } \
+	FORCEINLINE static uint32 __PPO__HitNumberDestroyTime() { return STRUCT_OFFSET(AEnemy, HitNumberDestroyTime); } \
+	FORCEINLINE static uint32 __PPO__BehaviorTree() { return STRUCT_OFFSET(AEnemy, BehaviorTree); } \
+	FORCEINLINE static uint32 __PPO__PatrolPoint() { return STRUCT_OFFSET(AEnemy, PatrolPoint); } \
+	FORCEINLINE static uint32 __PPO__PatrolPoint2() { return STRUCT_OFFSET(AEnemy, PatrolPoint2); } \
+	FORCEINLINE static uint32 __PPO__AggroSphere() { return STRUCT_OFFSET(AEnemy, AggroSphere); } \
+	FORCEINLINE static uint32 __PPO__bStunned() { return STRUCT_OFFSET(AEnemy, bStunned); } \
+	FORCEINLINE static uint32 __PPO__StunChance() { return STRUCT_OFFSET(AEnemy, StunChance); }
 
 
 #define FinalProject_Source_FinalProject_Enemy_h_10_PROLOG \

@@ -1,3 +1,13 @@
 D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Development\FinalProject\Definitions.FinalProject.h
 D:\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\GruxAnimInstance.h
 D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Inc\FinalProject\GruxAnimInstance.generated.h
+D:\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\Enemy.h
+D:\UE4.27\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
+D:\UE4.27\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/CharacterMovementReplication.h
+D:\UE4.27\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CharacterMovementReplication.generated.h
+D:\UE4.27\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
+D:\UE4.27\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
+D:\UE4.27\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
+D:\GithubRepo\FinalYearProject\FinalProject\Source\FinalProject\BulletHitInterface.h
+D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Inc\FinalProject\BulletHitInterface.generated.h
+D:\GithubRepo\FinalYearProject\FinalProject\Intermediate\Build\Win64\UE4Editor\Inc\FinalProject\Enemy.generated.h

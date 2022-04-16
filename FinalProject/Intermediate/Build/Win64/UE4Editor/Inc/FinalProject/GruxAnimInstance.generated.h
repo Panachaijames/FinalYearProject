@@ -14,8 +14,16 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FINALPROJECT_GruxAnimInstance_generated_h
 
 #define FinalProject_Source_FinalProject_GruxAnimInstance_h_15_SPARSE_DATA
-#define FinalProject_Source_FinalProject_GruxAnimInstance_h_15_RPC_WRAPPERS
-#define FinalProject_Source_FinalProject_GruxAnimInstance_h_15_RPC_WRAPPERS_NO_PURE_DECLS
+#define FinalProject_Source_FinalProject_GruxAnimInstance_h_15_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execUpdateAnimationProperties);
+
+
+#define FinalProject_Source_FinalProject_GruxAnimInstance_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execUpdateAnimationProperties);
+
+
 #define FinalProject_Source_FinalProject_GruxAnimInstance_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUGruxAnimInstance(); \
@@ -60,7 +68,11 @@ public: \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UGruxAnimInstance)
 
 
-#define FinalProject_Source_FinalProject_GruxAnimInstance_h_15_PRIVATE_PROPERTY_OFFSET
+#define FinalProject_Source_FinalProject_GruxAnimInstance_h_15_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__Speed() { return STRUCT_OFFSET(UGruxAnimInstance, Speed); } \
+	FORCEINLINE static uint32 __PPO__Enemy() { return STRUCT_OFFSET(UGruxAnimInstance, Enemy); }
+
+
 #define FinalProject_Source_FinalProject_GruxAnimInstance_h_12_PROLOG
 #define FinalProject_Source_FinalProject_GruxAnimInstance_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

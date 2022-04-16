@@ -36,6 +36,23 @@ protected:
 	UFUNCTION(BlueprintCallable)
 	void StoreHitNumber(UUserWidget* HitNumber, FVector Location);
 
+	UFUNCTION()
+	void DestroyHitNumber(UUserWidget* HitNumber);
+
+	void UpdateHitNumbers();
+
+	/** Called when something overlap with aggro sphere*/
+	UFUNCTION()
+	void AggroSphereOverlap(UPrimitiveComponent* OverlappedComponent,
+		AActor* OtherActor,
+		UPrimitiveComponent* OtherComp,
+		int32 OtherBodyIndex,
+		bool bFormSweep,
+		const FHitResult& SweepResult);
+
+	UFUNCTION(BlueprintCallable)
+	void SetStunned(bool Stunned);
+
 	/** PArticle to spawn when hit by bullet*/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Combat, meta = (AllowedPrivateAccess = "true"))
 	class UParticleSystem* ImpactParticles;
@@ -80,6 +97,36 @@ protected:
 	UPROPERTY(VisibleAnywhere, Category = Combat, meta = (AllowedPrivateAccess = "true"))
 	TMap<UUserWidget*, FVector> HitNumbers;
 
+	/** Time before a HitNumber is removed from the screen*/
+	UPROPERTY(EditAnywhere, Category = Combat, meta = (AllowedPrivateAccess = "true"))
+	float HitNumberDestroyTime;
+
+	/** Behavior tree for the ai character*/
+	UPROPERTY(EditAnywhere, Category = "Behavior Tree", meta = (AllowedPrivateAccess = "true"))
+	class UBehaviorTree* BehaviorTree;
+
+	/** Point for the enemy to move to*/
+	UPROPERTY(EditAnywhere, Category = "Behavior Tree", meta = (AllowedPrivateAccess = "true", MakeEditWidget = "true"))
+	FVector PatrolPoint;
+
+	/** Second Point for the enemy to move to */
+	UPROPERTY(EditAnywhere, Category = "Behavior Tree", meta = (AllowedPrivateAccess = "true", MakeEditWidget = "true"))
+	FVector PatrolPoint2;
+
+	class AEnemyController* EnemyController;
+
+	/** Overlap sphere for when the enemy become hostile*/
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Combat, meta = (AllowedPrivateAccess = "true", MakeEditWidget = "true"))
+	class USphereComponent* AggroSphere;
+
+	/** True when playing the get hit animation*/
+	UPROPERTY(VisibleAnywhere,BlueprintReadWrite, Category = Combat, meta = (AllowedPrivateAccess = "true"))
+	bool bStunned;
+
+	/** Chance of being stun 0 no stun chance 1 100% stun chance*/
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Combat, meta = (AllowedPrivateAccess = "true"))
+	float StunChance;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -93,6 +140,8 @@ public:
 
 	FORCEINLINE FString GetHeadBone() const { return HeadBone; }
 
+	FORCEINLINE UBehaviorTree* GetBehaviorTree() const { return BehaviorTree; }
+
 	UFUNCTION(BlueprintImplementableEvent)
-	void ShowHitNumber(int32 Damage, FVector HitLocation);
+	void ShowHitNumber(int32 Damage, FVector HitLocation, bool bHeadShot);
 };
