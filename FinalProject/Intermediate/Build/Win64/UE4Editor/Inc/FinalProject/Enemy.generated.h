@@ -22,6 +22,16 @@ struct FVector;
 #define FinalProject_Source_FinalProject_Enemy_h_13_RPC_WRAPPERS \
 	virtual void ShowHealthBar_Implementation(); \
  \
+	DECLARE_FUNCTION(execDeactivateRightWeapon); \
+	DECLARE_FUNCTION(execActivateRightWeapon); \
+	DECLARE_FUNCTION(execDeactivateLeftWeapon); \
+	DECLARE_FUNCTION(execActivateLeftWeapon); \
+	DECLARE_FUNCTION(execOnRightWeaponOverlap); \
+	DECLARE_FUNCTION(execOnLeftWeaponOverlap); \
+	DECLARE_FUNCTION(execGetAttackSectionName); \
+	DECLARE_FUNCTION(execPlayAttackMontage); \
+	DECLARE_FUNCTION(execCombatRangeEndOverlap); \
+	DECLARE_FUNCTION(execCombatRangeOverlap); \
 	DECLARE_FUNCTION(execSetStunned); \
 	DECLARE_FUNCTION(execAggroSphereOverlap); \
 	DECLARE_FUNCTION(execDestroyHitNumber); \
@@ -31,6 +41,16 @@ struct FVector;
 
 #define FinalProject_Source_FinalProject_Enemy_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execDeactivateRightWeapon); \
+	DECLARE_FUNCTION(execActivateRightWeapon); \
+	DECLARE_FUNCTION(execDeactivateLeftWeapon); \
+	DECLARE_FUNCTION(execActivateLeftWeapon); \
+	DECLARE_FUNCTION(execOnRightWeaponOverlap); \
+	DECLARE_FUNCTION(execOnLeftWeaponOverlap); \
+	DECLARE_FUNCTION(execGetAttackSectionName); \
+	DECLARE_FUNCTION(execPlayAttackMontage); \
+	DECLARE_FUNCTION(execCombatRangeEndOverlap); \
+	DECLARE_FUNCTION(execCombatRangeOverlap); \
 	DECLARE_FUNCTION(execSetStunned); \
 	DECLARE_FUNCTION(execAggroSphereOverlap); \
 	DECLARE_FUNCTION(execDestroyHitNumber); \
@@ -109,7 +129,13 @@ public: \
 	FORCEINLINE static uint32 __PPO__PatrolPoint2() { return STRUCT_OFFSET(AEnemy, PatrolPoint2); } \
 	FORCEINLINE static uint32 __PPO__AggroSphere() { return STRUCT_OFFSET(AEnemy, AggroSphere); } \
 	FORCEINLINE static uint32 __PPO__bStunned() { return STRUCT_OFFSET(AEnemy, bStunned); } \
-	FORCEINLINE static uint32 __PPO__StunChance() { return STRUCT_OFFSET(AEnemy, StunChance); }
+	FORCEINLINE static uint32 __PPO__StunChance() { return STRUCT_OFFSET(AEnemy, StunChance); } \
+	FORCEINLINE static uint32 __PPO__bInAttackRange() { return STRUCT_OFFSET(AEnemy, bInAttackRange); } \
+	FORCEINLINE static uint32 __PPO__CombatRangeSphere() { return STRUCT_OFFSET(AEnemy, CombatRangeSphere); } \
+	FORCEINLINE static uint32 __PPO__AttackMontage() { return STRUCT_OFFSET(AEnemy, AttackMontage); } \
+	FORCEINLINE static uint32 __PPO__LeftWeaponCollision() { return STRUCT_OFFSET(AEnemy, LeftWeaponCollision); } \
+	FORCEINLINE static uint32 __PPO__RightWeaponCollision() { return STRUCT_OFFSET(AEnemy, RightWeaponCollision); } \
+	FORCEINLINE static uint32 __PPO__BaseDamage() { return STRUCT_OFFSET(AEnemy, BaseDamage); }
 
 
 #define FinalProject_Source_FinalProject_Enemy_h_10_PROLOG \

@@ -32,6 +32,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	FINALPROJECT_API UEnum* Z_Construct_UEnum_FinalProject_EAmmoType();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FTransform();
+	ENGINE_API UClass* Z_Construct_UClass_USoundCue_NoRegister();
 // End Cross Module References
 	struct Z_Construct_UDelegateFunction_FinalProject_HighlightIconDelegate__DelegateSignature_Statics
 	{
@@ -765,6 +766,18 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_HighlightedSlot_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FIntPropertyParams NewProp_HighlightedSlot;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Health_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Health;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MaxHealth_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_MaxHealth;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MeleeImpactSound_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MeleeImpactSound;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -1308,6 +1321,36 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 	};
 #endif
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HighlightedSlot = { "HighlightedSlot", nullptr, (EPropertyFlags)0x0040000000020015, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, HighlightedSlot), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HighlightedSlot_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HighlightedSlot_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_Health_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Combat" },
+		{ "Comment", "/** Character health*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Character health" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_Health = { "Health", nullptr, (EPropertyFlags)0x0040000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, Health), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_Health_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_Health_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MaxHealth_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Combat" },
+		{ "Comment", "/** Character Max health*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Character Max health" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MaxHealth = { "MaxHealth", nullptr, (EPropertyFlags)0x0040000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, MaxHealth), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MaxHealth_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MaxHealth_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MeleeImpactSound_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Combat" },
+		{ "Comment", "/** Sound made by character get hit by melee atk*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Sound made by character get hit by melee atk" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MeleeImpactSound = { "MeleeImpactSound", nullptr, (EPropertyFlags)0x0040000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, MeleeImpactSound), Z_Construct_UClass_USoundCue_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MeleeImpactSound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MeleeImpactSound_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ACharacterMovement_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CameraBoom,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_FollowCamera,
@@ -1365,6 +1408,9 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_EquipItemDelegate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HighlightIconDelegate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HighlightedSlot,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_Health,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MaxHealth,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MeleeImpactSound,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ACharacterMovement_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ACharacterMovement>::IsAbstract,
@@ -1393,7 +1439,7 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ACharacterMovement, 3633469907);
+	IMPLEMENT_CLASS(ACharacterMovement, 1217969024);
 	template<> FINALPROJECT_API UClass* StaticClass<ACharacterMovement>()
 	{
 		return ACharacterMovement::StaticClass();

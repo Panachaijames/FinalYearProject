@@ -46,6 +46,13 @@ public:
 	// Sets default values for this character's properties
 	ACharacterMovement();
 
+	//Take Combat DMG
+	virtual float TakeDamage(
+		float DamageAmount,
+		struct FDamageEvent const& DamageEvent,
+		class AController* EventInstigator,
+		AActor* DamageCauser) override;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -424,6 +431,18 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Inventory, meta = (AllowPrivateAccess = "true"))
 	int32 HighlightedSlot;
 
+	/** Character health*/
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Combat, meta = (AllowPrivateAccess = "true"))
+	float Health;
+
+	/** Character Max health*/
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Combat, meta = (AllowPrivateAccess = "true"))
+	float MaxHealth;
+
+	/** Sound made by character get hit by melee atk*/
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Combat, meta = (AllowPrivateAccess = "true"))
+	class USoundCue* MeleeImpactSound;
+
 public:
 	/** Returns CameraBoom subobject */
 	FORCEINLINE USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
@@ -460,4 +479,5 @@ public:
 	void StartEquipSoundTimer();
 
 	FORCEINLINE AWeapon* GetEquippedWeapon() const { return EquippedWeapon; }
+	FORCEINLINE USoundCue* GetMeleeImpactSound() const { return MeleeImpactSound; }
 };

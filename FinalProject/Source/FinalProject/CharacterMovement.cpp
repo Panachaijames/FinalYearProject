@@ -68,7 +68,9 @@ ACharacterMovement::ACharacterMovement() :
 	PickupSoundResetTime(0.2f),
 	EquipSoundResetTime(0.2f),
 	// Icon animation property
-	HighlightedSlot(-1)
+	HighlightedSlot(-1),
+	Health(100.f),
+	MaxHealth(100.f)
 	
 {
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
@@ -117,6 +119,19 @@ ACharacterMovement::ACharacterMovement() :
 	InterpComp5->SetupAttachment(GetFollowCamera());
 	InterpComp6 = CreateDefaultSubobject<USceneComponent>(TEXT("Weapon Interpolation Component 6"));
 	InterpComp6->SetupAttachment(GetFollowCamera());
+}
+
+float ACharacterMovement::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
+{
+	if (Health - DamageAmount <= 0.f)
+	{
+		Health = 0.f;
+	}
+	else
+	{
+		Health -= DamageAmount;
+	}
+	return DamageAmount;
 }
 
 // Called when the game starts or when spawned

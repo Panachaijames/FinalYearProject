@@ -167,7 +167,10 @@ public: \
 	FORCEINLINE static uint32 __PPO__Inventory() { return STRUCT_OFFSET(ACharacterMovement, Inventory); } \
 	FORCEINLINE static uint32 __PPO__EquipItemDelegate() { return STRUCT_OFFSET(ACharacterMovement, EquipItemDelegate); } \
 	FORCEINLINE static uint32 __PPO__HighlightIconDelegate() { return STRUCT_OFFSET(ACharacterMovement, HighlightIconDelegate); } \
-	FORCEINLINE static uint32 __PPO__HighlightedSlot() { return STRUCT_OFFSET(ACharacterMovement, HighlightedSlot); }
+	FORCEINLINE static uint32 __PPO__HighlightedSlot() { return STRUCT_OFFSET(ACharacterMovement, HighlightedSlot); } \
+	FORCEINLINE static uint32 __PPO__Health() { return STRUCT_OFFSET(ACharacterMovement, Health); } \
+	FORCEINLINE static uint32 __PPO__MaxHealth() { return STRUCT_OFFSET(ACharacterMovement, MaxHealth); } \
+	FORCEINLINE static uint32 __PPO__MeleeImpactSound() { return STRUCT_OFFSET(ACharacterMovement, MeleeImpactSound); }
 
 
 #define FinalProject_Source_FinalProject_CharacterMovement_h_40_PROLOG
