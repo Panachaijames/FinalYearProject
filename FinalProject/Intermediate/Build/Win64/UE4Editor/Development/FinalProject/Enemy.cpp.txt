@@ -196,3 +196,5 @@ D:\UE4.27\UE_4.27\Engine\Source\Runtime\Engine\Classes\Components/CapsuleCompone
 D:\UE4.27\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CapsuleComponent.generated.h
 D:\UE4.27\UE_4.27\Engine\Source\Runtime\Engine\Classes\Components/BoxComponent.h
 D:\UE4.27\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\BoxComponent.generated.h
+D:\UE4.27\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/SkeletalMeshSocket.h
+D:\UE4.27\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\SkeletalMeshSocket.generated.h

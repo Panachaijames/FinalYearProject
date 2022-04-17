@@ -104,7 +104,16 @@ protected:
 	UFUNCTION(BlueprintCallable)
 	void DeactivateRightWeapon();
 
-	void DoDamage(AActor* Victim);
+	void DoDamage(class ACharacterMovement* Victim);
+	void SpawnBlood(ACharacterMovement* Victim, FName SocketName);
+
+	//Attempt to stun character
+	void StunCharacter(ACharacterMovement* Victim);
+
+	void ResetCanAttack();
+
+	UFUNCTION(BlueprintCallable)
+	void FinishDeath();
 
 private:
 	/** Particles to spawn when hit by bullets */
@@ -210,6 +219,29 @@ private:
 	/** Base Dmg for enemy*/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Combat, meta = (AllowPrivateAccess = "true"))
 	float BaseDamage;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Combat, meta = (AllowPrivateAccess = "true"))
+	FName LeftWeaponSocket;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Combat, meta = (AllowPrivateAccess = "true"))
+	FName RightWeaponSocket;
+
+	/** True when enemy can attack*/
+	UPROPERTY(VisibleAnywhere, Category = Combat, meta = (AllowPrivateAccess = "true"))
+	bool bCanAttack;
+
+	FTimerHandle AttackWaitTimer;
+
+	/**Min wait time for attack*/
+	UPROPERTY(EditAnywhere, Category = Combat, meta = (AllowPrivateAccess = "true"))
+	float AttackWaitTime;
+
+	/** Death anim monetage for enemy*/
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Combat, meta = (AllowPrivateAccess = "true"))
+	UAnimMontage* DeathMontage;
+
+	bool bDying;
+
 
 public:
 	// Called every frame

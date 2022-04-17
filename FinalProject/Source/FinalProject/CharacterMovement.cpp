@@ -70,7 +70,8 @@ ACharacterMovement::ACharacterMovement() :
 	// Icon animation property
 	HighlightedSlot(-1),
 	Health(100.f),
-	MaxHealth(100.f)
+	MaxHealth(100.f),
+	StunChance(0.25f)
 	
 {
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
@@ -466,7 +467,10 @@ void ACharacterMovement::StartFireTimer()
 
 void ACharacterMovement::AutoFireReset()
 {
+	if (CombatState == ECombatState::ECS_Stunned) return;
+
 	CombatState = ECombatState::ECS_Unoccupied;
+
 	if (EquippedWeapon == nullptr) return;
 	if (WeaponHasAmmo())
 	{
@@ -833,6 +837,7 @@ void ACharacterMovement::ReloadWeapon()
 
 void ACharacterMovement::FinishReloading()
 {
+	if (CombatState == ECombatState::ECS_Stunned)return;
 	// Update the combat state
 	CombatState = ECombatState::ECS_Unoccupied;
 
@@ -1071,6 +1076,12 @@ EPhysicalSurface ACharacterMovement::GetSurfaceType()
 
 }
 
+void ACharacterMovement::EndStun()
+{
+	CombatState = ECombatState::ECS_Unoccupied;
+
+}
+
 int32 ACharacterMovement::GetInterpLocationIndex()
 {
 	int32 LowestIndex = 1;
@@ -1157,6 +1168,7 @@ void ACharacterMovement::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 
 void ACharacterMovement::FinishEquipping()
 {
+	if (CombatState == ECombatState::ECS_Stunned) return;
 	CombatState = ECombatState::ECS_Unoccupied;
 	
 }
@@ -1265,4 +1277,15 @@ void ACharacterMovement::StartEquipSoundTimer()
 		this,
 		&ACharacterMovement::ResetEquipSoundTimer,
 		EquipSoundResetTime);
+}
+
+void ACharacterMovement::Stun()
+{
+	CombatState = ECombatState::ECS_Stunned;
+
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	if (AnimInstance && HitReactMontage)
+	{
+		AnimInstance->Montage_Play(HitReactMontage);
+	}
 }

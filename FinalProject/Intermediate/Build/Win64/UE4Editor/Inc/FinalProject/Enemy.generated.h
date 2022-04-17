@@ -22,6 +22,7 @@ struct FVector;
 #define FinalProject_Source_FinalProject_Enemy_h_13_RPC_WRAPPERS \
 	virtual void ShowHealthBar_Implementation(); \
  \
+	DECLARE_FUNCTION(execFinishDeath); \
 	DECLARE_FUNCTION(execDeactivateRightWeapon); \
 	DECLARE_FUNCTION(execActivateRightWeapon); \
 	DECLARE_FUNCTION(execDeactivateLeftWeapon); \
@@ -41,6 +42,7 @@ struct FVector;
 
 #define FinalProject_Source_FinalProject_Enemy_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execFinishDeath); \
 	DECLARE_FUNCTION(execDeactivateRightWeapon); \
 	DECLARE_FUNCTION(execActivateRightWeapon); \
 	DECLARE_FUNCTION(execDeactivateLeftWeapon); \
@@ -135,7 +137,12 @@ public: \
 	FORCEINLINE static uint32 __PPO__AttackMontage() { return STRUCT_OFFSET(AEnemy, AttackMontage); } \
 	FORCEINLINE static uint32 __PPO__LeftWeaponCollision() { return STRUCT_OFFSET(AEnemy, LeftWeaponCollision); } \
 	FORCEINLINE static uint32 __PPO__RightWeaponCollision() { return STRUCT_OFFSET(AEnemy, RightWeaponCollision); } \
-	FORCEINLINE static uint32 __PPO__BaseDamage() { return STRUCT_OFFSET(AEnemy, BaseDamage); }
+	FORCEINLINE static uint32 __PPO__BaseDamage() { return STRUCT_OFFSET(AEnemy, BaseDamage); } \
+	FORCEINLINE static uint32 __PPO__LeftWeaponSocket() { return STRUCT_OFFSET(AEnemy, LeftWeaponSocket); } \
+	FORCEINLINE static uint32 __PPO__RightWeaponSocket() { return STRUCT_OFFSET(AEnemy, RightWeaponSocket); } \
+	FORCEINLINE static uint32 __PPO__bCanAttack() { return STRUCT_OFFSET(AEnemy, bCanAttack); } \
+	FORCEINLINE static uint32 __PPO__AttackWaitTime() { return STRUCT_OFFSET(AEnemy, AttackWaitTime); } \
+	FORCEINLINE static uint32 __PPO__DeathMontage() { return STRUCT_OFFSET(AEnemy, DeathMontage); }
 
 
 #define FinalProject_Source_FinalProject_Enemy_h_10_PROLOG \

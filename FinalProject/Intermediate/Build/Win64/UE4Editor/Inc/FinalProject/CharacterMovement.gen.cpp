@@ -125,7 +125,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 		return ECombatState_StaticEnum();
 	}
 	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ECombatState(ECombatState_StaticEnum, TEXT("/Script/FinalProject"), TEXT("ECombatState"), false, nullptr, nullptr);
-	uint32 Get_Z_Construct_UEnum_FinalProject_ECombatState_Hash() { return 2988631399U; }
+	uint32 Get_Z_Construct_UEnum_FinalProject_ECombatState_Hash() { return 4190045074U; }
 	UEnum* Z_Construct_UEnum_FinalProject_ECombatState()
 	{
 #if WITH_HOT_RELOAD
@@ -141,6 +141,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 				{ "ECombatState::ECS_FireTimerInProgress", (int64)ECombatState::ECS_FireTimerInProgress },
 				{ "ECombatState::ECS_Reloading", (int64)ECombatState::ECS_Reloading },
 				{ "ECombatState::ECS_Equipping", (int64)ECombatState::ECS_Equipping },
+				{ "ECombatState::ECS_Stunned", (int64)ECombatState::ECS_Stunned },
 				{ "ECombatState::ECS_MAX", (int64)ECombatState::ECS_MAX },
 			};
 #if WITH_METADATA
@@ -154,6 +155,8 @@ void EmptyLinkFunctionForGeneratedCodeCharacterMovement() {}
 				{ "ECS_MAX.Name", "ECombatState::ECS_MAX" },
 				{ "ECS_Reloading.DisplayName", "Reloading" },
 				{ "ECS_Reloading.Name", "ECombatState::ECS_Reloading" },
+				{ "ECS_Stunned.DisplayName", "Stunned" },
+				{ "ECS_Stunned.Name", "ECombatState::ECS_Stunned" },
 				{ "ECS_Unoccupied.DisplayName", "Unoccupied" },
 				{ "ECS_Unoccupied.Name", "ECombatState::ECS_Unoccupied" },
 				{ "ModuleRelativePath", "CharacterMovement.h" },
@@ -291,6 +294,13 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 		P_THIS->FinishEquipping();
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(ACharacterMovement::execEndStun)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->EndStun();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(ACharacterMovement::execGetSurfaceType)
 	{
 		P_FINISH;
@@ -338,6 +348,7 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 		UClass* Class = ACharacterMovement::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "AutoFireReset", &ACharacterMovement::execAutoFireReset },
+			{ "EndStun", &ACharacterMovement::execEndStun },
 			{ "FinishCrosshairBulletFire", &ACharacterMovement::execFinishCrosshairBulletFire },
 			{ "FinishEquipping", &ACharacterMovement::execFinishEquipping },
 			{ "FinishReloading", &ACharacterMovement::execFinishReloading },
@@ -367,6 +378,28 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ACharacterMovement_AutoFireReset_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ACharacterMovement_EndStun_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACharacterMovement_EndStun_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACharacterMovement_EndStun_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACharacterMovement, nullptr, "EndStun", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACharacterMovement_EndStun_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterMovement_EndStun_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ACharacterMovement_EndStun()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ACharacterMovement_EndStun_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -778,6 +811,18 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MeleeImpactSound_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MeleeImpactSound;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BloodParticles_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_BloodParticles;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_HitReactMontage_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_HitReactMontage;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_StunChance_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_StunChance;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -788,6 +833,7 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ACharacterMovement_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_ACharacterMovement_AutoFireReset, "AutoFireReset" }, // 847656714
+		{ &Z_Construct_UFunction_ACharacterMovement_EndStun, "EndStun" }, // 3130226967
 		{ &Z_Construct_UFunction_ACharacterMovement_FinishCrosshairBulletFire, "FinishCrosshairBulletFire" }, // 2062173036
 		{ &Z_Construct_UFunction_ACharacterMovement_FinishEquipping, "FinishEquipping" }, // 483444009
 		{ &Z_Construct_UFunction_ACharacterMovement_FinishReloading, "FinishReloading" }, // 574205581
@@ -1351,6 +1397,36 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MeleeImpactSound = { "MeleeImpactSound", nullptr, (EPropertyFlags)0x0040000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, MeleeImpactSound), Z_Construct_UClass_USoundCue_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MeleeImpactSound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MeleeImpactSound_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_BloodParticles_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Combat" },
+		{ "Comment", "/** Blood Splatter particles for melee hit*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Blood Splatter particles for melee hit" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_BloodParticles = { "BloodParticles", nullptr, (EPropertyFlags)0x0040000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, BloodParticles), Z_Construct_UClass_UParticleSystem_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_BloodParticles_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_BloodParticles_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HitReactMontage_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Combat" },
+		{ "Comment", "/**Hit React Anim Monatge when character is stunnned*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Hit React Anim Monatge when character is stunnned" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HitReactMontage = { "HitReactMontage", nullptr, (EPropertyFlags)0x0040000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, HitReactMontage), Z_Construct_UClass_UAnimMontage_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HitReactMontage_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HitReactMontage_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterMovement_Statics::NewProp_StunChance_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Combat" },
+		{ "Comment", "/**Chance of being stun*/" },
+		{ "ModuleRelativePath", "CharacterMovement.h" },
+		{ "ToolTip", "Chance of being stun" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACharacterMovement_Statics::NewProp_StunChance = { "StunChance", nullptr, (EPropertyFlags)0x0040000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterMovement, StunChance), METADATA_PARAMS(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_StunChance_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterMovement_Statics::NewProp_StunChance_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ACharacterMovement_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_CameraBoom,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_FollowCamera,
@@ -1411,6 +1487,9 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_Health,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MaxHealth,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_MeleeImpactSound,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_BloodParticles,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_HitReactMontage,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterMovement_Statics::NewProp_StunChance,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ACharacterMovement_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ACharacterMovement>::IsAbstract,
@@ -1439,7 +1518,7 @@ static struct FScriptStruct_FinalProject_StaticRegisterNativesFInterpLocation
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ACharacterMovement, 1217969024);
+	IMPLEMENT_CLASS(ACharacterMovement, 881429178);
 	template<> FINALPROJECT_API UClass* StaticClass<ACharacterMovement>()
 	{
 		return ACharacterMovement::StaticClass();
