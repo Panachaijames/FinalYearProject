@@ -16,5 +16,31 @@
 | Module Supervisor  | Dr. John Healey  |
 
 <br />
+
 ## Project Overview
+
+## How to run
+
+
+
+## Game Instructions
+
+### Movement
+- **W** - to run forward
+- **A** - to run left
+- **S** - to run backward
+- **D** - to run right
+
+### Reload 
+- **R** - to relaod gun magazine
+
+### Pick up
+- **E** - to pick up guns and ammo on the ground
+
+### Guns Switching
+- **F** - to change to default gun
+- **1** - to change to gun in an inventory 1
+- **2** - to change to gun in an inventory 2
+- **3** - to change to gun in an inventory 3
+- **4** - to change to gun in an inventory 4
 
