@@ -36,7 +36,9 @@ AEnemy::AEnemy() :
 	RightWeaponSocket(TEXT("FX_Trail_R_01")),
 	bCanAttack(true),
 	AttackWaitTime(1.f),
-	bDying(false)
+	bDying(false),
+	DeathTime(4.f),
+	Score(0.f)
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -181,6 +183,7 @@ void AEnemy::Die()
 			FName("Dead"), 
 			true);
 		EnemyController->StopMovement();
+		
 	}
 
 }
@@ -256,9 +259,16 @@ void AEnemy::AggroSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor
 
 	if (Character)
 	{
-		EnemyController->GetBlackboardComponent()->SetValueAsObject(
-			TEXT("Target"),
-			Character);
+		if (EnemyController)
+		{
+			if (EnemyController->GetBlackboardComponent())
+			{
+				EnemyController->GetBlackboardComponent()->SetValueAsObject(
+					TEXT("Target"),
+					Character);
+			}
+		}
+		
 	}
 }
 
@@ -456,6 +466,18 @@ void AEnemy::ResetCanAttack()
 
 void AEnemy::FinishDeath()
 {
+	GetMesh()->bPauseAnims = true;
+
+	GetWorldTimerManager().SetTimer(
+		DeathTimer,
+		this,
+		&AEnemy::DestroyEnemy,
+		DeathTime);
+
+}
+
+void AEnemy::DestroyEnemy()
+{
 	Destroy();
 }
 
@@ -473,7 +495,7 @@ void AEnemy::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 }
 
-void AEnemy::BulletHit_Implementation(FHitResult HitResult)
+void AEnemy::BulletHit_Implementation(FHitResult HitResult, AActor* Shooter, AController* ShooterController)
 {
 	if (ImpactSound)
 	{
@@ -483,16 +505,7 @@ void AEnemy::BulletHit_Implementation(FHitResult HitResult)
 	{
 		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ImpactParticles, HitResult.Location, FRotator(0.f), true);
 	}
-	ShowHealthBar();
-
-	//Determine whether buullet hit stun
-	const float Stunned = FMath::FRandRange(0.f, 1.f);
-	if (Stunned <= StunChance)
-	{
-		//Stun the enemy
-		PlayHitMontage(FName("HitReactFront"));
-		SetStunned(true);
-	}
+	
 	
 }
 
@@ -508,11 +521,44 @@ float AEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AC
 	if (Health - DamageAmount <= 0.f)
 	{
 		Health = 0.f;
+		Score += 100;
+
+		if (Score >= 700)
+		{
+			if (VictoryMenuClass)
+			{
+				APlayerController* controller = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+				controller->bShowMouseCursor = true;
+
+				UUserWidget* VictoryMenu = CreateWidget<UUserWidget>(
+					controller,
+					VictoryMenuClass);
+				if (VictoryMenu)
+				{
+					VictoryMenu->AddToViewport();
+				}
+
+
+			}
+		}
 		Die();
 	}
 	else
 	{
 		Health -= DamageAmount;
+	}
+
+	if (bDying) return DamageAmount;
+
+	ShowHealthBar();
+
+	//Determine whether buullet hit stun
+	const float Stunned = FMath::FRandRange(0.f, 1.f);
+	if (Stunned <= StunChance)
+	{
+		//Stun the enemy
+		PlayHitMontage(FName("HitReactFront"));
+		SetStunned(true);
 	}
 	return DamageAmount;
 }

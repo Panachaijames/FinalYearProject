@@ -16,9 +16,13 @@ class FINALPROJECT_API AShooterPlayerController : public APlayerController
 public:
 	AShooterPlayerController();
 
+
+
 protected:
 
 	virtual void BeginPlay() override;
+
+
 private:
 
 	/** Reference to the Overall HUD Overlay Blueprint Class */
@@ -28,4 +32,7 @@ private:
 	/** Variable to holds the HUD Overlay Widget after Creating it */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Widgets, meta = (AllowPrivateAccess = "true"))
 	UUserWidget* HUDOverlay;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Widget, meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<class UUserWidget> DeathMenuClass;
 };

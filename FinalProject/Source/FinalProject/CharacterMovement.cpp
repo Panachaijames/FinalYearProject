@@ -20,6 +20,10 @@
 #include "FinalProject.h"
 #include "BulletHitInterface.h"
 #include "Enemy.h"
+#include "EnemyController.h"
+#include "BehaviorTree/BlackboardComponent.h"
+
+
 
 // Sets default values
 ACharacterMovement::ACharacterMovement() : 
@@ -71,7 +75,8 @@ ACharacterMovement::ACharacterMovement() :
 	HighlightedSlot(-1),
 	Health(100.f),
 	MaxHealth(100.f),
-	StunChance(0.25f)
+	StunChance(0.25f),
+	bDead(false)
 	
 {
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
@@ -127,12 +132,57 @@ float ACharacterMovement::TakeDamage(float DamageAmount, FDamageEvent const& Dam
 	if (Health - DamageAmount <= 0.f)
 	{
 		Health = 0.f;
+		Die();
+
+		auto EnemyController = Cast<AEnemyController>(EventInstigator);
+		if (EnemyController)
+		{
+			EnemyController->GetBlackboardComponent()->SetValueAsBool(
+				FName(TEXT("CharacterDead")), true);
+		}
 	}
 	else
 	{
 		Health -= DamageAmount;
 	}
 	return DamageAmount;
+}
+
+void ACharacterMovement::Die()
+{
+	bDead = true;
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+
+	if (AnimInstance && DeathMontage)
+	{
+		AnimInstance->Montage_Play(DeathMontage);
+		AnimInstance->Montage_JumpToSection(FName("DeathA"), DeathMontage);
+	}
+}
+void ACharacterMovement::FinishDeath()
+{
+	GetMesh()->bPauseAnims = true;
+	APlayerController* PC = UGameplayStatics::GetPlayerController(this, 0);
+	if (PC)
+	{
+		DisableInput(PC);
+		if (DeathMenuClass)
+		{
+			APlayerController* controller = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+			controller->bShowMouseCursor = true;
+
+			UUserWidget* DeathMenu = CreateWidget<UUserWidget>(
+				controller,
+				DeathMenuClass);
+			if (DeathMenu)
+			{
+				DeathMenu->AddToViewport();
+			}
+
+			
+		}
+		
+	}
 }
 
 // Called when the game starts or when spawned
@@ -738,7 +788,7 @@ void ACharacterMovement::SendBullet()
 				IBulletHitInterface* BulletHitInterface = Cast<IBulletHitInterface>(BeamHitResult.Actor.Get());
 				if (BulletHitInterface)
 				{
-					BulletHitInterface->BulletHit_Implementation(BeamHitResult);
+					BulletHitInterface->BulletHit_Implementation(BeamHitResult, this, GetController());
 				}
 
 				AEnemy* HitEnemy = Cast<AEnemy>(BeamHitResult.Actor.Get());
@@ -1281,6 +1331,8 @@ void ACharacterMovement::StartEquipSoundTimer()
 
 void ACharacterMovement::Stun()
 {
+	if (Health <= 0.f) return;
+
 	CombatState = ECombatState::ECS_Stunned;
 
 	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
