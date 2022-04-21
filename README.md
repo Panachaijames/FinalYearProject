@@ -22,8 +22,8 @@
 
 ## How to run the game
 https://drive.google.com/file/d/1L0PCT5_asq78_E_qV3UR3gZVqm7Xfgf8/view?usp=sharing
-- Download the Game Package zip file from this link.
-- Extract and start the game by open "FinalProject.exe" file and enjoy the game!
+1. Download the Game Package zip file from this link.
+2. Extract and start the game by open "FinalProject.exe" file and enjoy the game!
 
 ## Game Instructions
 
