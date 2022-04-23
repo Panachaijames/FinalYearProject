@@ -17,6 +17,10 @@
 
 <br />
 
+## Screen Cast
+link below
+https://drive.google.com/file/d/15A-HUWnWo--9sAFm2bjKAd9Tm9leCLyg/view?usp=sharing
+
 ## Project Overview
 "Project Survive" is a Shooting game where the player needs to kill monsters to survive. The player will have a total of 100 health, and a pistol with 30 bullets as a starter. There will be many drops somewhere on the map that players can collect and it will assist the player to win the game easier. The drops include health, bullet, sub-machine gun, and AR gun.
 
