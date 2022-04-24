@@ -27,7 +27,11 @@ https://drive.google.com/file/d/15A-HUWnWo--9sAFm2bjKAd9Tm9leCLyg/view?usp=shari
 ## How to run the game
 https://drive.google.com/file/d/1L0PCT5_asq78_E_qV3UR3gZVqm7Xfgf8/view?usp=sharing
 1. Download the Game Package zip file from this link.
-2. Extract and start the game by open "FinalProject.exe" file and enjoy the game!
+2. Extract all
+3. Start the game by open "FinalProject.exe" file and enjoy the game!
+
+***The window defender may trigger and you may have to click more info to run the game.***
+***Install prerequisites may comes up, so you may also need to install that first before starting the game***
 
 ## Game Instructions
 
